@@ -43,18 +43,18 @@ $params = array(
 	array (
 		'Consignee' =>
 			array (
-				'ConsigneeAddress1' => $sender_info[3],
-				'ConsigneeAddress2' => $sender_info[4],
-				'ConsigneeAddress3'=> $sender_info[5],
+				'ConsigneeAddress1' => 'A',
+				'ConsigneeAddress2' => 'A',
+				'ConsigneeAddress3'=> 'A',
 				'ConsigneeAttention'=> 'A',
-				'ConsigneeMobile'=> $sender_info[6],
-				'ConsigneeName'=> $sender_info[1],
-				'ConsigneePincode'=> $sender_info[0],
-				'ConsigneeTelephone'=> $sender_info[6],
+				'ConsigneeMobile'=> '1234567890',
+				'ConsigneeName'=> 'A',
+				'ConsigneePincode'=> '400028',
+				'ConsigneeTelephone'=> '9833563411',
 			)	,
 		'Services' => 
 			array (
-				'ActualWeight' => $weight,
+				'ActualWeight' => '1',
 				'CollectableAmount' => '0',
 				'Commodity' =>
 					array (
@@ -62,21 +62,21 @@ $params = array(
 						'CommodityDetail2'  => ' Aultra Boos',						
 						'CommodityDetail3' => 'Bra'
 				),
-				'CreditReferenceNo' => $uid,
-				'DeclaredValue' => $cost,
+				'CreditReferenceNo' => '123111989',
+				'DeclaredValue' => '1000',
 				'Dimensions' =>
 					array (
 						'Dimension' =>
 							array (
-								'Breadth' =>$breath,
+								'Breadth' => '1',
 								'Count' => '1',
-								'Height' => $height,
-								'Length' => $lenght
+								'Height' => '1',
+								'Length' => '1'
 							),
 					),
 					'InvoiceNo' => '',
 					'PackType' => '',
-					'PickupDate' => $shipment_date,
+					'PickupDate' => '2016-08-05',
 					'PickupTime' => '1800',
 					'PieceCount' => '1',
 					'ProductCode' => 'A',
@@ -86,15 +86,15 @@ $params = array(
 			),
 			'Shipper' =>
 				array(
-					'CustomerAddress1' => $receiver_info[3],
-					'CustomerAddress2' => $receiver_info[4],
-					'CustomerAddress3' => $receiver_info[5],
+					'CustomerAddress1' => '1',
+					'CustomerAddress2' => '1',
+					'CustomerAddress3' => '1',
 					'CustomerCode' => '359181',
 					'CustomerEmailID' => 'a@b.com',
-					'CustomerMobile' => $receiver_info[6],
-					'CustomerName' => $receiver_info[1],
-					'CustomerPincode' => $receiver_info[0],
-					'CustomerTelephone' => $receiver_info[6],
+					'CustomerMobile' => '9833563411',
+					'CustomerName' => '1',
+					'CustomerPincode' => '400069',
+					'CustomerTelephone' => '1234567890',
 					'IsToPayCustomer' => '',
 					'OriginArea' => 'BOM',
 					'Sender' => '1',

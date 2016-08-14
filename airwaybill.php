@@ -48,6 +48,7 @@
         
         $couriervendor=$_POST["couriervendor"];
         $service=$_POST["services"];
+        $uid=$_POST["UID"];
         
         $from_pin=$_POST["from_pin"];
         $to_pin=$_POST["to_pin"];
@@ -78,7 +79,7 @@
         $package_details=array($weight,$lenght,$breath,$height,$purpose,$cost);
         
         
-        echo $from_pin."<br/>";
+        /*echo $from_pin."<br/>";
         echo $to_pin."<br/>";
         echo $sender_name."<br/>";
         echo $sender_address."<br/>";
@@ -93,7 +94,7 @@
         echo "Courier Vendor=>".$couriervendor."<br/>";
         echo "Service=>".$service."<br/>";
         echo date('c')."<br/>";
-        echo "Shipment Date=>".$fedex_shipment_date;
+        echo "Shipment Date=>".$fedex_shipment_date;*/
 
         
         
