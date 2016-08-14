@@ -21,7 +21,7 @@
 <li><a href="Service_Availabilty.php">Generate AirwayBill</a></li>
 <li><a href="TAT.php">TAT</a></li>
 <li class="nav-item nav-link active"><a href="Generate_AirwayBill.php">Generate AirwayBill</a></li>
-<li><a href="#">Book Pickup</a></li>
+<li><a href="#">Book shipment</a></li>
 <li><a href="#">Track Courier</a></li>
 </ul>
 </div>
@@ -29,46 +29,91 @@
 
 <div class="container">
 <h1 align="center">Generate AirwayBill</h1>
+
+
+
 <?php
     
-    $from_pin=$_POST["from_pin"];
-    $to_pin=$_POST["to_pin"];
     
-    $sender_name=$_POST["sender_name"];
-    $sender_city=$_POST["sender_city"];
-    $sender_state=$_POST["sender_state"];
-    $sender_address=$_POST["sender_address"];
-    $sender_phone=$_POST["sender_phone"];
+    if (isset($_POST["from_pin"]) && !empty($_POST["from_pin"]) && isset($_POST["to_pin"]) && !empty($_POST["to_pin"])) {
+        
+        $userid="santy";
+        
+        $shipment_date=$_POST["date"];
+        $nowtime = time();
+        $fedex_shipment_date=$shipment_date."T".$nowtime;
+        $convert_date = new DateTime($shipment_date);
+        $shipment_date1 = date_format($convert_date, 'd-M-Y');
+
+        
+        $couriervendor=$_POST["couriervendor"];
+        $service=$_POST["services"];
+        
+        $from_pin=$_POST["from_pin"];
+        $to_pin=$_POST["to_pin"];
+        
+        $sender_name=$_POST["sender_name"];
+        $sender_company=$_POST["sender_com_name"];
+        $sender_city=$_POST["sender_city"];
+        $sender_state=$_POST["sender_state"];
+        $sender_address=$_POST["sender_address"];
+        $sender_phone=$_POST["sender_phone"];
+        $sender_info=array($from_pin,$sender_name,$sender_company,$sender_address,$sender_city,$sender_state,$sender_phone);
+        
+        
+        $receiver_name=$_POST["receiver_name"];
+        $receiver_company=$_POST["receiver_com_name"];
+        $receiver_city=$_POST["receiver_city"];
+        $receiver_state=$_POST["receiver_state"];
+        $receiver_address=$_POST["receiver_address"];
+        $receiver_phone=$_POST["receiver_phone"];
+        $receiver_info=array($to_pin,$receiver_name,$receiver_company,$receiver_address,$receiver_city,$receiver_state,$receiver_phone);
+        
+        $weight=$_POST["weight"];
+        $lenght=$_POST["length"];
+        $breath=$_POST["breath"];
+        $height=$_POST["height"];
+        $purpose=$_POST["purpose"];
+        $cost=$_POST["invoice"];
+        $package_details=array($weight,$lenght,$breath,$height,$purpose,$cost);
+        
+        
+        echo $from_pin."<br/>";
+        echo $to_pin."<br/>";
+        echo $sender_name."<br/>";
+        echo $sender_address."<br/>";
+        echo $sender_city."<br/>";
+        echo $sender_state."<br/>";
+        echo $sender_phone."<br/>";
+        echo $receiver_name."<br/>";
+        echo $receiver_address."<br/>";
+        echo $receiver_city."<br/>";
+        echo $receiver_state."<br/>";
+        echo $receiver_phone."<br/>";
+        echo "Courier Vendor=>".$couriervendor."<br/>";
+        echo "Service=>".$service."<br/>";
+        echo date('c')."<br/>";
+        echo "Shipment Date=>".$fedex_shipment_date;
+
+        
+        
+        
+        $servername = "127.0.0.1";
+        $username = "root";
+        $pass = "yesbank";
+        $dbname = "transporter";
+        
+        
+        if($couriervendor=="FedEx"){
+            include './AirwayBill/FedEx/ShipWebServiceClient.php';
+        }
+        elseif($couriervendor=="BlueDart"){
+            include './AirwayBill/BlueDart/CallAwbService.php';
+        }
+    }
     
-    $receiver_name=$_POST["receiver_name"];
-    $receiver_city=$_POST["receiver_city"];
-    $receiver_state=$_POST["receiver_state"];
-    $receiver_address=$_POST["receiver_address"];
-    $receiver_phone=$_POST["receiver_phone"];
-    
-    
-    
-    
-    
-    
-    echo $from_pin."<br/>";
-    echo $to_pin."<br/>";
-    echo $sender_name."<br/>";
-    echo $sender_address."<br/>";
-    echo $sender_city."<br/>";
-    echo $sender_state."<br/>";
-    echo $sender_phone."<br/>";
-    echo $receiver_name."<br/>";
-    echo $receiver_address."<br/>";
-    echo $receiver_city."<br/>";
-    echo $receiver_state."<br/>";
-    echo $receiver_phone."<br/>";
-    
-    include './AirwayBill/FedEx/ShipWebServiceClient.php';
-    include './AirwayBill/BlueDart/CallAwbService.php';
     
     ?>
-
 
 </div>
 

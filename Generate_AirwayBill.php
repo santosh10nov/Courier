@@ -47,7 +47,7 @@
 <div class="col-xs-12">
 
 <div class="col-xs-4">
-<select class="form-control selcls" id="couriervendor" onchange="services_list()">
+<select class="form-control selcls" name="couriervendor" id="couriervendor" onchange="services_list()">
 <option value="" selected="selected">Select Courier Vendor</option>
 <option value="BlueDart">BlueDart</option>
 <option value="FedEx">Fedex</option>
@@ -205,13 +205,13 @@
 
 <tr>
 <td>Commodities:</td>
-<th><input type="text" class="form-control" name="desc" placeholder="Enter "></th>
+<th><input type="text" class="form-control" name="purpose" placeholder="Enter "></th>
 </tr>
 
 <tr>
 <td colspan="2">
 <div class="col-xs-8">
-<select class="form-control selcls" id="services">
+<select class="form-control selcls" name="services" id="services">
 <option value="" selected="selected">Select Courier Service</option>
 </select>
 </div>

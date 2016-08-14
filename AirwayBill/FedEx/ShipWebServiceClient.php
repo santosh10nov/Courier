@@ -2,12 +2,11 @@
 // Copyright 2009, FedEx Corporation. All rights reserved.
 // Version 12.0.0
 
-require_once('/Applications/XAMPP/xamppfiles/htdocs/FedEx/Create_Shipment/library/fedex-common.php5');
-
+require_once('fedex-common.php5');
+    print_r($sender_info);
 //The WSDL is not included with the sample code.
 //Please include and reference in $path_to_wsdl variable.
 $path_to_wsdl = "/Applications/XAMPP/xamppfiles/htdocs/Courier/AirwayBill/FedEx/ShipService_v17.wsdl";
-    
     
 
 define('SHIP_LABEL', 'fedexshipexpresslabel.pdf');  // PNG label file. Change to file-extension .pdf for creating a PDF label (e.g. shiplabel.pdf)
@@ -42,21 +41,21 @@ $request['Version'] = array(
 $request['RequestedShipment'] = array(
 	'ShipTimestamp' => date('c'),
 	'DropoffType' => 'REGULAR_PICKUP', // valid values REGULAR_PICKUP, REQUEST_COURIER, DROP_BOX, BUSINESS_SERVICE_CENTER and STATION
-	'ServiceType' => 'PRIORITY_OVERNIGHT', // valid values STANDARD_OVERNIGHT, PRIORITY_OVERNIGHT, FEDEX_GROUND, ...
+	'ServiceType' => $service, // valid values STANDARD_OVERNIGHT, PRIORITY_OVERNIGHT, FEDEX_GROUND, ...
 	'PackagingType' => 'YOUR_PACKAGING', // valid values FEDEX_BOX, FEDEX_PAK, FEDEX_TUBE, YOUR_PACKAGING, ...
 	'TotalWeight' => array(
-		'Value' => 5.0,
+		'Value' => $weight,
 		'Units' => 'LB' // valid values LB and KG
 	), 
-	'Shipper' => addShipper(),
-	'Recipient' => addRecipient(),
+	'Shipper' => addShipper($sender_info),
+	'Recipient' => addRecipient($receiver_info),
 	'ShippingChargesPayment' => addShippingChargesPayment(),
 	//'SpecialServicesRequested' => addSpecialServices(),
-    'CustomsClearanceDetail'=>addCustomsClearanceDetail(),
+    'CustomsClearanceDetail'=>addCustomsClearanceDetail($package_details),
 	'LabelSpecification' => addLabelSpecification(), 
 	'PackageCount' => 1,
 	'RequestedPackageLineItems' => array(
-		'0' => addPackageLineItem1()
+		'0' => addPackageLineItem1($package_details)
 	)
 );
 
@@ -79,12 +78,13 @@ try {
 
         // Create PNG or PDF label
         // Set LabelSpecification.ImageType to 'PDF' or 'PNG for generating a PDF or a PNG label       
-        $fp = fopen("./AirwayBill/FedEx/AirwayBill".SHIP_LABEL, 'wb');
+        $fp = fopen("./AirwayBill/FedEx/AirwayBill/".SHIP_LABEL, 'wb');
         fwrite($fp, $response->CompletedShipmentDetail->CompletedPackageDetails->Label->Parts->Image); //Create PNG or PDF file
         fclose($fp);
-        echo '<a href="./AirwayBill/FedEx/AirwayBill'.SHIP_LABEL.'">'.SHIP_LABEL.'</a> was generated.';
+        echo '<a href="./AirwayBill/FedEx/AirwayBill/'.SHIP_LABEL.'">'.SHIP_LABEL.'</a> was generated.';
     }else{
         printError($client, $response);
+        
     }
 
     writeToLog($client);    // Write to log file
@@ -94,35 +94,35 @@ try {
 
 
 
-function addShipper(){
+function addShipper($arr){
 	$shipper = array(
 		'Contact' => array(
-			'PersonName' => 'Sender Name',
-			'CompanyName' => 'Sender Company Name',
-			'PhoneNumber' => '1234567890'
+			'PersonName' => $arr[1],
+			'CompanyName' => $arr[2],
+			'PhoneNumber' => $arr[6]
 		),
 		'Address' => array(
-			'StreetLines' => array('Address Line 1'),
-			'City' => 'Mumbai',
+			'StreetLines' => array($arr[3]),
+			'City' => $arr[4],
 			'StateOrProvinceCode' => 'MH',
-			'PostalCode' => '400069',
+			'PostalCode' => $arr[0],
 			'CountryCode' => 'IN'
 		)
 	);
 	return $shipper;
 }
-function addRecipient(){
+function addRecipient($arr){
 	$recipient = array(
 		'Contact' => array(
-			'PersonName' => 'Recipient Name',
-			'CompanyName' => 'Recipient Company Name',
-			'PhoneNumber' => '1234567890'
+			'PersonName' => $arr[1],
+			'CompanyName' => $arr[2],
+			'PhoneNumber' => $arr[6]
 		),
 		'Address' => array(
-			'StreetLines' => array('Address Line 1'),
-			'City' => 'Mumbai',
+			'StreetLines' => array($arr[3]),
+			'City' => $arr[4],
 			'StateOrProvinceCode' => 'MH',
-			'PostalCode' => '400069',
+			'PostalCode' => $arr[0],
 			'CountryCode' => 'IN',
 			'Residential' => true
 		)
@@ -167,33 +167,33 @@ function addSpecialServices(){
 	return $specialServices; 
 }
     
-function addPackageLineItem1(){
+function addPackageLineItem1($arr){
 	$packageLineItem = array(
 		'SequenceNumber'=>1,
 		'GroupPackageCount'=>1,
 		'Weight' => array(
-			'Value' => 5.0,
+			'Value' => $arr[0],
 			'Units' => 'LB'
 		),
 		'Dimensions' => array(
-			'Length' => 20,
-			'Width' => 20,
-			'Height' => 10,
+			'Length' => $arr[1],
+			'Width' => $arr[2],
+			'Height' => $arr[3],
 			'Units' => 'IN'
 		)
 	);
 	return $packageLineItem;
 }
     
-    function addCustomsClearanceDetail(){
+    function addCustomsClearanceDetail($arr){
         $try=array(
                    'DocumentContent'=>'DOCUMENTS_ONLY',
                    'CommercialInvoice'=>array(
-                                            'Purpose'=>'GIFT'
+                                            'Purpose'=>$arr[4]
                    ),
                    'CustomsValue'=>array(
                                         'Currency'=>'INR',
-                                         'Amount'=>100
+                                         'Amount'=>$arr[5]
                    ),
                    'Commodities'=> array(
                                          'Name'=>'BOOKS',
@@ -202,17 +202,17 @@ function addPackageLineItem1(){
                                          'CountryOfManufacture'=>'IN',
                                          'Weight'=>array(
                                                         'Units'=>'LB',
-                                                         'Value'=>5.0
+                                                         'Value'=>$arr[0]
                                          ),
                                          'Quantity'=>1,
                                          'QuantityUnits'=>'EA',
                                          'UnitPrice'=>array(
                                                             'Currency'=>'INR',
-                                                            'Amount'=>100
+                                                            'Amount'=>$arr[5]
                                          ),
                                          'CustomsValue'=>array(
                                                                'Currency'=>'INR',
-                                                              'Amount'=>100
+                                                              'Amount'=>$arr[5]
                                          )
                                          
                    )
