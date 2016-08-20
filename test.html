@@ -7,10 +7,12 @@
                 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
                     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
                         <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
-                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+                            
+                            
+                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
                             <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
                             
-                            </head>
+    </head>
     
     <body>
         
@@ -40,53 +42,30 @@
                 </div>
             </div>
             
+            
             <!-- form start -->
             <form class="form-horizontal" action="airwaybill.php" role="form" method="post" onsubmit="return validate_activity(this)">
-                
-                <div class="row">
-                    <div class="col-xs-12">
-                        
-                        <div class="col-xs-4">
-                            <label for="dtp_input2" class="control-label col-xs-5">Shipment Date:  </label>
-                            <div class="input-group date form_date col-xs-7" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                                <input class="form-control" size="10" type="text" value="" name="date" readonly>
-                                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-                            </div>
-                            <input type="hidden" id="dtp_input2" value="" />
-                        </div>
-                        
-                        
-                        
-                        <div class="col-xs-2">
-                            <div class="dropdown">
-                                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Service Provider Name
-                                    <span class="caret"></span></button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">BlueDart</a></li>
-                                    <li><a href="#">FedEx</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        
-                    </div>
-                </div>
-                
                 
                 <div class="row">
                     <!-- right column -->
                     <div class="col-sm-4">
                         <div class="box box-primary">
                             <div class="box-header with-border">
-                                <h3 class="box-title">Sender Details</h3>
+                                <h3 class="box-title">Sender Detail
+                                    <button type="button" class="btn btn-default btn-sm"  id="add_fav" onclick="favourite(this)">
+                                        <span class="glyphicon glyphicon-heart"></span> Favourite
+                                    </button>
+                                    <button type="button" class="btn btn-info btn-sm" id="fav" onclick="favourite(this)" style="display:none">
+                                        <span class="glyphicon glyphicon-heart"></span> Favourite
+                                    </button>
+                                </h3>
                             </div>
                             <!-- /.box-header -->
                             <div class="box-body">
                                 <table class="table table-striped table-bordered">
                                     <tr>
                                         <td class="col-sm-4">Pickup Pincode:</td>
-                                        <th><input type="text" class="form-control" name="from_pin" placeholder="Enter From Pincode"></th>
+                                        <th><input type="text" class="form-control" name="from_pin" id="from_pin" placeholder="Enter From Pincode" onchange="senderlocation(this.value)"></th>
                                     </tr>
                                     <tr>
                                         <td>Sender Name:</td>
@@ -94,7 +73,7 @@
                                     </tr>
                                     <tr>
                                         <td>Company Name:</td>
-                                        <th><input type="text" class="form-control" name="sender_name" placeholder="Enter Company Name"></th>
+                                        <th><input type="text" class="form-control" name="sender_com_name" placeholder="Enter Company Name"></th>
                                     </tr>
                                     <tr>
                                         <td>Address:</td>
@@ -103,12 +82,12 @@
                                     
                                     <tr>
                                         <td>City:</td>
-                                        <th><input type="text" class="form-control" name="sender_city" placeholder="Enter City"></th>
+                                        <th><input type="text" class="form-control" name="sender_city" placeholder="Enter City" id="sender_city" ></th>
                                     </tr>
                                     
                                     <tr>
                                         <td>State:</td>
-                                        <th><input type="text" class="form-control" name="sender_state" placeholder="Enter State"></th>
+                                        <th><input type="text" class="form-control" name="sender_state" placeholder="Enter State" id="sender_state"></th>
                                     </tr>
                                     
                                     <tr>
@@ -134,7 +113,7 @@
                                 <table class="table table-striped table-bordered">
                                     <tr>
                                         <td class="col-sm-4">Destination Pincode:</td>
-                                        <th><input type="text" class="form-control" name="to_pin" placeholder="Enter To Pincode"></th>
+                                        <th><input type="text" class="form-control" name="to_pin" id="to_pin" placeholder="Enter To Pincode" onchange="receiverlocation(this.value)"></th>
                                     </tr>
                                     <tr>
                                         <td>Receiver Name</td>
@@ -142,7 +121,7 @@
                                     </tr>
                                     <tr>
                                         <td>Company Name:</td>
-                                        <th><input type="text" class="form-control" name="sender_name" placeholder="Enter Company Name"></th>
+                                        <th><input type="text" class="form-control" name="receiver_com_name" placeholder="Enter Company Name"></th>
                                     </tr>
                                     <tr>
                                         <td>Address:</td>
@@ -151,12 +130,12 @@
                                     
                                     <tr>
                                         <td>City:</td>
-                                        <th><input type="text" class="form-control" name="receiver_city" placeholder="Enter City"></th>
+                                        <th><input type="text" class="form-control" name="receiver_city" placeholder="Enter City" id="receiver_city"></th>
                                     </tr>
                                     
                                     <tr>
                                         <td>State:</td>
-                                        <th><input type="text" class="form-control" name="receiver_state" placeholder="Enter State"></th>
+                                        <th><input type="text" class="form-control" name="receiver_state" placeholder="Enter State" id="receiver_state" ></th>
                                     </tr>
                                     
                                     <tr>
@@ -181,23 +160,37 @@
                             <div class="box-body">
                                 <table class="table table-striped table-bordered">
                                     <tr>
-                                        <td>L</td>
-                                        <td><input type="text" class="form-control" name="length" placeholder="Length"></td>
+                                        <td>Courier Vendor</td>
+                                        <td><div>
+                                            <select class="form-control selcls" name="couriervendor" id="couriervendor" onchange="services_list()">
+                                                <option value="" selected="selected">Select Courier Vendor</option>
+                                                <option value="BlueDart">BlueDart</option>
+                                                <option value="FedEx">Fedex</option>
+                                            </select></div>
+                                        </td>
                                     </tr>
+                                    
                                     <tr>
-                                        <td>B</td>
-                                        <td><input type="text" class="form-control" name="breath" placeholder="Breath"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>H</td>
-                                        <td><input type="text" class="form-control" name="height" placeholder="Height"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Weight</td>
-                                        <th><input type="text" class="form-control" name="weight" placeholder="Enter Weight in KG"></th>
+                                        <td>Shipment Date</td>
+                                        <td>
+                                            <div class="input-group date form_date " data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                                                <input class="form-control" size="10" type="text" value="" name="date" readonly>
+                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                                                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                            </div>
+                                            <input type="hidden" id="dtp_input2" value="" />
+                                        </td>
                                     </tr>
                                     
                                     
+                                    <tr>
+                                        <td>Courier Service</td>
+                                        <td>
+                                            <select class="form-control selcls" name="services" id="services">
+                                                <option value="" selected="selected">Select Courier Service</option>
+                                            </select>
+                                        </td>
+                                    </tr>
                                     <tr>
                                         <td>Unique Number</td>
                                         <th><input type="text" class="form-control" name="UID" placeholder="Enter Unique Refer. Number"></th>
@@ -210,25 +203,34 @@
                                     
                                     <tr>
                                         <td>Commodities:</td>
-                                        <th><input type="text" class="form-control" name="desc" placeholder="Enter "></th>
+                                        <th><input type="text" class="form-control" name="purpose" placeholder="Enter "></th>
                                     </tr>
                                     
                                     <tr>
-                                        <td colspan="2">
-                                            <div class="dropdown">
-                                                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"> Service Provider Name
-                                                    <span class="caret"></span></button>
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="#">BlueDart</a></li>
-                                                    <li><a href="#">FedEx</a></li>
-                                                </ul>
-                                            </div>
-                                            <div>
-                                            <button type="submit" class="btn btn-success"  onClick="return validate_activity()">Submit</button>
-                                            </div>
+                                        <td>Package Count</td>
+                                        <td>
+                                            <select class="form-control selcls" name="packagecount" id="packagecount" >
+                                                <option value="1" selected="selected">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                            </select>
                                         </td>
                                     </tr>
                                     
+                                    <tr>
+                                        <td>Shipment Content</td>
+                                        <td>
+                                            <input type="radio" id="Documents" name="shipmentcontent" value="Documents" checked="checked"> Documents &nbsp;&nbsp;
+                                            <input type="radio" id="Commodities"name="shipmentcontent" value="Commodities"> Commodities
+                                        </td>
+                                    </tr>
                                     
                                 </table>
                                 
@@ -238,22 +240,191 @@
                         <!-- /.box -->
                     </div>
                 </div>
-                <!-- /.row -->
                 
                 
+                <div id="packageModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <h4 class="modal-title">Package Details</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="col-md-12 column">
+                                    <table class="table table-bordered table-hover" id="tab_logic">
+                                        <thead>
+                                            <tr >
+                                                <th class="text-center">
+                                                    #
+                                                </th>
+                                                <th class="text-center">
+                                                    Length
+                                                </th>
+                                                <th class="text-center">
+                                                    Width
+                                                </th>
+                                                <th class="text-center">
+                                                    Height
+                                                </th>
+                                                <th class="text-center">
+                                                    Weight
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr id='package0'>
+                                                <td>
+                                                    1
+                                                </td>
+                                                <td>
+                                                    <input type="text" name='length0'  placeholder='Length in cm' class="form-control"/>
+                                                </td>
+                                                <td>
+                                                    <input type="text" name='breath0' placeholder='Breath in cm' class="form-control"/>
+                                                </td>
+                                                <td>
+                                                    <input type="text" name='height0' placeholder='Height in cm' class="form-control"/>
+                                                </td>
+                                                <td>
+                                                    <input type="text" name='weight0' placeholder='Weight in KG' class="form-control"/>
+                                                </td>
+                                            </tr>
+                                            <tr id='package1'></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-primary">OK</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="ShipmentContentModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <h4 class="modal-title">Package Details</h4>
+                            </div>
+                            <div class="modal-body">
+                                    <div class="row clearfix">
+                                        <div class="col-md-12 column">
+                                            <table class="table table-bordered table-hover" id="tab_logic1">
+                                                <thead>
+                                                    <tr >
+                                                        <th class="text-center">
+                                                            #
+                                                        </th>
+                                                        <th class="text-center">
+                                                            Name
+                                                        </th>
+                                                        <th class="text-center">
+                                                            Mail
+                                                        </th>
+                                                        <th class="text-center">
+                                                            Mobile
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr id='addr0'>
+                                                        <td>
+                                                            1
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" name='name0'  placeholder='Name' class="form-control"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" name='mail0' placeholder='Mail' class="form-control"/>
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" name='mobile0' placeholder='Mobile' class="form-control"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr id='addr1'></tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    <a id="add_row" class="btn btn-default pull-left">Add Row</a><a id='delete_row' class="pull-right btn btn-default">Delete Row</a>
+                                </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-primary">OK</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
                 <!-- /.form Submit -->
                 
                 
-                
             </form>
+            
         </div>
+        
+        
+        
         
         
         <script type="text/javascript" src="jquery/jquery-1.8.3.min.js" charset="UTF-8"></script>
         <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
         <script type="text/javascript" src="js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+        
+        <script type="text/javascript">
+            $(document).ready(function(){
+                              var i=1;
+                              $("#packagecount").click(function(){
+                                                       var j=$("#packagecount").val();
+                                                       //alert("Loading");
+                                                       if(i<j){
+                                                       $('#packageModal').modal();
+                                                       var diff=j-i;
+                                                       for( var k = 0; k<diff; k++) {
+                                                       $('#package'+i).html("<td>"+ (i+1) +"</td><td><input name='length"+i+"' type='text' placeholder='Length in cm' class='form-control input-md'  /> </td><td><input  name='breath"+i+"' type='text' placeholder='Breath in cm'  class='form-control input-md'></td><td><input  name='height"+i+"' type='text' placeholder='Height in cm'  class='form-control input-md'></td><td><input  name='weight"+i+"' type='text' placeholder='Weight in KG'  class='form-control input-md'></td>");
+                                                       
+                                                       $('#tab_logic').append('<tr id="package'+(i+1)+'"></tr>');
+                                                       i++;
+                                                       }}
+                                                       if(i>j){
+                                                       $('#packageModal').modal();
+                                                       var diff=i-j;
+                                                       for( var k = 0; k<diff; k++) {
+                                                       $("#package"+(i-1)).html('');
+                                                       i--;
+                                                       
+                                                       
+                                                       }}
+                                                       });
+                              
+                              $("#Commodities").change(function () {
+                                                        if ($("#Commodities").is(":checked")) {
+                                                        $('#ShipmentContentModal').modal();
+                                                       var i=1;
+                                                       $("#add_row").click(function(){
+                                                                           $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='name"+i+"' type='text' placeholder='Name' class='form-control input-md'  /> </td><td><input  name='mail"+i+"' type='text' placeholder='Mail'  class='form-control input-md'></td><td><input  name='mobile"+i+"' type='text' placeholder='Mobile'  class='form-control input-md'></td>");
+                                                                           
+                                                                           $('#tab_logic1').append('<tr id="addr'+(i+1)+'"></tr>');
+                                                                           i++; 
+                                                                           });
+                                                       $("#delete_row").click(function(){
+                                                                              if(i>1){
+                                                                              $("#addr"+(i-1)).html('');
+                                                                              i--;
+                                                                              }
+                                                                              });
+                                                                         }
+                              });
+                              
+                              });
+                              
+            </script>
+        
+        
+        
         <script type="text/javascript">
             $('.form_datetime').datetimepicker({
                                                language:  'en',
@@ -287,6 +458,125 @@
                                                                                                              forceParse: 0
                                                                                                              });
             </script>
+        
+        <script>
+            function senderlocation(str) {
+                if (str == "") {
+                    document.getElementByName("from_pin").innerHTML = "";
+                    return;
+                } else {
+                    if (window.XMLHttpRequest) {
+                        // code for IE7+, Firefox, Chrome, Opera, Safari
+                        xmlhttp = new XMLHttpRequest();
+                    } else {
+                        // code for IE6, IE5
+                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                    }
+                    xmlhttp.onreadystatechange = function() {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                            var res = xmlhttp.responseText.split("|");
+                            document.getElementById("sender_city").value = res[0];
+                            document.getElementById("sender_state").value = res[1];
+                        }
+                    };
+                    xmlhttp.open("GET","location_ajax.php?from_pin="+str+"&location=s",true);
+                    xmlhttp.send();
+                    
+                }
+            }
+        
+        function receiverlocation(str) {
+            if (str == "") {
+                document.getElementByName("to_pin").innerHTML = "";
+                return;
+            } else {
+                if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+                } else {
+                    // code for IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function() {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        var res = xmlhttp.responseText.split("|");
+                        document.getElementById("receiver_city").value = res[0];
+                        document.getElementById("receiver_state").value = res[1];
+                    }
+                };
+                xmlhttp.open("GET","location_ajax.php?to_pin="+str+"&location=r",true);
+                xmlhttp.send();
+                
+            }
+        }
+        
+        function services_list(){
+            
+            var vendor = document.getElementById("couriervendor");
+            var vendor_name = vendor.options[vendor.selectedIndex].value;
+            
+            var from_pin= document.getElementById("from_pin").value;
+            var to_pin= document.getElementById("to_pin").value;
+            
+            
+            if(vendor_name==""){
+                $("#services").empty();
+                document.getElementById("services").options[0]=new Option("Select Courier Service","");
+            }else {
+                if (window.XMLHttpRequest) {
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+                } else {
+                    // code for IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function() {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        
+                        courierservice(xmlhttp.responseText);
+                    }
+                };
+                xmlhttp.open("GET","Service_ajax.php?couriervendor="+vendor_name,true);
+                xmlhttp.send();
+                
+                
+                function courierservice(response) {
+                    $("#services").empty();
+                    var arr = JSON.parse(response);
+                    var i;
+                    document.getElementById("services").options[0]=new Option("Select Courier Service","");
+                    for(i = 0; i < arr.length; i++) {
+                        document.getElementById("services").options[i+1]=new Option(arr[i].servicevalue,arr[i].service);
+                    }
+                    
+                }
+                
+                
+                
+                
+            }
+            
+        }
+        
+        function favourite(i){
+            
+            if(i.id=="add_fav"){
+                document.getElementById(i.id).style.display = 'none';
+                document.getElementById("fav").style.display = 'inline';
+            }
+            
+            else if(i.id=="fav")
+            {
+                document.getElementById(i.id).style.display = 'none';
+                document.getElementById("add_fav").style.display = 'inline';
+            }
+            
+        }
+        
+        
+        
+            </script>
+        
         
         
     </body>

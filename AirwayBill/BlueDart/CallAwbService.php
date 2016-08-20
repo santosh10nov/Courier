@@ -69,16 +69,17 @@ $params = array(
 						'Dimension' =>
 							array (
 								'Breadth' =>$breath,
-								'Count' => '1',
+								'Count' => '2',
 								'Height' => $height,
 								'Length' => $lenght
 							),
-					),
+                           
+                           ),
 					'InvoiceNo' => '',
 					'PackType' => '',
 					'PickupDate' => $shipment_date,
 					'PickupTime' => '1800',
-					'PieceCount' => '1',
+					'PieceCount' => '2',
 					'ProductCode' => 'A',
 					'ProductType' => 'Dutiables',
 					'SpecialInstruction' => '1',
@@ -125,7 +126,7 @@ $result = $soap->__soapCall('GenerateWayBill',array($params));
     echo '<a href="./AirwayBill/BlueDart/AirwayBill/'.SHIP_LABEL1.'">'.SHIP_LABEL1.'</a> was generated.';
 
 echo "<br>";
-//echo '<h2>Result</h2><pre>'; print_r($result); echo '</pre>';
+echo '<h2>Result</h2><pre>'; print_r($result); echo '</pre>';
     
     
 

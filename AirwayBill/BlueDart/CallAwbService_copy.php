@@ -73,7 +73,13 @@ $params = array(
 								'Height' => '1',
 								'Length' => '1'
 							),
-					),
+                           array (
+                                  'Breadth' => '2',
+                                  'Count' => '2',
+                                  'Height' => '1',
+                                  'Length' => '4'
+                                  ),
+                           ),
 					'InvoiceNo' => '',
 					'PackType' => '',
 					'PickupDate' => '2016-08-05',

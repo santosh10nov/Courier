@@ -7,9 +7,7 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 </head>
@@ -42,14 +40,34 @@
 </div>
 </div>
 
-
-
-
-
-
-
 <!-- form start -->
 <form class="form-horizontal" action="airwaybill.php" role="form" method="post" onsubmit="return validate_activity(this)">
+
+<div class="row">
+<div class="col-xs-12">
+
+<div class="col-xs-4">
+<select class="form-control selcls" name="couriervendor" id="couriervendor" onchange="services_list()">
+<option value="" selected="selected">Select Courier Vendor</option>
+<option value="BlueDart">BlueDart</option>
+<option value="FedEx">Fedex</option>
+</select>
+</div>
+
+<div class="col-xs-4">
+<label for="dtp_input2" class="control-label col-xs-5">Shipment Date:  </label>
+<div class="input-group date form_date col-xs-7" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+<input class="form-control" size="10" type="text" value="" name="date" readonly>
+<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+</div>
+<input type="hidden" id="dtp_input2" value="" />
+</div>
+
+
+</div>
+</div>
+
 
 <div class="row">
 <!-- right column -->
@@ -165,40 +183,21 @@
 <div class="box-body">
 <table class="table table-striped table-bordered">
 <tr>
-<td>Courier Vendor</td>
-<td><div>
-<select class="form-control selcls" name="couriervendor" id="couriervendor" onchange="services_list()">
-<option value="" selected="selected">Select Courier Vendor</option>
-<option value="BlueDart">BlueDart</option>
-<option value="FedEx">Fedex</option>
-</select></div>
-</td>
+<td>Length</td>
+<td><input type="text" class="form-control" name="length" placeholder="Length in cm"></td>
 </tr>
-
 <tr>
-<td>Shipment Date</td>
-<td>
-<div class="input-group date form_date " data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-<input class="form-control" size="10" type="text" value="" name="date" readonly>
-<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-</div>
-<input type="hidden" id="dtp_input2" value="" />
-</td>
+<td>Breath</td>
+<td><input type="text" class="form-control" name="breath" placeholder="Breath in cm"></td>
 </tr>
-
-
 <tr>
-<td>Courier Service</td>
-<td>
-<select class="form-control selcls" name="services" id="services">
-<option value="" selected="selected">Select Courier Service</option>
-</select>
-</td>
+<td>Height</td>
+<td><input type="text" class="form-control" name="height" placeholder="Height in cm"></td>
 </tr>
-
-
-
+<tr>
+<td>Weight</td>
+<th><input type="text" class="form-control" name="weight" placeholder="Enter Weight in KG"></th>
+</tr>
 
 
 <tr>
@@ -217,20 +216,13 @@
 </tr>
 
 <tr>
-<td>Package Count</td>
-<td>
-<select class="form-control selcls" name="packagecount" id="packagecount" data-toggle="modal" data-target="#largeModal">
-<option value="1" selected="selected">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-<option value="6">6</option>
-<option value="7">7</option>
-<option value="8">8</option>
-<option value="9">9</option>
-<option value="10">10</option>
+<td colspan="2">
+<div class="col-xs-8">
+<select class="form-control selcls" name="services" id="services">
+<option value="" selected="selected">Select Courier Service</option>
 </select>
+</div>
+<button type="submit" class="btn btn-success"  onClick="return validate_activity()">Submit</button>
 </td>
 </tr>
 
@@ -243,54 +235,21 @@
 <!-- /.box -->
 </div>
 </div>
+<!-- /.row -->
+
+
 
 <!-- /.form Submit -->
 
 
 </form>
-
 </div>
-
-
-
 
 
 <script type="text/javascript" src="jquery/jquery-1.8.3.min.js" charset="UTF-8"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
 <script type="text/javascript" src="js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
-
-<script type="text/javascript">
-$(document).ready(function(){
-                  var i=1;
-                  $("#packagecount").click(function(){
-                                           var j=$("#packagecount").val();
-                                           //alert("Loading");
-                                           if(i<j){
-                                           var diff=j-i;
-                                           for( var k = 0; k<diff; k++) {
-                                           $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='name"+i+"' type='text' placeholder='Name' class='form-control input-md'  /> </td><td><input  name='mail"+i+"' type='text' placeholder='Mail'  class='form-control input-md'></td><td><input  name='mobile"+i+"' type='text' placeholder='Mobile'  class='form-control input-md'></td>");
-                                           
-                                           $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
-                                           i++;
-                                           }}
-                                           if(i>j){
-                                           var diff=i-j;
-                                           for( var k = 0; k<diff; k++) {
-                                           $("#addr"+(i-1)).html('');
-                                           i--;
-                                           
-                                           
-                                           }}
-                                           });
-                  
-                  
-                  });
-
-</script>
-
-
-
 <script type="text/javascript">
 $('.form_datetime').datetimepicker({
                                    language:  'en',
@@ -347,7 +306,7 @@ function senderlocation(str) {
         };
         xmlhttp.open("GET","location_ajax.php?from_pin="+str+"&location=s",true);
         xmlhttp.send();
-        
+       
     }
 }
 
@@ -398,7 +357,7 @@ function services_list(){
         }
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                
+              
                 courierservice(xmlhttp.responseText);
             }
         };
@@ -407,18 +366,18 @@ function services_list(){
         
         
         function courierservice(response) {
-            $("#services").empty();
+        $("#services").empty();
             var arr = JSON.parse(response);
             var i;
             document.getElementById("services").options[0]=new Option("Select Courier Service","");
             for(i = 0; i < arr.length; i++) {
                 document.getElementById("services").options[i+1]=new Option(arr[i].servicevalue,arr[i].service);
             }
-            
+        
         }
         
         
-        
+   
         
     }
     
@@ -438,8 +397,6 @@ function favourite(i){
     }
     
 }
-
-
 
 </script>
 
