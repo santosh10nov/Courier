@@ -11,6 +11,7 @@
     $phone=$_GET['phone'];
     $companyname=$_GET['companyname'];
     $fav=$_GET['fav'];
+    $parties=$_GET['parties'];
     $name_comp=$name."-".$companyname;
     
     $servername = "127.0.0.1";
@@ -33,6 +34,7 @@
         
         $numrows = $stmt1->rowCount();
         
+        $output=array($fav,$parties);
         
         if($fav==1){
         
@@ -42,7 +44,7 @@
         
         $conn->exec($sql);
        
-        echo $fav;
+        echo json_encode($output);
             
         }
     
@@ -55,7 +57,7 @@
             
             $conn->exec($sql);
             
-            echo $fav;
+             echo json_encode($output);
         }
         
         elseif($numrows>0 and $fav==2){
@@ -68,7 +70,7 @@
             
             $conn->exec($sql);
             
-            echo $fav;
+            echo json_encode($output);
         }
 
     }catch(PDOException $e) {
