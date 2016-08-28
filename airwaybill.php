@@ -53,6 +53,10 @@
         $from_pin=$_POST["from_pin"];
         $to_pin=$_POST["to_pin"];
         
+        //////////////////////////////////////
+        /////// Sender Details///////////////
+        /////////////////////////////////////
+        
         $sender_name=$_POST["sender_name"];
         $sender_company=$_POST["sender_com_name"];
         $sender_city=$_POST["sender_city"];
@@ -62,6 +66,11 @@
         $sender_info=array($from_pin,$sender_name,$sender_company,$sender_address,$sender_city,$sender_state,$sender_phone);
         
         
+        
+        //////////////////////////////////////
+        /////// Receiver Details///////////////
+        /////////////////////////////////////
+        
         $receiver_name=$_POST["receiver_name"];
         $receiver_company=$_POST["receiver_com_name"];
         $receiver_city=$_POST["receiver_city"];
@@ -70,13 +79,35 @@
         $receiver_phone=$_POST["receiver_phone"];
         $receiver_info=array($to_pin,$receiver_name,$receiver_company,$receiver_address,$receiver_city,$receiver_state,$receiver_phone);
         
-        $weight=$_POST["weight"];
-        $lenght=$_POST["length"];
-        $breath=$_POST["breath"];
-        $height=$_POST["height"];
+        
+        //////////////////////////////////////
+        /////// Package Details///////////////
+        /////////////////////////////////////
+        
+        
+        $packagecount= $_POST["package_count"];
+        
+        $length=$_POST["length0"];
+        $breath=$_POST["breath0"];
+        $heigth=$_POST["height0"];
+        $weight=$_POST["weight0"];
+        
+       // $package_details=array($weight,$lenght,$breath,$height,$purpose,$cost);
+        
+        /*for($i=0;$i<$packagecount;$i++){
+            $length=$_POST["length".$i];
+            $breath=$_POST["breath0"];
+            $height=$_POST["'height0"];
+            $weight=$_POST["weight0"];
+        } */
+        
+        //$packagedetails=array($length,$breath,$)
+        
+       
+        
         $purpose=$_POST["purpose"];
         $cost=$_POST["invoice"];
-        $package_details=array($weight,$lenght,$breath,$height,$purpose,$cost);
+        $package_details=array($weight,$length,$breath,$heigth,$purpose,$cost);
         
         
         /*echo $from_pin."<br/>";
@@ -112,7 +143,9 @@
             include './AirwayBill/BlueDart/CallAwbService.php';
         }
     }
-    
+    else{
+        header("Location: index.php");
+    }
     
     ?>
 

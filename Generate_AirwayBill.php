@@ -43,11 +43,6 @@
 </div>
 
 
-
-
-
-
-
 <!-- form start -->
 <form class="form-horizontal" action="airwaybill.php" role="form" method="post" onsubmit="return validate_activity(this)">
 
@@ -56,14 +51,18 @@
 <div class="col-sm-4">
 <div class="box box-primary">
 <div class="box-header with-border">
-<h3 class="box-title">Sender Detail
-<button type="button" class="btn btn-default btn-sm"  id="add_fav" onclick="favourite(this)">
+<h4 class="box-title">Sender Detail
+<button type="button" class="btn btn-default btn-sm"  id="sender_add_fav" onclick="favourite(this)">
 <span class="glyphicon glyphicon-heart"></span> Favourite
 </button>
-<button type="button" class="btn btn-info btn-sm" id="fav" onclick="favourite(this)" style="display:none">
-<span class="glyphicon glyphicon-heart"></span> Favourite
+<button type="button" class="btn btn-danger btn-sm" id="sender_remove_fav" onclick="favourite(this)" style="display:none">Remove</button>
+<button type="button" class="btn btn-info btn-sm" id="sender_update_fav" onclick="favourite(this)" style="display:none">
+<span class="glyphicon glyphicon-heart"></span> Update
 </button>
-</h3>
+<button type="button" class="btn btn-success btn-sm"  id="sender_fav_list" data-toggle="modal" data-target="#SearchModal"  data-parties="sender">
+<span class="glyphicon glyphicon-user"></span> List
+</button>
+</h4>
 </div>
 <!-- /.box-header -->
 <div class="box-body">
@@ -74,15 +73,15 @@
 </tr>
 <tr>
 <td>Sender Name:</td>
-<th><input type="text" class="form-control" name="sender_name" placeholder="Enter Sender Name"></th>
+<th><input type="text" class="form-control" name="sender_name" id="sender_name" placeholder="Enter Sender Name"></th>
 </tr>
 <tr>
 <td>Company Name:</td>
-<th><input type="text" class="form-control" name="sender_com_name" placeholder="Enter Company Name"></th>
+<th><input type="text" class="form-control" name="sender_com_name" id="sender_com_name" placeholder="Enter Company Name"></th>
 </tr>
 <tr>
 <td>Address:</td>
-<th><textarea class="form-control custom-control" rows="3" style="resize:none" name="sender_address"></textarea></th>
+<th><textarea class="form-control custom-control" rows="3" style="resize:none" name="sender_address" id="sender_address" ></textarea></th>
 </tr>
 
 <tr>
@@ -97,7 +96,7 @@
 
 <tr>
 <td>Phone Number:</td>
-<th><input type="text" class="form-control" name="sender_phone" placeholder="Enter Phone Number"></th>
+<th><input type="text" class="form-control" name="sender_phone" placeholder="Enter Phone Number" id="sender_phone" ></th>
 </tr>
 </table>
 
@@ -111,7 +110,18 @@
 <div class="col-sm-4">
 <div class="box box-primary" >
 <div class="box-header with-border">
-<h3 class="box-title">Receiver Details</h3>
+<h4 class="box-title">Receiver Details
+<button type="button" class="btn btn-default btn-sm"  id="receiver_add_fav" onclick="favourite(this)">
+<span class="glyphicon glyphicon-heart"></span> Favourite
+</button>
+<button type="button" class="btn btn-danger btn-sm" id="receiver_remove_fav" onclick="favourite(this)" style="display:none">Remove</button>
+<button type="button" class="btn btn-info btn-sm" id="receiver_update_fav" onclick="favourite(this)" style="display:none">
+<span class="glyphicon glyphicon-heart"></span> Update
+</button>
+<button type="button" class="btn btn-success btn-sm"  id="receiver_fav_list" data-toggle="modal" data-target="#SearchModal" data-parties="receiver">
+<span class="glyphicon glyphicon-user"></span> List
+</button>
+</h4>
 </div>
 <!-- /.box-header -->
 <div class="box-body">
@@ -122,15 +132,15 @@
 </tr>
 <tr>
 <td>Receiver Name</td>
-<th><input type="text" class="form-control" name="receiver_name" placeholder="Enter Receiver Name"></th>
+<th><input type="text" class="form-control" name="receiver_name" id="receiver_name" placeholder="Enter Receiver Name"></th>
 </tr>
 <tr>
 <td>Company Name:</td>
-<th><input type="text" class="form-control" name="receiver_com_name" placeholder="Enter Company Name"></th>
+<th><input type="text" class="form-control" name="receiver_com_name" id="receiver_com_name" placeholder="Enter Company Name"></th>
 </tr>
 <tr>
 <td>Address:</td>
-<th><textarea class="form-control custom-control" rows="3" style="resize:none" name="receiver_address"></textarea></th>
+<th><textarea class="form-control custom-control" rows="3" style="resize:none" name="receiver_address"  id="receiver_address"></textarea></th>
 </tr>
 
 <tr>
@@ -145,7 +155,7 @@
 
 <tr>
 <td>Phone Number:</td>
-<th><input type="text" class="form-control" name="receiver_phone" placeholder="Enter Phone Number"></th>
+<th><input type="text" class="form-control" name="receiver_phone" id="receiver_phone" placeholder="Enter Phone Number"></th>
 </tr>
 </table>
 
@@ -159,7 +169,7 @@
 <div class="col-sm-4">
 <div class="box box-primary">
 <div class="box-header with-border">
-<h3 class="box-title">Shipment Details</h3>
+<h4 class="box-title">Shipment Details</h4>
 </div>
 <!-- /.box-header -->
 <div class="box-body">
@@ -196,11 +206,6 @@
 </select>
 </td>
 </tr>
-
-
-
-
-
 <tr>
 <td>Unique Number</td>
 <th><input type="text" class="form-control" name="UID" placeholder="Enter Unique Refer. Number"></th>
@@ -219,8 +224,9 @@
 <tr>
 <td>Package Count</td>
 <td>
-<select class="form-control selcls" name="packagecount" id="packagecount" data-toggle="modal" data-target="#largeModal">
-<option value="1" selected="selected">1</option>
+<select class="form-control selcls" name="packagecount" id="packagecount" >
+<option value="" selected="selected">Select Package Count</option>
+<option value="1">1</option>
 <option value="2">2</option>
 <option value="3">3</option>
 <option value="4">4</option>
@@ -234,6 +240,13 @@
 </td>
 </tr>
 
+<tr>
+<td>Shipment Content</td>
+<td>
+<input type="radio" id="Documents" name="shipmentcontent" value="Documents" checked="checked"> Documents &nbsp;&nbsp;
+<input type="radio" id="Commodities"name="shipmentcontent" value="Commodities"> Commodities
+</td>
+</tr>
 
 </table>
 
@@ -241,6 +254,159 @@
 <!-- /.box-footer -->
 </div>
 <!-- /.box -->
+</div>
+</div>
+
+
+<div id="packageModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+<h4 class="modal-title">Package Details</h4>
+</div>
+<div class="modal-body">
+<div class="col-md-12 column">
+<table class="table table-bordered table-hover" id="tab_logic">
+<thead>
+<tr >
+<th class="text-center">
+#
+</th>
+<th class="text-center">
+Length
+</th>
+<th class="text-center">
+Width
+</th>
+<th class="text-center">
+Height
+</th>
+<th class="text-center">
+Weight
+</th>
+</tr>
+</thead>
+<tbody>
+<tr id='package0'>
+<td>
+1
+</td>
+<td>
+<input type="text" name='length0'  placeholder='Length in cm' class="form-control"/>
+</td>
+<td>
+<input type="text" name='breath0' placeholder='Breath in cm' class="form-control"/>
+</td>
+<td>
+<input type="text" name='height0' placeholder='Height in cm' class="form-control"/>
+</td>
+<td>
+<input type="text" name='weight0' placeholder='Weight in KG' class="form-control"/>
+</td>
+</tr>
+<tr id='package1'></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+<button type="button" class="btn btn-primary">OK</button>
+</div>
+</div>
+</div>
+</div>
+
+<div id="ShipmentContentModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+<h4 class="modal-title">Package Details</h4>
+</div>
+<div class="modal-body">
+<div class="row clearfix">
+<div class="col-md-12 column">
+<input>
+<table class="table table-bordered table-hover" id="tab_logic1">
+<thead>
+<tr >
+<th class="text-center">
+#
+</th>
+<th class="text-center">
+Commodity
+</th>
+<th class="text-center">
+Commodity Description
+</th>
+<th class="text-center">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr id='addr0'>
+<td>
+1
+</td>
+<td>
+<input type="text" name='Commodity0'  placeholder='Commodity' class="form-control"/>
+</td>
+<td>
+<input type="text" name='Commodity_desc0' placeholder='Commodity Description' class="form-control"/>
+</td>
+<td>
+<input type="text" name='CommodityValue0' placeholder='Commodity Value' class="form-control"/>
+</td>
+</tr>
+<tr id='addr1'></tr>
+</tbody>
+</table>
+</div>
+<a id="add_row" class="btn btn-success pull-left">Add Row</a><a id='delete_row' class="pull-right btn btn-danger">Delete Row</a>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+<button type="button" class="btn btn-primary">Save</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="SearchModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+<h4 class="modal-title">Contact List</h4>
+</div>
+<div class="modal-body">
+<form>
+<div class="row">
+<div class="panel panel-primary filterable">
+<div class="panel-heading">
+<h3 class="panel-title">Users</h3>
+</div>
+<input type="hidden" name="parties" id="parties_id" value=""/>
+<table class="table">
+<thead>
+<tr class="filters">
+<th><input type="text" class="form-control" placeholder="Name" id="contact_name"  onkeyup="search()"></th>
+<th><input type="text" class="form-control" placeholder="Company Name" id="company_name" onkeyup="search()"></th>
+<th><input type="text" class="form-control" placeholder="Phone Number" id="phonenumber" onkeyup="search()"></th>
+</tr>
+</thead>
+</table>
+<div id="result"></div>
+</div>
+</div>
+</form>
+</div>
+</div>
 </div>
 </div>
 
@@ -267,26 +433,63 @@ $(document).ready(function(){
                                            var j=$("#packagecount").val();
                                            //alert("Loading");
                                            if(i<j){
+                                           $('#packageModal').modal();
                                            var diff=j-i;
                                            for( var k = 0; k<diff; k++) {
-                                           $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='name"+i+"' type='text' placeholder='Name' class='form-control input-md'  /> </td><td><input  name='mail"+i+"' type='text' placeholder='Mail'  class='form-control input-md'></td><td><input  name='mobile"+i+"' type='text' placeholder='Mobile'  class='form-control input-md'></td>");
+                                           $('#package'+i).html("<td>"+ (i+1) +"</td><td><input name='length"+i+"' type='text' placeholder='Length in cm' class='form-control input-md'  /> </td><td><input  name='breath"+i+"' type='text' placeholder='Breath in cm'  class='form-control input-md'></td><td><input  name='height"+i+"' type='text' placeholder='Height in cm'  class='form-control input-md'></td><td><input  name='weight"+i+"' type='text' placeholder='Weight in KG'  class='form-control input-md'></td>");
                                            
-                                           $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
+                                           $('#tab_logic').append('<tr id="package'+(i+1)+'"></tr>');
                                            i++;
                                            }}
                                            if(i>j){
+                                           $('#packageModal').modal();
                                            var diff=i-j;
                                            for( var k = 0; k<diff; k++) {
-                                           $("#addr"+(i-1)).html('');
+                                           $("#package"+(i-1)).html('');
                                            i--;
-                                           
-                                           
                                            }}
+                                           if(i==1){
+                                           $('#packageModal').modal();
+                                           }
+                                           
+                                           
                                            });
+                  
+                  $("#Commodities").click(function () {
+                                          if ($("#Commodities").is(":checked")) {
+                                          $('#ShipmentContentModal').modal();
+                                          var i=1;
+                                          $("#add_row").click(function(){
+                                                              $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='Commodity"+i+"' type='text' placeholder='Commodity' class='form-control input-md'  /> </td><td><input  name='Commodity_desc"+i+"' type='text' placeholder='Commodity Description'  class='form-control input-md'></td><td><input  name='CommodityValue"+i+"' type='text' placeholder='Commodity Value'  class='form-control input-md'></td>");
+                                                              
+                                                              $('#tab_logic1').append('<tr id="addr'+(i+1)+'"></tr>');
+                                                              i++;
+                                                              });
+                                          $("#delete_row").click(function(){
+                                                                 if(i>1){
+                                                                 $("#addr"+(i-1)).html('');
+                                                                 i--;
+                                                                 }
+                                                                 });
+                                          }
+                                          });
+                  
+                  
+                  
                   
                   
                   });
 
+
+$('#SearchModal').on('show.bs.modal', function(e) {
+                     var parties_name = $(e.relatedTarget).data('parties');
+                     $(e.currentTarget).find('input[name="parties"]').val(parties_name);
+                     });
+$(".modal").on("hidden.bs.modal", function(){
+               $('.modal-body').find('input,textarea').val('');
+               document.getElementById("result").innerHTML=" ";
+               
+               });
 </script>
 
 
@@ -328,7 +531,7 @@ $('.form_time').datetimepicker({
 <script>
 function senderlocation(str) {
     if (str == "") {
-        document.getElementByName("from_pin").innerHTML = "";
+        document.getElementById("from_pin").innerHTML = "";
         return;
     } else {
         if (window.XMLHttpRequest) {
@@ -353,7 +556,7 @@ function senderlocation(str) {
 
 function receiverlocation(str) {
     if (str == "") {
-        document.getElementByName("to_pin").innerHTML = "";
+        document.getElementById("to_pin").innerHTML = "";
         return;
     } else {
         if (window.XMLHttpRequest) {
@@ -426,19 +629,258 @@ function services_list(){
 
 function favourite(i){
     
-    if(i.id=="add_fav"){
-        document.getElementById(i.id).style.display = 'none';
-        document.getElementById("fav").style.display = 'inline';
+    if(i.id=="sender_add_fav" || i.id=="sender_update_fav" || i.id=="sender_remove_fav"){
+        
+        var pin= document.getElementById("from_pin").value;
+        var name = document.getElementById("sender_name").value;
+        var com_name = document.getElementById("sender_com_name").value;
+        var address = document.getElementById("sender_address").value;
+        var city = document.getElementById("sender_city").value;
+        var state = document.getElementById("sender_state").value;
+        var phone = document.getElementById("sender_phone").value;
+        
+        if(sender_name==""||sender_phone==""||sender_com_name==""){
+            alert("Plz. add Name,Company Name, Phone Number");
+        }
+        else {
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    
+                    notification(xmlhttp.responseText);
+                }
+            };
+            
+            
+            if(i.id=="sender_add_fav"){
+                
+                xmlhttp.open("GET","ContactFav_ajax.php?pin="+pin+"&name="+name+"&companyname="+com_name+"&address="+address+"&city="+city+"&state="+state+"&phone="+phone+"&fav=1&parties=sender",true);
+                xmlhttp.send();
+            }
+            
+            else if(i.id=="sender_update_fav"){
+                
+                xmlhttp.open("GET","ContactFav_ajax.php?pin="+pin+"&name="+name+"&companyname="+com_name+"&address="+address+"&city="+city+"&state="+state+"&phone="+phone+"&fav=2&parties=sender",true);
+                xmlhttp.send();
+                
+            }
+            
+            else if(i.id=="sender_remove_fav"){
+                
+                
+                
+                xmlhttp.open("GET","ContactFav_ajax.php?pin="+pin+"&name="+name+"&companyname="+com_name+"&address="+address+"&city="+city+"&state="+state+"&phone="+phone+"&fav=0&parties=sender",true);
+                xmlhttp.send();
+                
+            }
+            
+        }
+        
+        
     }
     
-    else if(i.id=="fav")
-    {
-        document.getElementById(i.id).style.display = 'none';
-        document.getElementById("add_fav").style.display = 'inline';
+    else if( i.id=="receiver_add_fav" || i.id=="receiver_update_fav" || i.id=="receiver_remove_fav"){
+        
+        var pin= document.getElementById("to_pin").value;
+        var name = document.getElementById("receiver_name").value;
+        var com_name = document.getElementById("receiver_com_name").value;
+        var address = document.getElementById("receiver_address").value;
+        var city = document.getElementById("receiver_city").value;
+        var state = document.getElementById("receiver_state").value;
+        var phone = document.getElementById("receiver_phone").value;
+        
+        if(name==""||phone==""||com_name==""){
+            alert("Plz. add Name,Company Name, Phone Number");
+        }
+        else {
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    
+                    notification(xmlhttp.responseText);
+                }
+            };
+            
+            
+            
+            if(i.id=="receiver_add_fav"){
+                
+                xmlhttp.open("GET","ContactFav_ajax.php?pin="+pin+"&name="+name+"&companyname="+com_name+"&address="+address+"&city="+city+"&state="+state+"&phone="+phone+"&fav=1&parties=receiver",true);
+                xmlhttp.send();
+            }
+            
+            else if(i.id=="receiver_update_fav"){
+                
+                xmlhttp.open("GET","ContactFav_ajax.php?pin="+pin+"&name="+name+"&companyname="+com_name+"&address="+address+"&city="+city+"&state="+state+"&phone="+phone+"&fav=2&parties=receiver",true);
+                xmlhttp.send();
+                
+            }
+            
+            else if(i.id=="receiver_remove_fav"){
+                
+                
+                xmlhttp.open("GET","ContactFav_ajax.php?pin="+pin+"&name="+name+"&companyname="+com_name+"&address="+address+"&city="+city+"&state="+state+"&phone="+phone+"&fav=0&parties=receiver",true);
+                xmlhttp.send();
+                
+            }
+            
+            
+        }
+        
+        
     }
     
 }
 
+
+function notification(response)
+{
+    
+    var arr =  JSON.parse(response)
+    
+    
+    if(arr[0]=="1"){
+        alert("Contact Detials Added Successfully");
+        if(arr[1]=="sender"){
+            document.getElementById("sender_add_fav").style.display = 'none';
+            document.getElementById("sender_update_fav").style.display = 'inline';
+            document.getElementById("sender_remove_fav").style.display = 'inline';
+            document.getElementById("sender_fav_list").innerHTML='<span class="glyphicon glyphicon-user"></span>';
+        }
+        else if(arr[1]=="receiver"){
+            document.getElementById("receiver_add_fav").style.display = 'none';
+            document.getElementById("receiver_update_fav").style.display = 'inline';
+            document.getElementById("receiver_remove_fav").style.display = 'inline';
+            document.getElementById("receiver_fav_list").innerHTML='<span class="glyphicon glyphicon-user"></span>';
+        }
+        
+    }
+    else if(arr[0]=="2"){
+        alert("Contact Detials Updated Successfully");
+        if(arr[1]=="sender"){
+            document.getElementById("sender_add_fav").style.display = 'none';
+            document.getElementById("sender_update_fav").style.display = 'inline';
+            document.getElementById("sender_remove_fav").style.display = 'inline';
+            document.getElementById("sender_fav_list").innerHTML='<span class="glyphicon glyphicon-user"></span>';
+        }
+        else if(arr[1]=="receiver"){
+            document.getElementById("receiver_add_fav").style.display = 'none';
+            document.getElementById("receiver_update_fav").style.display = 'inline';
+            document.getElementById("receiver_remove_fav").style.display = 'inline';
+            document.getElementById("receiver_fav_list").innerHTML='<span class="glyphicon glyphicon-user"></span>';
+        }
+        
+    }
+    else if(arr[0]=="0"){
+        alert("Contact Detials Removed Successfully");
+        if(arr[1]=="sender"){
+            document.getElementById("sender_add_fav").style.display = 'inline';
+            document.getElementById("sender_update_fav").style.display = 'none';
+            document.getElementById("sender_remove_fav").style.display = 'none';
+            document.getElementById("sender_fav_list").innerHTML='<span class="glyphicon glyphicon-user"></span>List';
+        }
+        else if(arr[1]=="receiver"){
+            document.getElementById("receiver_add_fav").style.display = 'inline';
+            document.getElementById("receiver_update_fav").style.display = 'none';
+            document.getElementById("receiver_remove_fav").style.display = 'none';
+            document.getElementById("receiver_fav_list").innerHTML='<span class="glyphicon glyphicon-user"></span>List';
+        }
+        
+        
+    }
+    
+    
+}
+
+
+function search(){
+    
+    
+    var searchname= document.getElementById("contact_name").value;
+    var searchcomp_name= document.getElementById("company_name").value;
+    var searchphone= document.getElementById("phonenumber").value;
+    var parties=document.getElementById("parties_id").value;
+    
+    //alert(searchcomp_name);
+    
+    if(searchname=="" && searchcomp_name=="" && searchphone==""){
+        
+    }else {
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                
+                
+                $('#result').html(xmlhttp.responseText);
+                //document.getElementById("searchphone").value=xmlhttp.responseText;
+                
+            }
+        };
+        xmlhttp.open("GET","SearchContact_ajax.php?searchname="+searchname+"&comp_name="+searchcomp_name+"&phone="+searchphone+"&parties="+parties,true);
+        xmlhttp.send();
+        
+        
+    }
+}
+
+function selectRow(pincode,name,comp_name,address,city,state,phone,parties){
+    
+    if(parties=="sender"){
+        
+        document.getElementById("from_pin").value=pincode;
+        document.getElementById("sender_name").value=name;
+        document.getElementById("sender_com_name").value=comp_name;
+        document.getElementById("sender_address").value= address;
+        document.getElementById("sender_city").value= city;
+        document.getElementById("sender_state").value= state;
+        document.getElementById("sender_phone").value= phone;
+        
+        document.getElementById("sender_add_fav").style.display = 'none';
+        document.getElementById("sender_update_fav").style.display = 'inline';
+        document.getElementById("sender_remove_fav").style.display = 'inline';
+        document.getElementById("sender_fav_list").innerHTML='<span class="glyphicon glyphicon-user"></span>';
+        
+        
+        
+    }
+    else if(parties=="receiver"){
+        document.getElementById("to_pin").value=pincode;
+        document.getElementById("receiver_name").value=name;
+        document.getElementById("receiver_com_name").value=comp_name;
+        document.getElementById("receiver_address").value= address;
+        document.getElementById("receiver_city").value= city;
+        document.getElementById("receiver_state").value= state;
+        document.getElementById("receiver_phone").value= phone;
+        
+        document.getElementById("receiver_add_fav").style.display = 'none';
+        document.getElementById("receiver_update_fav").style.display = 'inline';
+        document.getElementById("receiver_remove_fav").style.display = 'inline';
+        document.getElementById("receiver_fav_list").innerHTML='<span class="glyphicon glyphicon-user"></span>';
+        
+        
+        
+    }
+    
+    
+}
 
 
 </script>

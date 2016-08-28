@@ -46,7 +46,7 @@ $params = array(
 				'ConsigneeAddress1' => $sender_info[3],
 				'ConsigneeAddress2' => $sender_info[4],
 				'ConsigneeAddress3'=> $sender_info[5],
-				'ConsigneeAttention'=> 'A',
+				'ConsigneeAttention'=> $sender_info[2],
 				'ConsigneeMobile'=> $sender_info[6],
 				'ConsigneeName'=> $sender_info[1],
 				'ConsigneePincode'=> $sender_info[0],
@@ -70,8 +70,8 @@ $params = array(
 							array (
 								'Breadth' =>$breath,
 								'Count' => '2',
-								'Height' => $height,
-								'Length' => $lenght
+								'Height' => $heigth,
+								'Length' => $length
 							),
                            
                            ),
@@ -123,10 +123,15 @@ $result = $soap->__soapCall('GenerateWayBill',array($params));
     $fp = fopen("./AirwayBill/BlueDart/AirwayBill/".SHIP_LABEL1, 'wb');
     fwrite($fp,$result->GenerateWayBillResult->AWBPrintContent); //Create PNG or PDF file
     fclose($fp);
-    echo '<a href="./AirwayBill/BlueDart/AirwayBill/'.SHIP_LABEL1.'">'.SHIP_LABEL1.'</a> was generated.';
+    //echo '<a href="./AirwayBill/BlueDart/AirwayBill/'.SHIP_LABEL1.'">'.SHIP_LABEL1.'</a> was generated.';
+    
+    echo '<embed src="./AirwayBill/BlueDart/AirwayBill/'.SHIP_LABEL1.'" width="600px" height="400px"  type="application/pdf"><br>';
+    echo'<a href="./AirwayBill/BlueDart/AirwayBill/'.SHIP_LABEL1.'" download><button type="submit" class="btn btn-success">Download</button></a>';
+    
+  
 
 echo "<br>";
-echo '<h2>Result</h2><pre>'; print_r($result); echo '</pre>';
+//echo '<h2>Result</h2><pre>'; print_r($result); echo '</pre>';
     
     
 
