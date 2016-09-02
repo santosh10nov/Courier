@@ -44,7 +44,7 @@
 
 
 <!-- form start -->
-<form class="form-horizontal" action="airwaybill.php" role="form" method="post" onsubmit="return validate_activity(this)">
+<form class="form-horizontal" action="airwaybill.php" role="form" method="post" onsubmit="validate_activity()">
 
 <div class="row">
 <!-- right column -->
@@ -184,6 +184,15 @@
 </select></div>
 </td>
 </tr>
+<tr>
+<td> COD</td>
+<td>
+<input type="radio" id="CODYes"  name="COD" value="Yes" onclick="Collectable(this)"> Yes &nbsp;&nbsp;
+<input type="radio" id="CODNo" name="COD" value="No"  onclick="Collectable(this)"> No
+<input type="text" id="CollectableAmount" name="CollectableAmount" class="form-control" placeholder="Collectable Amount" style="display:none">
+</td>
+
+</tr>
 
 <tr>
 <td>Shipment Date</td>
@@ -244,17 +253,22 @@
 <td>Shipment Content</td>
 <td>
 <input type="radio" id="Documents" name="shipmentcontent" value="Documents" checked="checked"> Documents &nbsp;&nbsp;
-<input type="radio" id="Commodities"name="shipmentcontent" value="Commodities"> Commodities
+<input type="radio" id="Commodities" name="shipmentcontent" value="Commodities"> Commodities
 </td>
 </tr>
 
 </table>
-
+<button type="submit" class="btn btn-success"  onclick=" validate_activity()">Submit</button>
 </div>
 <!-- /.box-footer -->
 </div>
 <!-- /.box -->
 </div>
+</div>
+
+<div id="hiddendiv">
+
+
 </div>
 
 
@@ -293,26 +307,27 @@ Weight
 1
 </td>
 <td>
-<input type="text" name='length0'  placeholder='Length in cm' class="form-control"/>
+<input type="text" name='length0' id='length0' placeholder='Length in cm' class="form-control"/>
 </td>
 <td>
-<input type="text" name='breath0' placeholder='Breath in cm' class="form-control"/>
+<input type="text" name='breath0' id='breath0' placeholder='Breath in cm' class="form-control"/>
 </td>
 <td>
-<input type="text" name='height0' placeholder='Height in cm' class="form-control"/>
+<input type="text" name='height0' id='height0' placeholder='Height in cm' class="form-control"/>
 </td>
 <td>
-<input type="text" name='weight0' placeholder='Weight in KG' class="form-control"/>
+<input type="text" name='weight0' id='weight0' placeholder='Weight in KG' class="form-control"/>
 </td>
 </tr>
 <tr id='package1'></tr>
 </tbody>
 </table>
+<input type="hidden" name="package_count" id="package_count" value=""/>
 </div>
 </div>
 <div class="modal-footer">
 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-<button type="button" class="btn btn-primary">OK</button>
+<button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
 </div>
 </div>
 </div>
@@ -328,7 +343,7 @@ Weight
 <div class="modal-body">
 <div class="row clearfix">
 <div class="col-md-12 column">
-<input>
+
 <table class="table table-bordered table-hover" id="tab_logic1">
 <thead>
 <tr >
@@ -364,12 +379,13 @@ Value
 <tr id='addr1'></tr>
 </tbody>
 </table>
+<input type="hidden" name="commodity_count" id="commodity_count" value="1"/>
 </div>
 <a id="add_row" class="btn btn-success pull-left">Add Row</a><a id='delete_row' class="pull-right btn btn-danger">Delete Row</a>
 </div>
 <div class="modal-footer">
 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-<button type="button" class="btn btn-primary">Save</button>
+<button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
 </div>
 </div>
 </div>
@@ -384,7 +400,7 @@ Value
 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 <h4 class="modal-title">Contact List</h4>
 </div>
-<div class="modal-body">
+<div class="modal-body" id="modalbody1">
 <form>
 <div class="row">
 <div class="panel panel-primary filterable">
@@ -431,25 +447,29 @@ $(document).ready(function(){
                   var i=1;
                   $("#packagecount").click(function(){
                                            var j=$("#packagecount").val();
-                                           //alert("Loading");
                                            if(i<j){
                                            $('#packageModal').modal();
                                            var diff=j-i;
                                            for( var k = 0; k<diff; k++) {
-                                           $('#package'+i).html("<td>"+ (i+1) +"</td><td><input name='length"+i+"' type='text' placeholder='Length in cm' class='form-control input-md'  /> </td><td><input  name='breath"+i+"' type='text' placeholder='Breath in cm'  class='form-control input-md'></td><td><input  name='height"+i+"' type='text' placeholder='Height in cm'  class='form-control input-md'></td><td><input  name='weight"+i+"' type='text' placeholder='Weight in KG'  class='form-control input-md'></td>");
+                                           $('#package'+i).append("<td>"+ (i+1) +"</td><td><input name='length"+i+"' id='length"+i+"' type='text' placeholder='Length in cm' class='form-control input-md'  /> </td><td><input  name='breath"+i+"' id='breath"+i+"' type='text' placeholder='Breath in cm'  class='form-control input-md'></td><td><input  name='height"+i+"' id='height"+i+"' type='text' placeholder='Height in cm'  class='form-control input-md'></td><td><input  name='weight"+i+"' id='weight"+i+"' type='text' placeholder='Weight in KG'  class='form-control input-md'></td>");
                                            
                                            $('#tab_logic').append('<tr id="package'+(i+1)+'"></tr>');
                                            i++;
-                                           }}
+                                           }
+                                           document.getElementById("package_count").value = i;
+                                           }
                                            if(i>j){
                                            $('#packageModal').modal();
                                            var diff=i-j;
                                            for( var k = 0; k<diff; k++) {
                                            $("#package"+(i-1)).html('');
                                            i--;
-                                           }}
+                                           }
+                                           document.getElementById("package_count").value = i;
+                                           }
                                            if(i==1){
                                            $('#packageModal').modal();
+                                           document.getElementById("package_count").value = i;
                                            }
                                            
                                            
@@ -464,13 +484,17 @@ $(document).ready(function(){
                                                               
                                                               $('#tab_logic1').append('<tr id="addr'+(i+1)+'"></tr>');
                                                               i++;
+                                                              document.getElementById("commodity_count").value = i;
                                                               });
                                           $("#delete_row").click(function(){
                                                                  if(i>1){
                                                                  $("#addr"+(i-1)).html('');
                                                                  i--;
+                                                                 document.getElementById("commodity_count").value = i;
                                                                  }
                                                                  });
+                                          
+                                          
                                           }
                                           });
                   
@@ -485,8 +509,9 @@ $('#SearchModal').on('show.bs.modal', function(e) {
                      var parties_name = $(e.relatedTarget).data('parties');
                      $(e.currentTarget).find('input[name="parties"]').val(parties_name);
                      });
+
 $(".modal").on("hidden.bs.modal", function(){
-               $('.modal-body').find('input,textarea').val('');
+               $('#modalbody1').find('input,textarea').val('');
                document.getElementById("result").innerHTML=" ";
                
                });
@@ -529,6 +554,7 @@ $('.form_time').datetimepicker({
 </script>
 
 <script>
+
 function senderlocation(str) {
     if (str == "") {
         document.getElementById("from_pin").innerHTML = "";
@@ -881,6 +907,75 @@ function selectRow(pincode,name,comp_name,address,city,state,phone,parties){
     
     
 }
+
+function Collectable(i){
+    
+    if(i.id=="CODYes"){
+        document.getElementById("CollectableAmount").style.display='block';
+        
+    }
+    else if (i.id=="CODNo"){
+        document.getElementById("CollectableAmount").style.display='none';
+        document.getElementById("CollectableAmount").value=0;
+        
+    }
+}
+
+/*function dimension(){
+ // Number of inputs to create
+ var number = document.getElementById("package_count").value;
+ // Container <div> where dynamic content will be placed
+ var container = document.getElementById("hiddendiv");
+ // Clear previous contents of the container
+ while (container.hasChildNodes()) {
+ container.removeChild(container.lastChild);
+ }
+ for (i=0;i<number;i++){
+ 
+ // Create an <input> element, set its type and name attributes
+ var l = document.createElement("input");
+ l.type = "text";
+ l.name = "l" + i;
+ l.value=document.getElementById("length"+i).value;
+ container.appendChild(l);
+ 
+ // Append a line break
+ container.appendChild(document.createElement("br"));
+ 
+ var b = document.createElement("input");
+ b.type = "text";
+ b.name = "b" + i;
+ b.value=document.getElementById("breath"+i).value;
+ container.appendChild(b);
+ 
+ // Append a line break
+ container.appendChild(document.createElement("br"));
+ 
+ var h = document.createElement("input");
+ h.type = "text";
+ h.name = "h" + i;
+ h.value=document.getElementById("height"+i).value;
+ container.appendChild(h);
+ 
+ 
+ // Append a line break
+ container.appendChild(document.createElement("br"));
+ 
+ var w = document.createElement("input");
+ w.type = "text";
+ w.name = "w" + i;
+ w.value=document.getElementById("weight"+i).value;
+ container.appendChild(w);
+ 
+ 
+ // Append a line break
+ container.appendChild(document.createElement("br"));
+ 
+ }
+ 
+ 
+ 
+ } */
 
 
 </script>

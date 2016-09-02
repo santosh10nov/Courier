@@ -37,31 +37,116 @@
 				$soap->__setSoapHeaders($actionHeader);	
 		#echo "end of Soap 1.2 version (WSHttpBinding)  setting";
 
-define('SHIP_LABEL1', 'bluedartshipexpresslabel.pdf');
+    define('SHIP_LABEL1', 'bluedartshipexpresslabel.pdf');
+    
+    ///////////////////////////////////////////////////////////////
+    //////////////////////// Product Code /////////////////////////
+    ////////////////////////////////////////////////////////////////
+    
+    if($service=="Domestic Priority"){
+        $product='D';
+        $subproduct='';
+    }
+    else if($service=="Ground"){
+        $product='E';
+        $subproduct='';
+    }
+    else if($service=="Apex"){
+        $product='A';
+        $subproduct='';
+    }
+    else if($service=="eTailCODAir"){
+        $product='A';
+        $subproduct='C';
+    }
+    else if($service=="eTailCODGround"){
+        $product='E';
+        $subproduct='C';
+    }
+    else if($service=="eTailPrePaidAir"){
+        $product='A';
+        $subproduct='P';
+    }
+    else if($service=="eTailPrePaidGround"){
+        $product='E';
+        $subproduct='P';
+    }
+
+    ///////////////////////////////////////////////////////////////
+    //////////////////////// COD  ///////////////////////////////
+    ////////////////////////////////////////////////////////////////
+    
+    if($subproduct==''){
+        $COD=0;
+        $CustomerPay='false';
+    }
+    else {
+        $CustomerPay='true';
+        $COD=$CollectableAmount;
+    }
+    
+    
+    ///////////////////////////////////////////////////////////////
+    //////////////////////// Product Type  ///////////////////////////////
+    ///////////////////////////////////////////////////////////////
+    
+    
+    
+    if($shipmentcontent=="Documents"){
+        $producttype="Docs";
+    }
+    else if($shipmentcontent=="Commodities"){
+       $producttype="Dutiables";
+        
+        
+        
+        for($i=1;$i<($commodity_count+1);$i++){
+            
+            $Commodity_desc["CommodityDetail".$i]=$_POST["Commodity".$i];
+            
+        }
+
+        
+       $COD=0;
+    }
+    
+    ///////////////////////////////////////////////////////////////
+    ////////////////////////  Dimension  ///////////////////////////////
+    ///////////////////////////////////////////////////////////////
+
+    //$bd_dimension=array();
+    
+    //for($i=0;$i<packagecount;$i++){
+    
+      //  'Dimension' =>array ('Breadth' =>$breath,'Count' => '1','Height' => $height,'Length' => $length,)
+   // }
+    
+    
+    
+    ///////////////////////////////////////////////////////////////
+    //////////////////////// BlueDart Parameters  /////////////////
+    ////////////////////////////////////////////////////////////////
+
+    
 $params = array(
 'Request' => 
 	array (
 		'Consignee' =>
 			array (
-				'ConsigneeAddress1' => $sender_info[3],
-				'ConsigneeAddress2' => $sender_info[4],
-				'ConsigneeAddress3'=> $sender_info[5],
-				'ConsigneeAttention'=> $sender_info[2],
-				'ConsigneeMobile'=> $sender_info[6],
-				'ConsigneeName'=> $sender_info[1],
-				'ConsigneePincode'=> $sender_info[0],
-				'ConsigneeTelephone'=> $sender_info[6],
+				'ConsigneeAddress1' => $receiver_info[3],
+				'ConsigneeAddress2' => $receiver_info[4],
+				'ConsigneeAddress3'=> $receiver_info[5],
+				'ConsigneeAttention'=> $receiver_info[2],
+				'ConsigneeMobile'=> $receiver_info[6],
+				'ConsigneeName'=> $receiver_info[1],
+				'ConsigneePincode'=> $receiver_info[0],
+				'ConsigneeTelephone'=> $receiver_info[6],
 			)	,
 		'Services' => 
 			array (
 				'ActualWeight' => $weight,
-				'CollectableAmount' => '0',
-				'Commodity' =>
-					array (
-						'CommodityDetail1' => 'PRETTYSECRET',
-						'CommodityDetail2'  => ' Aultra Boos',						
-						'CommodityDetail3' => 'Bra'
-				),
+				'CollectableAmount' => $COD,
+				'Commodity' =>$Commodity_desc,
 				'CreditReferenceNo' => $uid,
 				'DeclaredValue' => $cost,
 				'Dimensions' =>
@@ -69,34 +154,34 @@ $params = array(
 						'Dimension' =>
 							array (
 								'Breadth' =>$breath,
-								'Count' => '2',
-								'Height' => $heigth,
+								'Count' => $packagecount,
+								'Height' => $height,
 								'Length' => $length
 							),
-                           
+                        
                            ),
 					'InvoiceNo' => '',
 					'PackType' => '',
 					'PickupDate' => $shipment_date,
 					'PickupTime' => '1800',
-					'PieceCount' => '2',
-					'ProductCode' => 'A',
-					'ProductType' => 'Dutiables',
+					'PieceCount' => $packagecount,
+					'ProductCode' => $product,
+					'ProductType' => $producttype,
 					'SpecialInstruction' => '1',
-					'SubProductCode' => ''
+					'SubProductCode' => $subproduct
 			),
 			'Shipper' =>
 				array(
-					'CustomerAddress1' => $receiver_info[3],
-					'CustomerAddress2' => $receiver_info[4],
-					'CustomerAddress3' => $receiver_info[5],
+					'CustomerAddress1' => $sender_info[3],
+					'CustomerAddress2' => $sender_info[4],
+					'CustomerAddress3' => $sender_info[5],
 					'CustomerCode' => '359181',
 					'CustomerEmailID' => 'a@b.com',
-					'CustomerMobile' => $receiver_info[6],
-					'CustomerName' => $receiver_info[1],
-					'CustomerPincode' => $receiver_info[0],
-					'CustomerTelephone' => $receiver_info[6],
-					'IsToPayCustomer' => '',
+					'CustomerMobile' => $sender_info[6],
+					'CustomerName' => $sender_info[1],
+					'CustomerPincode' => $sender_info[0],
+					'CustomerTelephone' => $sender_info[6],
+					'IsToPayCustomer' => $CustomerPay,
 					'OriginArea' => 'BOM',
 					'Sender' => '1',
 					'VendorCode' => ''
@@ -129,9 +214,8 @@ $result = $soap->__soapCall('GenerateWayBill',array($params));
     echo'<a href="./AirwayBill/BlueDart/AirwayBill/'.SHIP_LABEL1.'" download><button type="submit" class="btn btn-success">Download</button></a>';
     
   
-
-echo "<br>";
-//echo '<h2>Result</h2><pre>'; print_r($result); echo '</pre>';
+  
+echo '<h2>Result</h2><pre>'; print_r($result); echo '</pre>';
     
     
 
