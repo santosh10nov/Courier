@@ -52,6 +52,8 @@
         
         $from_pin=$_POST["from_pin"];
         $to_pin=$_POST["to_pin"];
+        $CollectableAmount=$_POST["CollectableAmount"];
+        $shipmentcontent=$_POST["shipmentcontent"];
         
         //////////////////////////////////////
         /////// Sender Details///////////////
@@ -86,28 +88,24 @@
         
         
         $packagecount= $_POST["package_count"];
-        
-        $length=$_POST["length0"];
-        $breath=$_POST["breath0"];
-        $heigth=$_POST["height0"];
-        $weight=$_POST["weight0"];
-        
-       // $package_details=array($weight,$lenght,$breath,$height,$purpose,$cost);
-        
-        /*for($i=0;$i<$packagecount;$i++){
-            $length=$_POST["length".$i];
-            $breath=$_POST["breath0"];
-            $height=$_POST["'height0"];
-            $weight=$_POST["weight0"];
-        } */
-        
-        //$packagedetails=array($length,$breath,$)
-        
-       
-        
         $purpose=$_POST["purpose"];
         $cost=$_POST["invoice"];
-        $package_details=array($weight,$length,$breath,$heigth,$purpose,$cost);
+        
+        $TotalWeight=0;
+        
+        for($i=0;$i<$packagecount;$i++){
+            $length=$_POST["length".$i];
+            $breath=$_POST["breath".$i];
+            $height=$_POST["height".$i];
+            $weight=$_POST["weight".$i];
+            $TotalWeight=$TotalWeight+$weight;
+            
+        }
+        
+        $commodity_count= $_POST["commodity_count"];
+        
+        
+        
         
         
         /*echo $from_pin."<br/>";
