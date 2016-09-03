@@ -215,6 +215,16 @@
 </select>
 </td>
 </tr>
+
+<tr>
+<td>Account Number</td>
+<td>
+<select class="form-control selcls" name="accountnumber" id="accountnumber">
+<option value="" selected="selected">Select Account Number</option>
+</select>
+</td>
+</tr>
+
 <tr>
 <td>Unique Number</td>
 <th><input type="text" class="form-control" name="UID" placeholder="Enter Unique Refer. Number"></th>
@@ -616,7 +626,8 @@ function services_list(){
     
     if(vendor_name==""){
         $("#services").empty();
-        document.getElementById("services").options[0]=new Option("Select Courier Service","");
+        document.getElementById("services").options[0]=new Option("Select Courier Service");
+        document.getElementById("accountnumber").options[0]=new Option("Select Account Number");
     }else {
         if (window.XMLHttpRequest) {
             // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -628,30 +639,64 @@ function services_list(){
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 
-                courierservice(xmlhttp.responseText);
+                courierservice(xmlhttp.responseText,vendor_name);
             }
         };
         xmlhttp.open("GET","Service_ajax.php?couriervendor="+vendor_name,true);
         xmlhttp.send();
         
         
-        function courierservice(response) {
-            $("#services").empty();
-            var arr = JSON.parse(response);
-            var i;
-            document.getElementById("services").options[0]=new Option("Select Courier Service","");
-            for(i = 0; i < arr.length; i++) {
-                document.getElementById("services").options[i+1]=new Option(arr[i].servicevalue,arr[i].service);
-            }
-            
-        }
-        
-        
-        
-        
     }
+}
+
+function courierservice(response,vendor) {
+    $("#services").empty();
+    var arr = JSON.parse(response);
+    var i;
+    document.getElementById("services").options[0]=new Option("Select Courier Service");
+    for(i = 0; i < arr.length; i++) {
+        document.getElementById("services").options[i+1]=new Option(arr[i].servicevalue,arr[i].service);
+    }
+    accountnumber(vendor);
     
 }
+
+function accountnumber(vendor_name){
+    
+    if (window.XMLHttpRequest) {
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+    } else {
+        // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            
+            accountnumberlist(xmlhttp.responseText);
+        }
+    };
+    xmlhttp.open("GET","vendoraction.php?action=vendornameList&vendor_name="+vendor_name,true);
+    xmlhttp.send();
+    
+}
+
+function accountnumberlist(response){
+    
+    $("#accountnumber").empty();
+    var arr = JSON.parse(response);
+    var i;
+    
+    document.getElementById("accountnumber").options[0]=new Option("Select Account Number");
+    for(i = 0; i < arr.length; i++) {
+        document.getElementById("accountnumber").options[i+1]=new Option(arr[i].accountvalue,arr[i].account_number);
+    }
+    
+    
+}
+
+
+
 
 function favourite(i){
     

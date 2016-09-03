@@ -101,10 +101,10 @@
                                                 <tr>
                                                     <td class="col-sm-4">Name:</td>
                                                     <th><select class="form-control selcls" name="vendor_name" id="vendor_name">
-                                                            <option value="" selected="selected">Select Courier Vendor</option>
-                                                            <option value="BlueDart">BlueDart</option>
-                                                            <option value="FedEx">Fedex</option>
-                                                        </select>
+                                                        <option value="" selected="selected">Select Courier Vendor</option>
+                                                        <option value="BlueDart">BlueDart</option>
+                                                        <option value="FedEx">Fedex</option>
+                                                    </select>
                                                     </select></th>
                                                 </tr>
                                                 <tr>
@@ -127,7 +127,7 @@
                                                 
                                             </table>
                                             <input type="hidden" class="form-control" name="serial_id" placeholder="Enter City" id="serial_id" ></th>
-                                        </div>
+                                                </div>
                                         <!-- /.box-footer -->
                                     </div>
                                     <!-- /.box -->
@@ -135,8 +135,8 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="insert()"id="save">Save</button>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="updatevendor()" id="update" style="display:none">Update</button>
+                                <button type="button" class="btn btn-primary"  onclick="insert()"id="save">Save</button>
+                                <button type="button" class="btn btn-primary"  onclick="updatevendor()" id="update" style="display:none">Update</button>
                             </div>
                         </div>
                     </div>
@@ -185,6 +185,7 @@
             }
         
         function list(){
+            
             if (window.XMLHttpRequest) {
                 // code for IE7+, Firefox, Chrome, Opera, Safari
                 xmlhttp = new XMLHttpRequest();
@@ -196,7 +197,7 @@
             xmlhttp.onreadystatechange = function() {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                     
-                    $('#result').html(xmlhttp.responseText);
+                    document.getElementById("result").innerHTML = xmlhttp.responseText;
                 }
             };
             xmlhttp.open("GET","vendoraction.php?action=select",true);
@@ -207,18 +208,17 @@
         
         function insert(){
             
-            
-            
             var vendor_name= document.getElementById("vendor_name").value;
             var login_id = document.getElementById("login_id").value;
             var account_number= document.getElementById("account_number").value;
             var account_key =document.getElementById("account_key").value;
             var password =document.getElementById("password").value;
             
+            $('#addvendor').modal('hide');
             
             
-            if(vendor_name=="" && login_id=="" && account_number=="" &&account_key=="" && password=="" ){
-                
+            if(vendor_name==""  || account_number=="" ){
+                alert("Plz. fill minimum Vendor Name or Account Name");
             }else {
                 if (window.XMLHttpRequest) {
                     // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -229,13 +229,13 @@
                 }
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        document.getElementById("result").innerHTML = xmlhttp.responseText;
                         
                     }
                 };
                 xmlhttp.open("GET","vendoraction.php?action=insert&vendor_name="+vendor_name+"&login_id="+login_id+"&account_number="+account_number+"&account_key="+account_key+"&password="+password,true);
                 xmlhttp.send();
                 
-                window.location.reload(true);
                 
             }
             
@@ -263,17 +263,15 @@
                 }
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                        
+                        document.getElementById("result").innerHTML = xmlhttp.responseText;
                     }
                 };
                 xmlhttp.open("GET","vendoraction.php?action=delete&vendor_name="+vendor_name+"&login_id="+login_id+"&account_number="+account_number+"&account_key="+account_key+"&password="+password+"&id="+id,true);
                 xmlhttp.send();
                 
-                
-                window.location.reload(true);
-                
             }
             
+           
             
         }
         
@@ -286,8 +284,9 @@
             var password =document.getElementById("password").value;
             var id=document.getElementById("serial_id").value;
             
+            $('#addvendor').modal('hide');
             
-            if(vendor_name=="" && login_id=="" && account_number=="" &&account_key=="" && password=="" ){
+            if(vendor_name==""  || account_number==""){
                 
             }else {
                 if (window.XMLHttpRequest) {
@@ -299,17 +298,17 @@
                 }
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                        
+                        document.getElementById("result").innerHTML = xmlhttp.responseText;
                     }
                 };
                 xmlhttp.open("GET","vendoraction.php?action=update&vendor_name="+vendor_name+"&login_id="+login_id+"&account_number="+account_number+"&account_key="+account_key+"&password="+password+"&id="+id,true);
                 xmlhttp.send();
                 
-                window.location.reload(true);
                 
             }
             
-
+            
+            
             
             
         }

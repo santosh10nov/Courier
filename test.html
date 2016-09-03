@@ -185,13 +185,13 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                         <td> COD</td>
-                                         <td>
-                                             <input type="radio" id="CODYes"  name="COD" value="Yes" onclick="Collectable(this)"> Yes &nbsp;&nbsp;
-                                                 <input type="radio" id="CODNo" name="COD" value="No"  onclick="Collectable(this)"> No
-                                                <input type="text" id="CollectableAmount" name="CollectableAmount" class="form-control" placeholder="Collectable Amount" style="display:none">
-                                                     </td>
-
+                                        <td> COD</td>
+                                        <td>
+                                            <input type="radio" id="CODYes"  name="COD" value="Yes" onclick="Collectable(this)"> Yes &nbsp;&nbsp;
+                                                <input type="radio" id="CODNo" name="COD" value="No"  onclick="Collectable(this)"> No
+                                                    <input type="text" id="CollectableAmount" name="CollectableAmount" class="form-control" placeholder="Collectable Amount" style="display:none">
+                                                        </td>
+                                        
                                     </tr>
                                     
                                     <tr>
@@ -215,6 +215,16 @@
                                             </select>
                                         </td>
                                     </tr>
+                                    
+                                    <tr>
+                                        <td>Account Number</td>
+                                        <td>
+                                            <select class="form-control selcls" name="accountnumber" id="accountnumber">
+                                                <option value="" selected="selected">Select Account Number</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    
                                     <tr>
                                         <td>Unique Number</td>
                                         <th><input type="text" class="form-control" name="UID" placeholder="Enter Unique Refer. Number"></th>
@@ -254,7 +264,7 @@
                                         <td>
                                             <input type="radio" id="Documents" name="shipmentcontent" value="Documents" checked="checked"> Documents &nbsp;&nbsp;
                                                 <input type="radio" id="Commodities" name="shipmentcontent" value="Commodities"> Commodities
-                                        </td>
+                                                    </td>
                                     </tr>
                                     
                                 </table>
@@ -344,43 +354,43 @@
                                 <div class="row clearfix">
                                     <div class="col-md-12 column">
                                         
-                                            <table class="table table-bordered table-hover" id="tab_logic1">
-                                                <thead>
-                                                    <tr >
-                                                        <th class="text-center">
-                                                            #
-                                                        </th>
-                                                        <th class="text-center">
-                                                            Commodity
-                                                        </th>
-                                                        <th class="text-center">
-                                                            Commodity Description
-                                                        </th>
-                                                        <th class="text-center">
-                                                            Value
-                                                        </th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr id='addr0'>
-                                                        <td>
-                                                            1
-                                                        </td>
-                                                        <td>
-                                                            <input type="text" name='Commodity0'  placeholder='Commodity' class="form-control"/>
-                                                        </td>
-                                                        <td>
-                                                            <input type="text" name='Commodity_desc0' placeholder='Commodity Description' class="form-control"/>
-                                                        </td>
-                                                        <td>
-                                                            <input type="text" name='CommodityValue0' placeholder='Commodity Value' class="form-control"/>
-                                                        </td>
-                                                    </tr>
-                                                    <tr id='addr1'></tr>
-                                                </tbody>
-                                            </table>
-                                            <input type="hidden" name="commodity_count" id="commodity_count" value="1"/>
-                                            </div>
+                                        <table class="table table-bordered table-hover" id="tab_logic1">
+                                            <thead>
+                                                <tr >
+                                                    <th class="text-center">
+                                                        #
+                                                    </th>
+                                                    <th class="text-center">
+                                                        Commodity
+                                                    </th>
+                                                    <th class="text-center">
+                                                        Commodity Description
+                                                    </th>
+                                                    <th class="text-center">
+                                                        Value
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr id='addr0'>
+                                                    <td>
+                                                        1
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name='Commodity0'  placeholder='Commodity' class="form-control"/>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name='Commodity_desc0' placeholder='Commodity Description' class="form-control"/>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name='CommodityValue0' placeholder='Commodity Value' class="form-control"/>
+                                                    </td>
+                                                </tr>
+                                                <tr id='addr1'></tr>
+                                            </tbody>
+                                        </table>
+                                        <input type="hidden" name="commodity_count" id="commodity_count" value="1"/>
+                                    </div>
                                     <a id="add_row" class="btn btn-success pull-left">Add Row</a><a id='delete_row' class="pull-right btn btn-danger">Delete Row</a>
                                 </div>
                                 <div class="modal-footer">
@@ -490,7 +500,7 @@
                                                                              if(i>1){
                                                                              $("#addr"+(i-1)).html('');
                                                                              i--;
-                                                                              document.getElementById("commodity_count").value = i;
+                                                                             document.getElementById("commodity_count").value = i;
                                                                              }
                                                                              });
                                                       
@@ -499,7 +509,7 @@
                                                       });
                               
                               
-                             
+                              
                               
                               
                               });
@@ -510,7 +520,7 @@
                                                    $(e.currentTarget).find('input[name="parties"]').val(parties_name);
                                                    });
                                                    
-                             $(".modal").on("hidden.bs.modal", function(){
+                                                   $(".modal").on("hidden.bs.modal", function(){
                                                                   $('#modalbody1').find('input,textarea').val('');
                                                                   document.getElementById("result").innerHTML=" ";
                                                                   
@@ -616,7 +626,8 @@
             
             if(vendor_name==""){
                 $("#services").empty();
-                document.getElementById("services").options[0]=new Option("Select Courier Service","");
+                document.getElementById("services").options[0]=new Option("Select Courier Service");
+                document.getElementById("accountnumber").options[0]=new Option("Select Account Number");
             }else {
                 if (window.XMLHttpRequest) {
                     // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -628,30 +639,64 @@
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         
-                        courierservice(xmlhttp.responseText);
+                        courierservice(xmlhttp.responseText,vendor_name);
                     }
                 };
                 xmlhttp.open("GET","Service_ajax.php?couriervendor="+vendor_name,true);
                 xmlhttp.send();
                 
                 
-                function courierservice(response) {
-                    $("#services").empty();
-                    var arr = JSON.parse(response);
-                    var i;
-                    document.getElementById("services").options[0]=new Option("Select Courier Service","");
-                    for(i = 0; i < arr.length; i++) {
-                        document.getElementById("services").options[i+1]=new Option(arr[i].servicevalue,arr[i].service);
-                    }
-                    
-                }
-                
-                
-                
-                
             }
+        }
+        
+        function courierservice(response,vendor) {
+            $("#services").empty();
+            var arr = JSON.parse(response);
+            var i;
+            document.getElementById("services").options[0]=new Option("Select Courier Service");
+            for(i = 0; i < arr.length; i++) {
+                document.getElementById("services").options[i+1]=new Option(arr[i].servicevalue,arr[i].service);
+            }
+            accountnumber(vendor);
             
         }
+        
+        function accountnumber(vendor_name){
+            
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    
+                    accountnumberlist(xmlhttp.responseText);
+                }
+            };
+            xmlhttp.open("GET","vendoraction.php?action=vendornameList&vendor_name="+vendor_name,true);
+            xmlhttp.send();
+            
+        }
+        
+        function accountnumberlist(response){
+            
+            $("#accountnumber").empty();
+            var arr = JSON.parse(response);
+            var i;
+            
+            document.getElementById("accountnumber").options[0]=new Option("Select Account Number");
+            for(i = 0; i < arr.length; i++) {
+                document.getElementById("accountnumber").options[i+1]=new Option(arr[i].accountvalue,arr[i].account_number);
+            }
+            
+            
+        }
+        
+        
+        
         
         function favourite(i){
             
@@ -922,63 +967,63 @@
         }
         
         /*function dimension(){
-            // Number of inputs to create
-            var number = document.getElementById("package_count").value;
-            // Container <div> where dynamic content will be placed
-            var container = document.getElementById("hiddendiv");
-            // Clear previous contents of the container
-            while (container.hasChildNodes()) {
-                container.removeChild(container.lastChild);
-            }
-            for (i=0;i<number;i++){
-                
-                // Create an <input> element, set its type and name attributes
-                var l = document.createElement("input");
-                l.type = "text";
-                l.name = "l" + i;
-                l.value=document.getElementById("length"+i).value;
-                container.appendChild(l);
-                
-                // Append a line break
-                container.appendChild(document.createElement("br"));
-                
-                var b = document.createElement("input");
-                b.type = "text";
-                b.name = "b" + i;
-                b.value=document.getElementById("breath"+i).value;
-                container.appendChild(b);
-                
-                // Append a line break
-                container.appendChild(document.createElement("br"));
-                
-                var h = document.createElement("input");
-                h.type = "text";
-                h.name = "h" + i;
-                h.value=document.getElementById("height"+i).value;
-                container.appendChild(h);
-                
-                
-                // Append a line break
-                container.appendChild(document.createElement("br"));
-                
-                var w = document.createElement("input");
-                w.type = "text";
-                w.name = "w" + i;
-                w.value=document.getElementById("weight"+i).value;
-                container.appendChild(w);
-                
-                
-                // Append a line break
-                container.appendChild(document.createElement("br"));
-
-            }
-            
-            
-            
-        } */
-   
-   
-        </script>
+         // Number of inputs to create
+         var number = document.getElementById("package_count").value;
+         // Container <div> where dynamic content will be placed
+         var container = document.getElementById("hiddendiv");
+         // Clear previous contents of the container
+         while (container.hasChildNodes()) {
+         container.removeChild(container.lastChild);
+         }
+         for (i=0;i<number;i++){
+         
+         // Create an <input> element, set its type and name attributes
+         var l = document.createElement("input");
+         l.type = "text";
+         l.name = "l" + i;
+         l.value=document.getElementById("length"+i).value;
+         container.appendChild(l);
+         
+         // Append a line break
+         container.appendChild(document.createElement("br"));
+         
+         var b = document.createElement("input");
+         b.type = "text";
+         b.name = "b" + i;
+         b.value=document.getElementById("breath"+i).value;
+         container.appendChild(b);
+         
+         // Append a line break
+         container.appendChild(document.createElement("br"));
+         
+         var h = document.createElement("input");
+         h.type = "text";
+         h.name = "h" + i;
+         h.value=document.getElementById("height"+i).value;
+         container.appendChild(h);
+         
+         
+         // Append a line break
+         container.appendChild(document.createElement("br"));
+         
+         var w = document.createElement("input");
+         w.type = "text";
+         w.name = "w" + i;
+         w.value=document.getElementById("weight"+i).value;
+         container.appendChild(w);
+         
+         
+         // Append a line break
+         container.appendChild(document.createElement("br"));
+         
+         }
+         
+         
+         
+         } */
+        
+        
+            </script>
         
         
         

@@ -48,6 +48,7 @@
         
         $couriervendor=$_POST["couriervendor"];
         $service=$_POST["services"];
+        $account_number=$_POST["accountnumber"];
         $uid=$_POST["UID"];
         
         $from_pin=$_POST["from_pin"];
