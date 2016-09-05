@@ -31,14 +31,14 @@
             
             
             if($numrows==0){
-                echo ' <table class="table table-striped table-bordered table-list">';
+                echo ' <table class=" col-xl-12 table table-striped table-bordered table-list">';
                 echo '<thead><tr><th>ID</th><th>Name</th><th>Customer-Code/Login ID</th><th>Account Number/ Meter</th><th>Key</th><th>Password</th><th><em class="fa fa-cog" align="center"></em></th></tr></thead><tboby>';
                 echo '<tr><td colspan="7" align="center">No Record Found</td></tr>';
                 echo '</tbody></table><br />';
                 
             }
             else if($numrows>0){
-                echo ' <table class="table table-striped table-bordered table-list">';
+                echo ' <table class=" col-xl-12 table table-striped table-bordered table-list">';
                 echo '<thead><tr><th>ID</th><th>Name</th><th>Customer-Code/Login ID</th><th>Account Number/ Meter</th><th>Key</th><th>Password</th><th><em class="fa fa-cog" align="center"></em></th></tr></thead><tboby>';
                 $i=1;
                 while($row = $stmt1->fetch()){
@@ -78,14 +78,14 @@
             
             
             if($numrows==0){
-                echo ' <table class="table table-striped table-bordered table-list">';
+                echo ' <table class=" col-xl-12 table table-striped table-bordered table-list">';
                 echo '<thead><tr><th>ID</th><th>Name</th><th>Customer-Code/Login ID</th><th>Account Number/ Meter</th><th>Key</th><th>Password</th><th><em class="fa fa-cog" align="center"></em></th></tr></thead><tboby>';
                 echo '<tr><td colspan="7" align="center">No Record Found</td></tr>';
                 echo '</tbody></table><br />';
                 
             }
             else if($numrows>0){
-                echo ' <table class="table table-striped table-bordered table-list">';
+                echo ' <table class="col-xl-12  table table-striped table-bordered table-list">';
                 echo '<thead><tr><th>ID</th><th>Name</th><th>Customer-Code/Login ID</th><th>Account Number/ Meter</th><th>Key</th><th>Password</th><th><em class="fa fa-cog" align="center"></em></th></tr></thead><tboby>';
                 $i=1;
                 while($row = $stmt2->fetch()){

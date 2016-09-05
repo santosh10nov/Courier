@@ -163,14 +163,15 @@
                 /////////////////////////////////////////////////////////
                 
                 
-                $service_avi_level= $service_avi_level1 + $service_avi_level2;
+                $fedex_service_avi_level= $service_avi_level1 + $service_avi_level2;
+                $bluedart_service_avi_level=$service_avi_level4+$service_avi_level5+$service_avi_level6+$service_avi_level7+$service_avi_level8+$service_avi_level9+$service_avi_level10;
                 
                 echo "Pickup Location: " .$pickup_location."  (".$from_pin.")   ========================>  ";
                 echo "Destination Location: " .$destination_location."  (".$to_pin.")<br><br>";
                 
                 
                 
-                if($service_avi_level==0){
+                if($fedex_service_avi_level==0 &&$bluedart_service_avi_level==0 ){
                     echo "Sorry, no service available"."<br>";
                 }
                 else{

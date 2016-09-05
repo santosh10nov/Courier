@@ -37,6 +37,12 @@
 				$soap->__setSoapHeaders($actionHeader);
     #echo "end of Soap 1.2 version (WSHttpBinding)  setting";
     
+    
+    
+    
+    
+    
+    
     define('SHIP_LABEL1', 'bluedartshipexpresslabel.pdf');
     
     ///////////////////////////////////////////////////////////////
@@ -151,11 +157,6 @@
         $AreaCode=$row2['AreaCode'];
         
 
-    }
-    catch(PDOException $e) {
-        echo "Error: " . $e->getMessage();
-    }
-    
    
     
     ///////////////////////////////////////////////////////////////
@@ -236,17 +237,59 @@
     // Here I call my external function
     $result = $soap->__soapCall('GenerateWayBill',array($params));
     
-    #echo "Generated Waybill number " + $result->GenerateWayBillResult->AWBNo;
-    //echo $result->GenerateWayBillResult->Status->WayBillGenerationStatus->StatusInformation;
+    $response_status= $result->GenerateWayBillResult->Status->WayBillGenerationStatus->StatusInformation;
+    
+    if($response_status=="Waybill Generation Sucessful"){
+        
+        $token= $result->GenerateWayBillResult->AWBNo;
+        
+        $filename=$token.".pdf";
+        
+        $fp = fopen("./AirwayBill/BlueDart/AirwayBill/".$filename, 'wb');
+        fwrite($fp,$result->GenerateWayBillResult->AWBPrintContent); //Create PNG or PDF file
+        fclose($fp);
+    
+        $stmt5 = $conn->prepare("INSERT INTO `AirwayBill`(`ShipperName`, `ReceiverName`, `COD`, `PackageCount`, `ReferenceID`, `AWB_Date`, `CourierVendor`, `CourierService`, `AWB_Status`, `AWB_Link`) VALUES ('$sender_info[1]','$receiver_info[1]','$COD',$packagecount,'$uid','$shipment_date','BlueDart','$service','Success','$filename')");
+        $stmt5->execute();
+    
+        $stmt6 = $conn->prepare(" SELECT * FROM AirwayBill WHERE `ShipperName`='$sender_info[1]' AND `ReceiverName`= '$receiver_info[1]' AND `COD`= '$COD' AND `ReferenceID`='$uid' AND `AWB_Date`='$shipment_date' AND `CourierVendor`='BlueDart' AND `AWB_Status` ='Success' order by `API_Hit_Date` DESC");
+        $stmt6->execute();
+    
+        $stmt6->setFetchMode(PDO::FETCH_ASSOC);
+        $row6 = $stmt6->fetch();
+    
+        $AWB_UID=$row6['UID'];
     
     
-    $fp = fopen("./AirwayBill/BlueDart/AirwayBill/".SHIP_LABEL1, 'wb');
-    fwrite($fp,$result->GenerateWayBillResult->AWBPrintContent); //Create PNG or PDF file
-    fclose($fp);
-    //echo '<a href="./AirwayBill/BlueDart/AirwayBill/'.SHIP_LABEL1.'">'.SHIP_LABEL1.'</a> was generated.';
+        $stmt7=$conn->prepare("INSERT INTO `AirwayBill_Parties`(`Shipper_Name`, `Shipper_Comp`, `Shipper_Address`, `Receiver_Name`, `Receiver_Comp`, `Receiver_Address`,`AWB_UID`) VALUES ('$sender_info[1]','$sender_info[2]','$sender_info[3].$sender_info[4].$sender_info[5].$sender_info[0]','$receiver_info[1]','$receiver_info[2]','$receiver_info[3].$receiver_info[4].$receiver_info[5].$receiver_info[0]','$AWB_UID') ");
     
-    echo '<embed src="./AirwayBill/BlueDart/AirwayBill/'.SHIP_LABEL1.'" width="600px" height="400px"  type="application/pdf"><br>';
-    echo'<a href="./AirwayBill/BlueDart/AirwayBill/'.SHIP_LABEL1.'" download><button type="submit" class="btn btn-success">Download</button></a>';
+        $stmt7->execute();
+
+    }
+    else{
+        
+        $stmt5 = $conn->prepare("INSERT INTO `AirwayBill`(`ShipperName`, `ReceiverName`, `COD`, `PackageCount`, `ReferenceID`, `AWB_Date`, `CourierVendor`, `CourierService`, `AWB_Status`, `AWB_Link`) VALUES ('$sender_info[1]','$receiver_info[1]','$COD',$packagecount,'$uid','$shipment_date','BlueDart','$service','Fail','')");
+        $stmt5->execute();
+        
+        
+        
+        $stmt6 = $conn->prepare(" SELECT * FROM AirwayBill WHERE `ShipperName`='$sender_info[1]' AND `ReceiverName`= '$receiver_info[1]' AND `COD`= '$COD' AND `ReferenceID`='$uid' AND `AWB_Date`='$shipment_date' AND `CourierVendor`='FedEx' AND `AWB_Status` ='Fail' order by `API_Hit_Date` DESC");
+        $stmt6->execute();
+        
+        $stmt6->setFetchMode(PDO::FETCH_ASSOC);
+        $row6 = $stmt6->fetch();
+        
+        $AWB_UID=$row6['UID'];
+        
+        $stmt7=$conn->prepare("INSERT INTO `AirwayBill_Error`(`AWB_UID`,`Failure_Type`, `Message`) VALUES ('$AWB_UID','Error','$response_status')");
+        
+        $stmt7->execute();
+    }
+    
+    }
+    catch(PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
     
     
     
