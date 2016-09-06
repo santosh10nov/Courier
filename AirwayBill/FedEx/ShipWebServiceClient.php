@@ -127,13 +127,13 @@ $client = new SoapClient($path_to_wsdl, array('trace' => 1)); // Refer to http:/
                     
                     $stmt7->execute();
                     
-                    
+                     $status="Success";
                     
                     
                 }else{
                     //printError($client, $response);
                     
-                    $message=$response->Notifications->Message;
+                    $message=json_encode($response->Notifications);
                     
                     
                     $stmt5 = $conn->prepare("INSERT INTO `AirwayBill`(`ShipperName`, `ReceiverName`, `COD`, `PackageCount`, `ReferenceID`, `AWB_Date`, `CourierVendor`, `CourierService`, `AWB_Status`, `AWB_Link`) VALUES ('$sender_info[1]','$receiver_info[1]','$COD',$packagecount,'$uid','$shipment_date','FedEx','$service','Fail','')");
@@ -153,6 +153,7 @@ $client = new SoapClient($path_to_wsdl, array('trace' => 1)); // Refer to http:/
                     
                     $stmt7->execute();
                     
+                     $status="Error";
                     
                 }
                 
@@ -160,10 +161,8 @@ $client = new SoapClient($path_to_wsdl, array('trace' => 1)); // Refer to http:/
             } catch (SoapFault $exception) {
                 
                 
-                $message=$exception->detail->desc;
+                $message=json_encode($exception->detail);
                 $message = str_replace("'", ' ', $message);
-                
-                $message=str_replace("validation failure for ProcessShipmentRequest Error:", "", $message);
                 
                 $stmt5 = $conn->prepare("INSERT INTO `AirwayBill`(`ShipperName`, `ReceiverName`, `COD`, `PackageCount`, `ReferenceID`, `AWB_Date`, `CourierVendor`, `CourierService`, `AWB_Status`, `AWB_Link`) VALUES ('$sender_info[1]','$receiver_info[1]','$COD',$packagecount,'$uid','$shipment_date','FedEx','$service','Fail','')");
                 $stmt5->execute();
@@ -181,6 +180,8 @@ $client = new SoapClient($path_to_wsdl, array('trace' => 1)); // Refer to http:/
                 $stmt7=$conn->prepare("INSERT INTO `AirwayBill_Error`(`AWB_UID`,`Failure_Type`, `Message`) VALUES ('$AWB_UID','FAULT','$message')");
                 
                 $stmt7->execute();
+                
+                 $status="Error";
             }
             
     }

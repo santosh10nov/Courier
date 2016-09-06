@@ -12,6 +12,7 @@
     $companyname=$_GET['companyname'];
     $fav=$_GET['fav'];
     $parties=$_GET['parties'];
+    $vendorid=$_GET['vendorid'];
     $name_comp=$name."-".$companyname;
     
     $servername = "127.0.0.1";
@@ -20,7 +21,7 @@
     $dbname = "transporter";
     
     
-    $arr=array($name_comp,$name,$companyname,$address,$city,$state,$pincode,$phone,$fav);
+    $arr=array($name_comp,$name,$companyname,$address,$city,$state,$pincode,$phone,$fav,$vendorid);
     
     //print_r($arr);
     
@@ -38,7 +39,7 @@
         
         if($fav==1){
         
-        $sql = "INSERT INTO contact_list (NameCompany,Name,Company,Address,City,State,Pincode,phone,fav) VALUES ('$arr[0]','$arr[1]','$arr[2]','$arr[3]','$arr[4]','$arr[5]','$arr[6]','$arr[7]','$arr[8]')";
+        $sql = "INSERT INTO contact_list (NameCompany,Name,Company,Address,City,State,Pincode,phone,fav,vendor_id) VALUES ('$arr[0]','$arr[1]','$arr[2]','$arr[3]','$arr[4]','$arr[5]','$arr[6]','$arr[7]','$arr[8]','$arr[9]')";
         
         // Add new contact-list
         
@@ -48,17 +49,6 @@
             
         }
     
-        elseif($fav==0){
-            $row = $stmt1->fetch();
-            $userid=$row['userid'];
-            
-            // soft delete contact from contact-list
-            $sql = "UPDATE `contact_list` SET `fav`='$fav' WHERE `contact_list`.`userid` = $userid";
-            
-            $conn->exec($sql);
-            
-             echo json_encode($output);
-        }
         
         elseif($numrows>0 and $fav==2){
             $row = $stmt1->fetch();
@@ -66,7 +56,7 @@
             
             // Update the contact-list
             
-            $sql = "UPDATE `contact_list` SET `NameCompany` = '$arr[0]', `Name` = '$arr[1]', `Company` = '$arr[2]', `Address` = '$arr[3]', `City` = '$arr[4]', `State` = '$arr[5]', `Pincode` = '$arr[6]', `phone` = '$arr[7]',`fav`=2 WHERE `contact_list`.`userid` = $userid";
+            $sql = "UPDATE `contact_list` SET `NameCompany` = '$arr[0]', `Name` = '$arr[1]', `Company` = '$arr[2]', `Address` = '$arr[3]', `City` = '$arr[4]', `State` = '$arr[5]', `Pincode` = '$arr[6]', `phone` = '$arr[7]',`fav`=2,`vendor_id`='$arr[9]' WHERE `contact_list`.`userid` = $userid";
             
             $conn->exec($sql);
             
