@@ -55,7 +55,7 @@
 <button type="button" class="btn btn-default btn-sm"  id="sender_add_fav" onclick="favourite(this)">
 <span class="glyphicon glyphicon-heart"></span> Favourite
 </button>
-<button type="button" class="btn btn-danger btn-sm" id="sender_remove_fav" onclick="favourite(this)" style="display:none">Remove</button>
+<button type="button" class="btn btn-danger btn-sm" id="sender_reset_fav" onclick="Reset(this)" style="display:none">Reset</button>
 <button type="button" class="btn btn-info btn-sm" id="sender_update_fav" onclick="favourite(this)" style="display:none">
 <span class="glyphicon glyphicon-heart"></span> Update
 </button>
@@ -67,6 +67,10 @@
 <!-- /.box-header -->
 <div class="box-body">
 <table class="table table-striped table-bordered">
+<tr>
+<td>Vendor ID:</td>
+<th><input type="text" class="form-control" name="sender_vendorid" id="sender_vendorid" placeholder="Enter Sender Vendor ID"></th>
+</tr>
 <tr>
 <td class="col-sm-4">Pickup Pincode:</td>
 <th><input type="text" class="form-control" name="from_pin" id="from_pin" placeholder="Enter From Pincode" onchange="senderlocation(this.value)"></th>
@@ -114,7 +118,7 @@
 <button type="button" class="btn btn-default btn-sm"  id="receiver_add_fav" onclick="favourite(this)">
 <span class="glyphicon glyphicon-heart"></span> Favourite
 </button>
-<button type="button" class="btn btn-danger btn-sm" id="receiver_remove_fav" onclick="favourite(this)" style="display:none">Remove</button>
+<button type="button" class="btn btn-danger btn-sm" id="receiver_reset_fav" onclick="Reset(this)" style="display:none">Reset</button>
 <button type="button" class="btn btn-info btn-sm" id="receiver_update_fav" onclick="favourite(this)" style="display:none">
 <span class="glyphicon glyphicon-heart"></span> Update
 </button>
@@ -126,6 +130,10 @@
 <!-- /.box-header -->
 <div class="box-body">
 <table class="table table-striped table-bordered">
+<tr>
+<td>Vendor ID:</td>
+<th><input type="text" class="form-control" name="receiver_vendorid" id="receiver_vendorid" placeholder="Enter Receiver Vendor ID"></th>
+</tr>
 <tr>
 <td class="col-sm-4">Destination Pincode:</td>
 <th><input type="text" class="form-control" name="to_pin" id="to_pin" placeholder="Enter To Pincode" onchange="receiverlocation(this.value)"></th>
@@ -421,6 +429,7 @@ Value
 <table class="table">
 <thead>
 <tr class="filters">
+<th><input type="text" class="form-control" placeholder="VendorId" id="search_vendor_id"  onkeyup="search()"></th>
 <th><input type="text" class="form-control" placeholder="Name" id="contact_name"  onkeyup="search()"></th>
 <th><input type="text" class="form-control" placeholder="Company Name" id="company_name" onkeyup="search()"></th>
 <th><input type="text" class="form-control" placeholder="Phone Number" id="phonenumber" onkeyup="search()"></th>
@@ -566,9 +575,11 @@ $('.form_time').datetimepicker({
 <script>
 
 function senderlocation(str) {
-    if (str == "") {
-        document.getElementById("from_pin").innerHTML = "";
-        return;
+    if (str.length!=6 || isNaN(str)) {
+        if(str!=""){
+            alert("Enter Correct Pincode");
+            return;
+        }
     } else {
         if (window.XMLHttpRequest) {
             // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -591,9 +602,12 @@ function senderlocation(str) {
 }
 
 function receiverlocation(str) {
-    if (str == "") {
-        document.getElementById("to_pin").innerHTML = "";
-        return;
+    if (str.length!=6 || isNaN(str)) {
+        if(str!=""){
+            alert("Enter Correct Pincode");
+            return;
+            
+        }
     } else {
         if (window.XMLHttpRequest) {
             // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -700,7 +714,7 @@ function accountnumberlist(response){
 
 function favourite(i){
     
-    if(i.id=="sender_add_fav" || i.id=="sender_update_fav" || i.id=="sender_remove_fav"){
+    if(i.id=="sender_add_fav" || i.id=="sender_update_fav"){
         
         var pin= document.getElementById("from_pin").value;
         var name = document.getElementById("sender_name").value;
@@ -709,6 +723,7 @@ function favourite(i){
         var city = document.getElementById("sender_city").value;
         var state = document.getElementById("sender_state").value;
         var phone = document.getElementById("sender_phone").value;
+        var vendorid=document.getElementById("sender_vendorid").value;
         
         if(sender_name==""||sender_phone==""||sender_com_name==""){
             alert("Plz. add Name,Company Name, Phone Number");
@@ -731,22 +746,13 @@ function favourite(i){
             
             if(i.id=="sender_add_fav"){
                 
-                xmlhttp.open("GET","ContactFav_ajax.php?pin="+pin+"&name="+name+"&companyname="+com_name+"&address="+address+"&city="+city+"&state="+state+"&phone="+phone+"&fav=1&parties=sender",true);
+                xmlhttp.open("GET","ContactFav_ajax.php?pin="+pin+"&vendorid="+vendorid+"&name="+name+"&companyname="+com_name+"&address="+address+"&city="+city+"&state="+state+"&phone="+phone+"&fav=1&parties=sender",true);
                 xmlhttp.send();
             }
             
             else if(i.id=="sender_update_fav"){
                 
-                xmlhttp.open("GET","ContactFav_ajax.php?pin="+pin+"&name="+name+"&companyname="+com_name+"&address="+address+"&city="+city+"&state="+state+"&phone="+phone+"&fav=2&parties=sender",true);
-                xmlhttp.send();
-                
-            }
-            
-            else if(i.id=="sender_remove_fav"){
-                
-                
-                
-                xmlhttp.open("GET","ContactFav_ajax.php?pin="+pin+"&name="+name+"&companyname="+com_name+"&address="+address+"&city="+city+"&state="+state+"&phone="+phone+"&fav=0&parties=sender",true);
+                xmlhttp.open("GET","ContactFav_ajax.php?pin="+pin+"&vendorid="+vendorid+"&name="+name+"&companyname="+com_name+"&address="+address+"&city="+city+"&state="+state+"&phone="+phone+"&fav=2&parties=sender",true);
                 xmlhttp.send();
                 
             }
@@ -756,7 +762,7 @@ function favourite(i){
         
     }
     
-    else if( i.id=="receiver_add_fav" || i.id=="receiver_update_fav" || i.id=="receiver_remove_fav"){
+    else if( i.id=="receiver_add_fav" || i.id=="receiver_update_fav" ){
         
         var pin= document.getElementById("to_pin").value;
         var name = document.getElementById("receiver_name").value;
@@ -765,6 +771,8 @@ function favourite(i){
         var city = document.getElementById("receiver_city").value;
         var state = document.getElementById("receiver_state").value;
         var phone = document.getElementById("receiver_phone").value;
+        var vendorid=document.getElementById("receiver_vendorid").value;
+        
         
         if(name==""||phone==""||com_name==""){
             alert("Plz. add Name,Company Name, Phone Number");
@@ -788,21 +796,13 @@ function favourite(i){
             
             if(i.id=="receiver_add_fav"){
                 
-                xmlhttp.open("GET","ContactFav_ajax.php?pin="+pin+"&name="+name+"&companyname="+com_name+"&address="+address+"&city="+city+"&state="+state+"&phone="+phone+"&fav=1&parties=receiver",true);
+                xmlhttp.open("GET","ContactFav_ajax.php?pin="+pin+"&vendorid="+vendorid+"&name="+name+"&companyname="+com_name+"&address="+address+"&city="+city+"&state="+state+"&phone="+phone+"&fav=1&parties=receiver",true);
                 xmlhttp.send();
             }
             
             else if(i.id=="receiver_update_fav"){
                 
-                xmlhttp.open("GET","ContactFav_ajax.php?pin="+pin+"&name="+name+"&companyname="+com_name+"&address="+address+"&city="+city+"&state="+state+"&phone="+phone+"&fav=2&parties=receiver",true);
-                xmlhttp.send();
-                
-            }
-            
-            else if(i.id=="receiver_remove_fav"){
-                
-                
-                xmlhttp.open("GET","ContactFav_ajax.php?pin="+pin+"&name="+name+"&companyname="+com_name+"&address="+address+"&city="+city+"&state="+state+"&phone="+phone+"&fav=0&parties=receiver",true);
+                xmlhttp.open("GET","ContactFav_ajax.php?pin="+pin+"&vendorid="+vendorid+"&name="+name+"&companyname="+com_name+"&address="+address+"&city="+city+"&state="+state+"&phone="+phone+"&fav=2&parties=receiver",true);
                 xmlhttp.send();
                 
             }
@@ -827,13 +827,13 @@ function notification(response)
         if(arr[1]=="sender"){
             document.getElementById("sender_add_fav").style.display = 'none';
             document.getElementById("sender_update_fav").style.display = 'inline';
-            document.getElementById("sender_remove_fav").style.display = 'inline';
+            document.getElementById("sender_reset_fav").style.display = 'inline';
             document.getElementById("sender_fav_list").innerHTML='<span class="glyphicon glyphicon-user"></span>';
         }
         else if(arr[1]=="receiver"){
             document.getElementById("receiver_add_fav").style.display = 'none';
             document.getElementById("receiver_update_fav").style.display = 'inline';
-            document.getElementById("receiver_remove_fav").style.display = 'inline';
+            document.getElementById("receiver_reset_fav").style.display = 'inline';
             document.getElementById("receiver_fav_list").innerHTML='<span class="glyphicon glyphicon-user"></span>';
         }
         
@@ -843,35 +843,17 @@ function notification(response)
         if(arr[1]=="sender"){
             document.getElementById("sender_add_fav").style.display = 'none';
             document.getElementById("sender_update_fav").style.display = 'inline';
-            document.getElementById("sender_remove_fav").style.display = 'inline';
+            document.getElementById("sender_reset_fav").style.display = 'inline';
             document.getElementById("sender_fav_list").innerHTML='<span class="glyphicon glyphicon-user"></span>';
         }
         else if(arr[1]=="receiver"){
             document.getElementById("receiver_add_fav").style.display = 'none';
             document.getElementById("receiver_update_fav").style.display = 'inline';
-            document.getElementById("receiver_remove_fav").style.display = 'inline';
+            document.getElementById("receiver_reset_fav").style.display = 'inline';
             document.getElementById("receiver_fav_list").innerHTML='<span class="glyphicon glyphicon-user"></span>';
         }
         
     }
-    else if(arr[0]=="0"){
-        alert("Contact Detials Removed Successfully");
-        if(arr[1]=="sender"){
-            document.getElementById("sender_add_fav").style.display = 'inline';
-            document.getElementById("sender_update_fav").style.display = 'none';
-            document.getElementById("sender_remove_fav").style.display = 'none';
-            document.getElementById("sender_fav_list").innerHTML='<span class="glyphicon glyphicon-user"></span>List';
-        }
-        else if(arr[1]=="receiver"){
-            document.getElementById("receiver_add_fav").style.display = 'inline';
-            document.getElementById("receiver_update_fav").style.display = 'none';
-            document.getElementById("receiver_remove_fav").style.display = 'none';
-            document.getElementById("receiver_fav_list").innerHTML='<span class="glyphicon glyphicon-user"></span>List';
-        }
-        
-        
-    }
-    
     
 }
 
@@ -883,10 +865,11 @@ function search(){
     var searchcomp_name= document.getElementById("company_name").value;
     var searchphone= document.getElementById("phonenumber").value;
     var parties=document.getElementById("parties_id").value;
+    var searchvendorid=document.getElementById("search_vendor_id").value;
     
     //alert(searchcomp_name);
     
-    if(searchname=="" && searchcomp_name=="" && searchphone==""){
+    if(searchname=="" && searchcomp_name=="" && searchphone=="" && searchvendorid==""){
         
     }else {
         if (window.XMLHttpRequest) {
@@ -905,17 +888,18 @@ function search(){
                 
             }
         };
-        xmlhttp.open("GET","SearchContact_ajax.php?searchname="+searchname+"&comp_name="+searchcomp_name+"&phone="+searchphone+"&parties="+parties,true);
+        xmlhttp.open("GET","SearchContact_ajax.php?searchname="+searchname+"&comp_name="+searchcomp_name+"&phone="+searchphone+"&parties="+parties+"&searchvendorid="+searchvendorid,true);
         xmlhttp.send();
         
         
     }
 }
 
-function selectRow(pincode,name,comp_name,address,city,state,phone,parties){
+function selectRow(pincode,name,comp_name,address,city,state,phone,parties,vendor_id){
     
     if(parties=="sender"){
         
+        document.getElementById("sender_vendorid").value=vendor_id;
         document.getElementById("from_pin").value=pincode;
         document.getElementById("sender_name").value=name;
         document.getElementById("sender_com_name").value=comp_name;
@@ -924,15 +908,17 @@ function selectRow(pincode,name,comp_name,address,city,state,phone,parties){
         document.getElementById("sender_state").value= state;
         document.getElementById("sender_phone").value= phone;
         
+        
         document.getElementById("sender_add_fav").style.display = 'none';
         document.getElementById("sender_update_fav").style.display = 'inline';
-        document.getElementById("sender_remove_fav").style.display = 'inline';
+        document.getElementById("sender_reset_fav").style.display = 'inline';
         document.getElementById("sender_fav_list").innerHTML='<span class="glyphicon glyphicon-user"></span>';
         
         
         
     }
     else if(parties=="receiver"){
+        document.getElementById("receiver_vendorid").value=vendor_id;
         document.getElementById("to_pin").value=pincode;
         document.getElementById("receiver_name").value=name;
         document.getElementById("receiver_com_name").value=comp_name;
@@ -943,7 +929,7 @@ function selectRow(pincode,name,comp_name,address,city,state,phone,parties){
         
         document.getElementById("receiver_add_fav").style.display = 'none';
         document.getElementById("receiver_update_fav").style.display = 'inline';
-        document.getElementById("receiver_remove_fav").style.display = 'inline';
+        document.getElementById("receiver_reset_fav").style.display = 'inline';
         document.getElementById("receiver_fav_list").innerHTML='<span class="glyphicon glyphicon-user"></span>';
         
         
@@ -962,6 +948,46 @@ function Collectable(i){
     else if (i.id=="CODNo"){
         document.getElementById("CollectableAmount").style.display='none';
         document.getElementById("CollectableAmount").value=0;
+        
+    }
+}
+
+
+function Reset(i){
+    
+    if(i.id=="sender_reset_fav"){
+        document.getElementById("sender_add_fav").style.display = 'inline';
+        document.getElementById("sender_update_fav").style.display = 'none';
+        document.getElementById("sender_reset_fav").style.display = 'none';
+        document.getElementById("sender_fav_list").innerHTML='<span class="glyphicon glyphicon-user"></span>List';
+        
+        document.getElementById("sender_vendorid").value="";
+        document.getElementById("from_pin").value="";
+        document.getElementById("sender_name").value="";
+        document.getElementById("sender_com_name").value="";
+        document.getElementById("sender_address").value="";
+        document.getElementById("sender_city").value="";
+        document.getElementById("sender_state").value="";
+        document.getElementById("sender_phone").value="";
+        
+        
+    }
+    else if(i.id=="receiver_reset_fav"){
+        
+        document.getElementById("receiver_add_fav").style.display = 'inline';
+        document.getElementById("receiver_update_fav").style.display = 'none';
+        document.getElementById("receiver_reset_fav").style.display = 'none';
+        document.getElementById("receiver_fav_list").innerHTML='<span class="glyphicon glyphicon-user"></span>List';
+        
+        document.getElementById("receiver_vendorid").value="";
+        document.getElementById("to_pin").value="";
+        document.getElementById("receiver_name").value="";
+        document.getElementById("receiver_com_name").value="";
+        document.getElementById("receiver_address").value= "";
+        document.getElementById("receiver_city").value= "";
+        document.getElementById("receiver_state").value= "";
+        document.getElementById("receiver_phone").value= "";
+        
         
     }
 }

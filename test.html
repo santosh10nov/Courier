@@ -12,7 +12,7 @@
                             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
                             <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
                             
-                            </head>
+    </head>
     
     <body>
         
@@ -198,7 +198,7 @@
                                             <input type="radio" id="CODYes"  name="COD" value="Yes" onclick="Collectable(this)"> Yes &nbsp;&nbsp;
                                                 <input type="radio" id="CODNo" name="COD" value="No"  onclick="Collectable(this)"> No
                                                     <input type="text" id="CollectableAmount" name="CollectableAmount" class="form-control" placeholder="Collectable Amount" style="display:none">
-                                                        </td>
+                                        </td>
                                         
                                     </tr>
                                     
@@ -209,7 +209,7 @@
                                                 <input class="form-control" size="10" type="text" value="" name="date" readonly>
                                                     <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-                                                    </div>
+                                            </div>
                                             <input type="hidden" id="dtp_input2" value="" />
                                         </td>
                                     </tr>
@@ -244,8 +244,18 @@
                                     </tr>
                                     
                                     <tr>
-                                        <td>Commodities:</td>
-                                        <th><input type="text" class="form-control" name="purpose" placeholder="Enter "></th>
+                                        <td>Purpose:</td>
+                                        <th><div>
+                                        <select class="form-control selcls" name="purpose" id="purpose" >
+                                            <option value="" selected="selected">Purpose of Shipment</option>
+                                            <option value="GIFT">GIFT</option>
+                                            <option value="NOT_SOLD">NOT SOLD</option>
+                                            <option value="PERSONAL_EFFECTS">PERSONAL EFFECTS</option>
+                                            <option value="REPAIR_AND_RETURN">REPAIR AND RETURN</option>
+                                            <option value="SAMPLE">SAMPLE</option>
+                                            <option value="SOLD">SOLD</option>
+                                        </select></div>
+
                                     </tr>
                                     
                                     <tr>
@@ -272,7 +282,7 @@
                                         <td>
                                             <input type="radio" id="Documents" name="shipmentcontent" value="Documents" checked="checked"> Documents &nbsp;&nbsp;
                                                 <input type="radio" id="Commodities" name="shipmentcontent" value="Commodities"> Commodities
-                                                    </td>
+                                        </td>
                                     </tr>
                                     
                                 </table>
@@ -604,7 +614,7 @@
         function receiverlocation(str) {
             if (str.length!=6 || isNaN(str)) {
                 if(str!=""){
-                     alert("Enter Correct Pincode");
+                    alert("Enter Correct Pincode");
                     return;
                     
                 }
@@ -725,7 +735,7 @@
                 var phone = document.getElementById("sender_phone").value;
                 var vendorid=document.getElementById("sender_vendorid").value;
                 
-                if(sender_name==""||sender_phone==""||sender_com_name==""){
+                if(name==""||phone==""||com_name==""){
                     alert("Plz. add Name,Company Name, Phone Number");
                 }
                 else {
@@ -898,7 +908,7 @@
         function selectRow(pincode,name,comp_name,address,city,state,phone,parties,vendor_id){
             
             if(parties=="sender"){
-             
+                
                 document.getElementById("sender_vendorid").value=vendor_id;
                 document.getElementById("from_pin").value=pincode;
                 document.getElementById("sender_name").value=name;
@@ -987,66 +997,10 @@
                 document.getElementById("receiver_city").value= "";
                 document.getElementById("receiver_state").value= "";
                 document.getElementById("receiver_phone").value= "";
-
-
+                
+                
             }
         }
-        
-        /*function dimension(){
-         // Number of inputs to create
-         var number = document.getElementById("package_count").value;
-         // Container <div> where dynamic content will be placed
-         var container = document.getElementById("hiddendiv");
-         // Clear previous contents of the container
-         while (container.hasChildNodes()) {
-         container.removeChild(container.lastChild);
-         }
-         for (i=0;i<number;i++){
-         
-         // Create an <input> element, set its type and name attributes
-         var l = document.createElement("input");
-         l.type = "text";
-         l.name = "l" + i;
-         l.value=document.getElementById("length"+i).value;
-         container.appendChild(l);
-         
-         // Append a line break
-         container.appendChild(document.createElement("br"));
-         
-         var b = document.createElement("input");
-         b.type = "text";
-         b.name = "b" + i;
-         b.value=document.getElementById("breath"+i).value;
-         container.appendChild(b);
-         
-         // Append a line break
-         container.appendChild(document.createElement("br"));
-         
-         var h = document.createElement("input");
-         h.type = "text";
-         h.name = "h" + i;
-         h.value=document.getElementById("height"+i).value;
-         container.appendChild(h);
-         
-         
-         // Append a line break
-         container.appendChild(document.createElement("br"));
-         
-         var w = document.createElement("input");
-         w.type = "text";
-         w.name = "w" + i;
-         w.value=document.getElementById("weight"+i).value;
-         container.appendChild(w);
-         
-         
-         // Append a line break
-         container.appendChild(document.createElement("br"));
-         
-         }
-         
-         
-         
-         } */
         
         
             </script>

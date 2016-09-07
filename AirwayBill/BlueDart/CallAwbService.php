@@ -265,6 +265,36 @@
     
         $stmt7->execute();
         
+        
+        for($i=0;$i<$packagecount;$i++){
+            
+            $length=$Package["Dim".$i]["length".$i];
+            $breath=$Package["Dim".$i]["breath".$i];
+            $height=$Package["Dim".$i]["height".$i];
+            $weight=$Package["Dim".$i]["weight".$i];
+            
+            
+            $stmt8=$conn->prepare("INSERT INTO `AirwayBill_Packages`(`AWB_UID`, `Package_Count`, `Length`, `Breath`, `Height`, `Weight`) VALUES ('$AWB_UID','$i+1',$length,$breath,$height,$weight)");
+            
+            $stmt8->execute();
+            
+        }
+        
+        if($shipmentcontent=="Commodities"){
+            for($i=0;$i<$commodity_count;$i++){
+                
+                $Commodity=$Package["Com".$i]["Commodity".$i];
+                $Commodity_desc=$Package["Com".$i]["Commodity_desc".$i];
+                $CommodityValue=$Package["Com".$i]["CommodityValue".$i];
+                
+                $stmt9=$conn->prepare("INSERT INTO `AirwayBill_Commodites`(`AWB_UID`, `Commodity`, `Commodity_Desc`, `Value`) VALUES ('$AWB_UID','$Commodity','$Commodity_desc','$CommodityValue')");
+                $stmt9->execute();
+                
+            }
+            
+        }
+        
+        
          $status="Success";
 
     }
