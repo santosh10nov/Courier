@@ -54,7 +54,7 @@
 </tr>
 <tr>
 <td align="center"><img src="img/contact_list_profile.png" alt="track" width="42" height="42" border="0"></td>
-<td align="center"><img src="img/AirwayBillList.png" alt="report" width="42" height="42" border="0"></td>
+<td align="center"><a href="airwaybill_list.html"><img src="img/AirwayBillList.png" alt="report" width="42" height="42" border="0"></a></td>
 </tr>
 <tr>
 <td align="center">Contact List</td>

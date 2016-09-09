@@ -6,7 +6,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>Demo: Cantina Negrar preloader deconstruction</title>
+<title>rShipper-Generate AirwayBill</title>
 <meta name="description" content="Learn how to recreate the preloader from Cantina Negrar. Tutorial for a passionate front-end web developers by Petr Tichy.">
 
 <!--iOS -->
@@ -98,8 +98,9 @@ padding-top: 10px;
         <div class="row">
         <div class="col-sm-6" id="info">
         <button type="button" class="btn btn-danger btn-sm" href="Generate_AirwayBill.php" >Cancel AirwayBill</button>
-        <button type="button" class="btn btn-info btn-sm">Modify AirwayBill</button>
-        <button type="button" class="btn btn-success btn-sm">Generate New AirwayBill</button>
+        <button type="button" class="btn btn-info btn-sm" onclick="goBack()">Modify AirwayBill</button>
+        <a href="Generate_AirwayBill.php"><button type="button" class="btn btn-success btn-sm">New AirwayBill</button></a>
+        <a href="#" download="proposed_file_name">Download</a>
         </div>
         <div class="col-sm-6" id="pdf">
         </div>
@@ -121,6 +122,10 @@ padding-top: 10px;
                                      }, 3000);
                           
                           });
+    
+    function goBack() {
+        window.history.back();
+    }
     </script>
     
     </body>
@@ -154,7 +159,7 @@ padding-top: 10px;
         //////////////////////////////////////
         /////// Sender Details///////////////
         /////////////////////////////////////
-        
+        $sender_vendorid=$_POST["sender_vendorid"];
         $sender_name=$_POST["sender_name"];
         $sender_company=$_POST["sender_com_name"];
         $sender_city=$_POST["sender_city"];
@@ -168,7 +173,7 @@ padding-top: 10px;
         //////////////////////////////////////
         /////// Receiver Details///////////////
         /////////////////////////////////////
-        
+        $receiver_vendorid=$_POST["receiver_vendorid"];
         $receiver_name=$_POST["receiver_name"];
         $receiver_company=$_POST["receiver_com_name"];
         $receiver_city=$_POST["receiver_city"];

@@ -244,8 +244,18 @@
 </tr>
 
 <tr>
-<td>Commodities:</td>
-<th><input type="text" class="form-control" name="purpose" placeholder="Enter "></th>
+<td>Purpose:</td>
+<th><div>
+<select class="form-control selcls" name="purpose" id="purpose" >
+<option value="" selected="selected">Purpose of Shipment</option>
+<option value="GIFT">GIFT</option>
+<option value="NOT_SOLD">NOT SOLD</option>
+<option value="PERSONAL_EFFECTS">PERSONAL EFFECTS</option>
+<option value="REPAIR_AND_RETURN">REPAIR AND RETURN</option>
+<option value="SAMPLE">SAMPLE</option>
+<option value="SOLD">SOLD</option>
+</select></div>
+
 </tr>
 
 <tr>
@@ -725,7 +735,7 @@ function favourite(i){
         var phone = document.getElementById("sender_phone").value;
         var vendorid=document.getElementById("sender_vendorid").value;
         
-        if(sender_name==""||sender_phone==""||sender_com_name==""){
+        if(name==""||phone==""||com_name==""){
             alert("Plz. add Name,Company Name, Phone Number");
         }
         else {
@@ -991,62 +1001,6 @@ function Reset(i){
         
     }
 }
-
-/*function dimension(){
- // Number of inputs to create
- var number = document.getElementById("package_count").value;
- // Container <div> where dynamic content will be placed
- var container = document.getElementById("hiddendiv");
- // Clear previous contents of the container
- while (container.hasChildNodes()) {
- container.removeChild(container.lastChild);
- }
- for (i=0;i<number;i++){
- 
- // Create an <input> element, set its type and name attributes
- var l = document.createElement("input");
- l.type = "text";
- l.name = "l" + i;
- l.value=document.getElementById("length"+i).value;
- container.appendChild(l);
- 
- // Append a line break
- container.appendChild(document.createElement("br"));
- 
- var b = document.createElement("input");
- b.type = "text";
- b.name = "b" + i;
- b.value=document.getElementById("breath"+i).value;
- container.appendChild(b);
- 
- // Append a line break
- container.appendChild(document.createElement("br"));
- 
- var h = document.createElement("input");
- h.type = "text";
- h.name = "h" + i;
- h.value=document.getElementById("height"+i).value;
- container.appendChild(h);
- 
- 
- // Append a line break
- container.appendChild(document.createElement("br"));
- 
- var w = document.createElement("input");
- w.type = "text";
- w.name = "w" + i;
- w.value=document.getElementById("weight"+i).value;
- container.appendChild(w);
- 
- 
- // Append a line break
- container.appendChild(document.createElement("br"));
- 
- }
- 
- 
- 
- } */
 
 
 </script>
