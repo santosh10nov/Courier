@@ -12,11 +12,59 @@
                             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
                             <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
                             
-    </head>
+                            <style>
+                               
+                            .sidenav {
+                                height: 100%;
+                                width: 0;
+                                position: fixed;
+                                z-index: 1;
+                                top: 0;
+                                left: 0;
+                                background-color: #111;
+                                overflow-x: hidden;
+                                transition: 0.5s;
+                                padding-top: 60px;
+                            }
+                            
+                            .sidenav a {
+                                padding: 8px 8px 8px 32px;
+                                text-decoration: none;
+                                font-size: 25px;
+                                color: #818181;
+                                display: block;
+                                transition: 0.3s
+                            }
+                            
+                            .sidenav a:hover, .offcanvas a:focus{
+                                color: #f1f1f1;
+                            }
+                            
+                            .sidenav .closebtn {
+                                position: absolute;
+                                top: 0;
+                                right: 25px;
+                                font-size: 36px;
+                                margin-left: 50px;
+                            }
+                            
+                            #container {
+                                transition: margin-left .5s;
+                                padding: 16px;
+                            }
+                            
+                            @media screen and (max-height: 450px) {
+                                .sidenav {padding-top: 15px;}
+                                .sidenav a {font-size: 18px;}
+                            }
+                            
+                            </style>
+                            
+                            </head>
     
     <body>
         
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default" id="header_nav">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="index.php">rShipper</a>
@@ -32,7 +80,9 @@
             </div>
         </nav>
         
-        <div class="container">
+    
+        <div class="container" id="container">
+            <span style="font-size:30px;cursor:pointer;float: left;" onclick="openNav()">&#9776;</span>
             <h1 align="center">Generate AirwayBill </h1>
             <div class="alerts" id="alert_box" style="padding-top: 0em; padding-bottom: 0em;display: none;">
                 <div class="alert alert-danger" role="alert">
@@ -41,11 +91,15 @@
                     </ul>
                 </div>
             </div>
-            
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="Generate_AirwayBill.php" >Generate Way Bill</a>
+                <a href="airwaybill_list.html">Way Bill List</a>
+            </div>
             
             <!-- form start -->
             <form class="form-horizontal" action="airwaybill.php" role="form" method="post" onsubmit="validate_activity()">
-                
+
                 <div class="row">
                     <!-- right column -->
                     <div class="col-sm-4">
@@ -184,12 +238,15 @@
                                 <table class="table table-striped table-bordered">
                                     <tr>
                                         <td>Courier Vendor</td>
-                                        <td><div>
-                                            <select class="form-control selcls" name="couriervendor" id="couriervendor" onclick="services_list()">
-                                                <option value="" selected="selected">Select Courier Vendor</option>
-                                                <option value="BlueDart">BlueDart</option>
-                                                <option value="FedEx">Fedex</option>
-                                            </select></div>
+                                        <td>
+                                            <div>
+                                                <select class="form-control selcls" name="couriervendor" id="couriervendor" onclick="services_list()">
+                                                    <option value="" selected="selected">Select Courier Vendor</option>
+                                                    <option value="BlueDart">BlueDart</option>
+                                                    <option value="FedEx">Fedex</option>
+                                                    <option value="DTDC">DTDC</option>
+                                                </select>
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
@@ -198,7 +255,7 @@
                                             <input type="radio" id="CODYes"  name="COD" value="Yes" onclick="Collectable(this)"> Yes &nbsp;&nbsp;
                                                 <input type="radio" id="CODNo" name="COD" value="No"  onclick="Collectable(this)"> No
                                                     <input type="text" id="CollectableAmount" name="CollectableAmount" class="form-control" placeholder="Collectable Amount" style="display:none">
-                                        </td>
+                                                        </td>
                                         
                                     </tr>
                                     
@@ -209,7 +266,7 @@
                                                 <input class="form-control" size="10" type="text" value="" name="date" readonly>
                                                     <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                                     <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-                                            </div>
+                                                    </div>
                                             <input type="hidden" id="dtp_input2" value="" />
                                         </td>
                                     </tr>
@@ -218,7 +275,7 @@
                                     <tr>
                                         <td>Courier Service</td>
                                         <td>
-                                            <select class="form-control selcls" name="services" id="services">
+                                            <select class="form-control selcls" name="services" id="services" style="display:inline">
                                                 <option value="" selected="selected">Select Courier Service</option>
                                             </select>
                                         </td>
@@ -227,7 +284,7 @@
                                     <tr>
                                         <td>Account Number</td>
                                         <td>
-                                            <select class="form-control selcls" name="accountnumber" id="accountnumber">
+                                            <select class="form-control selcls" name="accountnumber" id="accountnumber" style="display:inline">
                                                 <option value="" selected="selected">Select Account Number</option>
                                             </select>
                                         </td>
@@ -246,17 +303,17 @@
                                     <tr>
                                         <td>Purpose:</td>
                                         <th><div>
-                                        <select class="form-control selcls" name="purpose" id="purpose" >
-                                            <option value="" selected="selected">Purpose of Shipment</option>
-                                            <option value="GIFT">GIFT</option>
-                                            <option value="NOT_SOLD">NOT SOLD</option>
-                                            <option value="PERSONAL_EFFECTS">PERSONAL EFFECTS</option>
-                                            <option value="REPAIR_AND_RETURN">REPAIR AND RETURN</option>
-                                            <option value="SAMPLE">SAMPLE</option>
-                                            <option value="SOLD">SOLD</option>
-                                        </select></div>
-
-                                    </tr>
+                                            <select class="form-control selcls" name="purpose" id="purpose" >
+                                                <option value="" selected="selected">Purpose of Shipment</option>
+                                                <option value="GIFT">GIFT</option>
+                                                <option value="NOT_SOLD">NOT SOLD</option>
+                                                <option value="PERSONAL_EFFECTS">PERSONAL EFFECTS</option>
+                                                <option value="REPAIR_AND_RETURN">REPAIR AND RETURN</option>
+                                                <option value="SAMPLE">SAMPLE</option>
+                                                <option value="SOLD">SOLD</option>
+                                            </select></div>
+                                        
+                                            </tr>
                                     
                                     <tr>
                                         <td>Package Count</td>
@@ -282,7 +339,7 @@
                                         <td>
                                             <input type="radio" id="Documents" name="shipmentcontent" value="Documents" checked="checked"> Documents &nbsp;&nbsp;
                                                 <input type="radio" id="Commodities" name="shipmentcontent" value="Commodities"> Commodities
-                                        </td>
+                                                    </td>
                                     </tr>
                                     
                                 </table>
@@ -529,7 +586,7 @@
                               
                               
                               
-                              
+                               CourierVendorList();
                               
                               });
                               
@@ -544,6 +601,7 @@
                                                                   document.getElementById("result").innerHTML=" ";
                                                                   
                                                                   });
+                                                                  
             </script>
         
         
@@ -651,8 +709,14 @@
             if(vendor_name==""){
                 $("#services").empty();
                 document.getElementById("services").options[0]=new Option("Select Courier Service");
+                $("#accountnumber").empty();
                 document.getElementById("accountnumber").options[0]=new Option("Select Account Number");
-            }else {
+            }
+            else {
+                
+                document.getElementById("services").style.display = 'inline';
+                document.getElementById("accountnumber").style.display = 'inline';
+                
                 if (window.XMLHttpRequest) {
                     // code for IE7+, Firefox, Chrome, Opera, Safari
                     xmlhttp = new XMLHttpRequest();
@@ -1002,8 +1066,56 @@
             }
         }
         
+        function CourierVendorList(){
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    
+                    $("#couriervendor").empty();
+                    var arr = JSON.parse(xmlhttp.responseText);
+                    var i;
+                    
+                    document.getElementById("couriervendor").options[0]=new Option("Select Courier Vendor");
+                    for(i = 0; i < arr.length; i++) {
+                        document.getElementById("couriervendor").options[i+1]=new Option(arr[i].value,arr[i].venndor_name);
+                    }
+                    
+                }
+            };
+            xmlhttp.open("GET","vendoraction.php?action=CourierVendorList",true);
+            xmlhttp.send();
+            
+            
+        }
+        
+        
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("container").style.marginLeft = "250px";
+            document.getElementById("header_nav").style.marginLeft = "250px";
+            //document.body.style.backgroundColor = "rgba(0,0,0,0.7)";
+        }
+        
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("container").style.marginLeft= "0";
+            document.getElementById("header_nav").style.marginLeft = "0";
+            document.body.style.backgroundColor = "white";
+        }
+        
         
             </script>
+        
+        
+        
+        
+
         
         
         

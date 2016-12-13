@@ -100,6 +100,7 @@ padding-top: 10px;
         <button type="button" class="btn btn-danger btn-sm" href="Generate_AirwayBill.php" >Cancel AirwayBill</button>
         <button type="button" class="btn btn-info btn-sm" onclick="goBack()">Modify AirwayBill</button>
         <a href="Generate_AirwayBill.php"><button type="button" class="btn btn-success btn-sm">New AirwayBill</button></a>
+        <input type="text" id="AWB_Number" value="">
         <a href="#" download="proposed_file_name">Download</a>
         </div>
         <div class="col-sm-6" id="pdf">
@@ -130,8 +131,8 @@ padding-top: 10px;
     
     </body>
     </html>
-
-<?php
+    
+    <?php
     
     
     if (isset($_POST["from_pin"]) && !empty($_POST["from_pin"]) && isset($_POST["to_pin"]) && !empty($_POST["to_pin"])) {
@@ -286,144 +287,148 @@ padding-top: 10px;
                     
                     $AWB_UID=$row6['UID'];
                     
-                
-            $stmt7=$conn->prepare("INSERT INTO `AirwayBill_Parties`(`Shipper_Name`, `Shipper_Comp`, `Shipper_Address`, `Receiver_Name`, `Receiver_Comp`, `Receiver_Address`,`AWB_UID`) VALUES ('$sender_info[1]','$sender_info[2]','$sender_info[3].$sender_info[4].$sender_info[5].$sender_info[0]','$receiver_info[1]','$receiver_info[2]','$receiver_info[3].$receiver_info[4].$receiver_info[5].$receiver_info[0]','$AWB_UID') ");
-            
+                    
+                    $stmt7=$conn->prepare("INSERT INTO `AirwayBill_Parties`(`Shipper_Name`, `Shipper_Comp`, `Shipper_Address`, `Receiver_Name`, `Receiver_Comp`, `Receiver_Address`,`AWB_UID`) VALUES ('$sender_info[1]','$sender_info[2]','$sender_info[3].$sender_info[4].$sender_info[5].$sender_info[0]','$receiver_info[1]','$receiver_info[2]','$receiver_info[3].$receiver_info[4].$receiver_info[5].$receiver_info[0]','$AWB_UID') ");
+                    
                     $stmt7->execute();
                     $status="No Service";
                     
-                    }
+                }
                 
                 if($status=="Success"){
                     ?>
-
-<script>PDFObject.embed('<?php echo "./AirwayBill/FedEx/AirwayBill/$filename";?>', "#pdf");</script>
-
-<?php
-    }
-    elseif($status=="Error"){
-        echo "Sorry, Some Error Occurred";
-    }
-    elseif($status=="No Service"){
-        
-        echo "Sorry, No Service";
-    }
-    
-    }
-    elseif($couriervendor=="BlueDart"){
-        
-        
-        $stmt3 = $conn->prepare("Select * from `bluedart_service_avii1` where `pincode`=$from_pin");
-        $stmt3->execute();
-        $stmt3->setFetchMode(PDO::FETCH_ASSOC);
-        $row3 = $stmt3->fetch();
-        
-        
-        $stmt4 = $conn->prepare("Select * from `bluedart_service_avii1` where `pincode`=$to_pin");
-        $stmt4->execute();
-        $stmt4->setFetchMode(PDO::FETCH_ASSOC);
-        $row4 = $stmt4->fetch();
-        
-        $service_avi_level4=$row3["ApexInbound"]*$row4["ApexOutbound"]*$row3["classification"]*$row4["classification"];
-        
-        
-        $service_avi_level5=$row3["DomesticPriorityInbound"]*$row4["DomesticPriorityOutbound"]*$row3["classification"]*$row4["classification"];
-        
-        
-        $service_avi_level6=$row3["GroundInbound"]*$row4["GroundOutbound"]*$row3["classification"]*$row4["classification"];
-        
-        
-        $service_avi_level7=$row3["eTailCODAirInbound"]*$row4["eTailCODAirOutbound"]*$row3["classification"]*$row4["classification"];
-        
-        
-        $service_avi_level8=$row3["eTailCODGroundInbound"]*$row4["eTailCODGroundOutbound"]*$row3["classification"]*$row4["classification"];
-        
-        
-        $service_avi_level9=$row3["eTailPrePaidAirInbound"]*$row4["eTailPrePaidAirOutbound"]*$row3["classification"]*$row4["classification"];
-        
-        
-        $service_avi_level10=$row3["eTailPrePaidGroundInbound"]*$row4["eTailPrePaidGroundOutbound"]*$row3["classification"]*$row4["classification"];
-        
-        
-        if($service=="Apex" && $service_avi_level4!=0){
+                    
+                    <script>PDFObject.embed('<?php echo "./AirwayBill/FedEx/AirwayBill/$filename";?>', "#pdf");</script>
+                    
+                    <?php
+                }
+                elseif($status=="Error"){
+                    echo "Sorry, Some Error Occurred";
+                }
+                elseif($status=="No Service"){
+                    
+                    echo "Sorry, No Service";
+                }
+                
+            }
+            elseif($couriervendor=="BlueDart"){
+                
+                
+                $stmt3 = $conn->prepare("Select * from `bluedart_service_avii1` where `pincode`=$from_pin");
+                $stmt3->execute();
+                $stmt3->setFetchMode(PDO::FETCH_ASSOC);
+                $row3 = $stmt3->fetch();
+                
+                
+                $stmt4 = $conn->prepare("Select * from `bluedart_service_avii1` where `pincode`=$to_pin");
+                $stmt4->execute();
+                $stmt4->setFetchMode(PDO::FETCH_ASSOC);
+                $row4 = $stmt4->fetch();
+                
+                $service_avi_level4=$row3["ApexInbound"]*$row4["ApexOutbound"]*$row3["classification"]*$row4["classification"];
+                
+                
+                $service_avi_level5=$row3["DomesticPriorityInbound"]*$row4["DomesticPriorityOutbound"]*$row3["classification"]*$row4["classification"];
+                
+                
+                $service_avi_level6=$row3["GroundInbound"]*$row4["GroundOutbound"]*$row3["classification"]*$row4["classification"];
+                
+                
+                $service_avi_level7=$row3["eTailCODAirInbound"]*$row4["eTailCODAirOutbound"]*$row3["classification"]*$row4["classification"];
+                
+                
+                $service_avi_level8=$row3["eTailCODGroundInbound"]*$row4["eTailCODGroundOutbound"]*$row3["classification"]*$row4["classification"];
+                
+                
+                $service_avi_level9=$row3["eTailPrePaidAirInbound"]*$row4["eTailPrePaidAirOutbound"]*$row3["classification"]*$row4["classification"];
+                
+                
+                $service_avi_level10=$row3["eTailPrePaidGroundInbound"]*$row4["eTailPrePaidGroundOutbound"]*$row3["classification"]*$row4["classification"];
+                
+                
+                if($service=="Apex" && $service_avi_level4!=0){
+                    
+                    include './AirwayBill/BlueDart/CallAwbService.php';
+                    
+                }
+                elseif($service=="Domestic Priority" && $service_avi_level5!=0){
+                    
+                    include './AirwayBill/BlueDart/CallAwbService.php';
+                }
+                elseif($service=="Ground" && $service_avi_level6!=0){
+                    
+                    include './AirwayBill/BlueDart/CallAwbService.php';
+                }
+                elseif($service=="eTailCODAir" && $service_avi_level7!=0){
+                    
+                    include './AirwayBill/BlueDart/CallAwbService.php';
+                }
+                elseif($service=="eTailCODGround" && $service_avi_level8!=0){
+                    
+                    include './AirwayBill/BlueDart/CallAwbService.php';
+                }
+                elseif($service=="eTailPrePaidAir" && $service_avi_level9!=0){
+                    
+                    include './AirwayBill/BlueDart/CallAwbService.php';
+                }
+                elseif($service=="eTailPrePaidGround" && $service_avi_level10!=0){
+                    
+                    include './AirwayBill/BlueDart/CallAwbService.php';
+                }
+                else{
+                    
+                    $stmt5 = $conn->prepare("INSERT INTO `AirwayBill`(`ShipperName`, `ReceiverName`, `COD`, `PackageCount`, `ReferenceID`, `AWB_Date`, `CourierVendor`, `CourierService`, `AWB_Status`, `AWB_Link`) VALUES ('$sender_info[1]','$receiver_info[1]','$COD',$packagecount,'$uid','$shipment_date','BlueDart','$service','No Service','')");
+                    $stmt5->execute();
+                    
+                    $stmt6 = $conn->prepare(" SELECT * FROM AirwayBill WHERE `ShipperName`='$sender_info[1]' AND `ReceiverName`= '$receiver_info[1]' AND `COD`= '$COD' AND `ReferenceID`='$uid' AND `AWB_Date`='$shipment_date' AND `CourierVendor`='BlueDart' AND `AWB_Status` ='No Service' order by `API_Hit_Date` DESC");
+                    $stmt6->execute();
+                    
+                    $stmt6->setFetchMode(PDO::FETCH_ASSOC);
+                    $row6 = $stmt6->fetch();
+                    
+                    $AWB_UID=$row6['UID'];
+                    
+                    
+                    $stmt7=$conn->prepare("INSERT INTO `AirwayBill_Parties`(`Shipper_Name`, `Shipper_Comp`, `Shipper_Address`, `Receiver_Name`, `Receiver_Comp`, `Receiver_Address`,`AWB_UID`) VALUES ('$sender_info[1]','$sender_info[2]','$sender_info[3].$sender_info[4].$sender_info[5].$sender_info[0]','$receiver_info[1]','$receiver_info[2]','$receiver_info[3].$receiver_info[4].$receiver_info[5].$receiver_info[0]','$AWB_UID') ");
+                    
+                    $stmt7->execute();
+                    
+                    $status="No Service";
+                }
+                
+                
+                if($status=="Success"){
+                    ?>
+                    <script>PDFObject.embed('<?php echo "./AirwayBill/BlueDart/AirwayBill/$filename";?>', "#pdf");</script>
+                    
+                    <?php
+                }
+                elseif($status=="Error"){
+                    echo "Sorry, Some Error Occurred";
+                }
+                elseif($status=="No Service"){
+                    
+                    echo "Sorry, No Service";
+                }
+            }
+            elseif($couriervendor=="DTDC"){
+                
+                include './fpdf/create_reciept.php';
+            }
             
-            include './AirwayBill/BlueDart/CallAwbService.php';
             
         }
-        elseif($service=="Domestic Priority" && $service_avi_level5!=0){
-            
-            include './AirwayBill/BlueDart/CallAwbService.php';
-        }
-        elseif($service=="Ground" && $service_avi_level6!=0){
-            
-            include './AirwayBill/BlueDart/CallAwbService.php';
-        }
-        elseif($service=="eTailCODAir" && $service_avi_level7!=0){
-            
-            include './AirwayBill/BlueDart/CallAwbService.php';
-        }
-        elseif($service=="eTailCODGround" && $service_avi_level8!=0){
-            
-            include './AirwayBill/BlueDart/CallAwbService.php';
-        }
-        elseif($service=="eTailPrePaidAir" && $service_avi_level9!=0){
-            
-            include './AirwayBill/BlueDart/CallAwbService.php';
-        }
-        elseif($service=="eTailPrePaidGround" && $service_avi_level10!=0){
-            
-            include './AirwayBill/BlueDart/CallAwbService.php';
-        }
-        else{
-            
-            $stmt5 = $conn->prepare("INSERT INTO `AirwayBill`(`ShipperName`, `ReceiverName`, `COD`, `PackageCount`, `ReferenceID`, `AWB_Date`, `CourierVendor`, `CourierService`, `AWB_Status`, `AWB_Link`) VALUES ('$sender_info[1]','$receiver_info[1]','$COD',$packagecount,'$uid','$shipment_date','BlueDart','$service','No Service','')");
-            $stmt5->execute();
-            
-            $stmt6 = $conn->prepare(" SELECT * FROM AirwayBill WHERE `ShipperName`='$sender_info[1]' AND `ReceiverName`= '$receiver_info[1]' AND `COD`= '$COD' AND `ReferenceID`='$uid' AND `AWB_Date`='$shipment_date' AND `CourierVendor`='BlueDart' AND `AWB_Status` ='No Service' order by `API_Hit_Date` DESC");
-            $stmt6->execute();
-            
-            $stmt6->setFetchMode(PDO::FETCH_ASSOC);
-            $row6 = $stmt6->fetch();
-            
-            $AWB_UID=$row6['UID'];
-            
-            
-            $stmt7=$conn->prepare("INSERT INTO `AirwayBill_Parties`(`Shipper_Name`, `Shipper_Comp`, `Shipper_Address`, `Receiver_Name`, `Receiver_Comp`, `Receiver_Address`,`AWB_UID`) VALUES ('$sender_info[1]','$sender_info[2]','$sender_info[3].$sender_info[4].$sender_info[5].$sender_info[0]','$receiver_info[1]','$receiver_info[2]','$receiver_info[3].$receiver_info[4].$receiver_info[5].$receiver_info[0]','$AWB_UID') ");
-            
-            $stmt7->execute();
-            
-            $status="No Service";
+        catch(PDOException $e) {
+            echo "Error: " . $e->getMessage();
         }
         
-        
-        if($status=="Success"){
-            ?>
-<script>PDFObject.embed('<?php echo "./AirwayBill/BlueDart/AirwayBill/$filename";?>', "#pdf");</script>
-
-<?php
-    }
-    elseif($status=="Error"){
-        echo "Sorry, Some Error Occurred";
-    }
-    elseif($status=="No Service"){
-        
-        echo "Sorry, No Service";
-    }
-    }
-    
-    
-    }
-    catch(PDOException $e) {
-        echo "Error: " . $e->getMessage();
-    }
-    
     }
     else{
         header("Location: index.php");
     }
     
     ?>
-
-
-
-
+    
+    
+    
+    

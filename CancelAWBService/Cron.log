@@ -1,0 +1,1401 @@
+Could not open input file: CancelAWB.php
+Could not open input file: CancelAWB.php
+Could not open input file: CancelAWB.php
+Could not open input file: CancelAWB.php
+Could not open input file: CancelAWB.php
+Could not open input file: CancelAWB.php
+Could not open input file: CancelAWB.php
+Could not open input file: CancelAWB.php
+Could not open input file: CancelAWB.php
+Could not open input file: CancelAWB.php
+Could not open input file: CancelAWB.php
+Could not open input file: CancelAWB.php
+Could not open input file: CancelAWB.php
+Could not open input file: CancelAWB.php
+Could not open input file: CancelAWB.php
+Could not open input file: CancelAWB.php
+Could not open input file: CancelAWB.php
+<br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077820
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077831
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077842
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077901
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077912
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077923
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre>Could not open input file: CancelAWB.php
+<br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077820
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077831
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077842
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077901
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077912
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077923
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077820
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077831
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077842
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077901
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077912
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077923
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077820
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077831
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077842
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077901
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077912
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077923
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077820
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077831
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077842
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077901
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077912
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077923
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077820
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077831
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077842
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077901
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077912
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077923
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077820
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077831
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077842
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077901
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077912
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077923
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre>
+Parse error: parse error, expecting `"variable (T_VARIABLE)"' or `'$'' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 56
+
+Parse error: parse error, expecting `"variable (T_VARIABLE)"' or `'$'' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 56
+
+Parse error: parse error, expecting `"variable (T_VARIABLE)"' or `'$'' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 56
+<br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077820
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre>Error: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1<br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077820
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre>Error: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1<br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077820
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre>Error: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1<br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077820
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre>Error: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1<br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077820
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre>Error: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1<br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077820
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre>Error: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1<br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077820
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre>Error: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1<br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077820
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre>Error: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1<br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077820
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre>Error: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1<br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077934
+            [CCRCRDREF] => 
+            [IsError] => 
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => Valid
+                            [StatusInformation] => Waybill Number : 58400077934 Is Canceled Successfully.
+                        )
+
+                )
+
+        )
+
+)
+</pre>Error: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1<br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077934
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre>Error: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+Parse error: parse error, expecting `"identifier (T_STRING)"' or `"variable (T_VARIABLE)"' or `"number (T_NUM_STRING)"' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 58
+
+Parse error: parse error, expecting `"identifier (T_STRING)"' or `"variable (T_VARIABLE)"' or `"number (T_NUM_STRING)"' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 58
+
+Parse error: parse error, expecting `"identifier (T_STRING)"' or `"variable (T_VARIABLE)"' or `"number (T_NUM_STRING)"' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 58
+
+Parse error: parse error in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 58
+
+Parse error: parse error, expecting `"identifier (T_STRING)"' or `"variable (T_VARIABLE)"' or `"number (T_NUM_STRING)"' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 59
+
+Parse error: parse error, expecting `"identifier (T_STRING)"' or `"variable (T_VARIABLE)"' or `"number (T_NUM_STRING)"' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 59
+
+Parse error: parse error, expecting `"identifier (T_STRING)"' or `"variable (T_VARIABLE)"' or `"number (T_NUM_STRING)"' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 59
+
+Parse error: parse error, expecting `"identifier (T_STRING)"' or `"variable (T_VARIABLE)"' or `"number (T_NUM_STRING)"' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 59
+
+Parse error: parse error, expecting `"identifier (T_STRING)"' or `"variable (T_VARIABLE)"' or `"number (T_NUM_STRING)"' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 59
+
+Parse error: parse error, expecting `"identifier (T_STRING)"' or `"variable (T_VARIABLE)"' or `"number (T_NUM_STRING)"' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 59
+
+Parse error: parse error, expecting `"identifier (T_STRING)"' or `"variable (T_VARIABLE)"' or `"number (T_NUM_STRING)"' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 59
+
+Parse error: parse error, expecting `"identifier (T_STRING)"' or `"variable (T_VARIABLE)"' or `"number (T_NUM_STRING)"' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 59
+
+Parse error: parse error, expecting `"identifier (T_STRING)"' or `"variable (T_VARIABLE)"' or `"number (T_NUM_STRING)"' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 59
+
+Parse error: parse error, expecting `"identifier (T_STRING)"' or `"variable (T_VARIABLE)"' or `"number (T_NUM_STRING)"' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 59
+
+Parse error: parse error, expecting `"identifier (T_STRING)"' or `"variable (T_VARIABLE)"' or `"number (T_NUM_STRING)"' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 59
+
+Parse error: parse error, expecting `"identifier (T_STRING)"' or `"variable (T_VARIABLE)"' or `"number (T_NUM_STRING)"' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 59
+
+Parse error: parse error, expecting `"identifier (T_STRING)"' or `"variable (T_VARIABLE)"' or `"number (T_NUM_STRING)"' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 59
+
+Parse error: parse error, expecting `"identifier (T_STRING)"' or `"variable (T_VARIABLE)"' or `"number (T_NUM_STRING)"' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 59
+
+Parse error: parse error, expecting `"identifier (T_STRING)"' or `"variable (T_VARIABLE)"' or `"number (T_NUM_STRING)"' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 59
+
+Parse error: parse error, expecting `"identifier (T_STRING)"' or `"variable (T_VARIABLE)"' or `"number (T_NUM_STRING)"' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 59
+
+Parse error: parse error, expecting `"identifier (T_STRING)"' or `"variable (T_VARIABLE)"' or `"number (T_NUM_STRING)"' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 59
+
+Parse error: parse error, expecting `"identifier (T_STRING)"' or `"variable (T_VARIABLE)"' or `"number (T_NUM_STRING)"' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 58
+
+Parse error: parse error, expecting `"identifier (T_STRING)"' or `"variable (T_VARIABLE)"' or `"number (T_NUM_STRING)"' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 58
+
+Parse error: parse error, expecting `"identifier (T_STRING)"' or `"variable (T_VARIABLE)"' or `"number (T_NUM_STRING)"' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 58
+
+Parse error: parse error, expecting `"identifier (T_STRING)"' or `"variable (T_VARIABLE)"' or `"number (T_NUM_STRING)"' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 58
+
+Parse error: parse error, expecting `"identifier (T_STRING)"' or `"variable (T_VARIABLE)"' or `"number (T_NUM_STRING)"' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 58
+
+Parse error: parse error, expecting `"identifier (T_STRING)"' or `"variable (T_VARIABLE)"' or `"number (T_NUM_STRING)"' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 58
+
+Parse error: parse error, expecting `"identifier (T_STRING)"' or `"variable (T_VARIABLE)"' or `"number (T_NUM_STRING)"' in /Applications/XAMPP/xamppfiles/htdocs/Courier/CancelAWBService/CancelAWB.php on line 58
+<br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077934
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077934
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077934
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077934
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077934
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077934
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077934
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077945
+            [CCRCRDREF] => 
+            [IsError] => 
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => Valid
+                            [StatusInformation] => Waybill Number : 58400077945 Is Canceled Successfully.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077945
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077956
+            [CCRCRDREF] => 
+            [IsError] => 
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => Valid
+                            [StatusInformation] => Waybill Number : 58400077956 Is Canceled Successfully.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077956
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre><br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077956
+            [CCRCRDREF] => 
+            [IsError] => 1
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => CancelFailure
+                            [StatusInformation] => Waybill Number has been already cancelled.
+                        )
+
+                )
+
+        )
+
+)
+</pre>Error: SQLSTATE[HY000]: General error<br><h2>Result</h2><pre>stdClass Object
+(
+    [CancelWaybillResult] => stdClass Object
+        (
+            [AWBNo] => 58400077960
+            [CCRCRDREF] => 
+            [IsError] => 
+            [Status] => stdClass Object
+                (
+                    [WayBillGenerationStatus] => stdClass Object
+                        (
+                            [StatusCode] => Valid
+                            [StatusInformation] => Waybill Number : 58400077960 Is Canceled Successfully.
+                        )
+
+                )
+
+        )
+
+)
+</pre>Error: SQLSTATE[HY000]: General errorError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refusedError: SQLSTATE[HY000] [2002] Connection refused

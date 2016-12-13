@@ -89,12 +89,15 @@
                                             <table class="table table-striped table-bordered" id="addvendortab">
                                                 <tr>
                                                     <td class="col-sm-4">Name:</td>
-                                                    <th><select class="form-control selcls" name="vendor_name" id="vendor_name">
+                                                    <th><select class="form-control selcls" name="vendor_name" id="vendor_name" onclick="otherCourier()">
                                                         <option value="" selected="selected">Select Courier Vendor</option>
+                                                        <option value="Other">Other</option>
+                                                        <option value="DTDC">DTDC</option>
                                                         <option value="BlueDart">BlueDart</option>
                                                         <option value="FedEx">Fedex</option>
                                                     </select>
-                                                    </select></th>
+                                                    <input type="text" class="form-control" name="other" id="other" placeholder="Enter Courier Vendor Name"  style="display:none">
+                                                    </th>
                                                 </tr>
                                                 <tr>
                                                     <td>Customer-Code/Login ID</td>
@@ -198,6 +201,7 @@
         function insert(){
             
             var vendor_name= document.getElementById("vendor_name").value;
+            var other_vendor= document.getElementById("other").value;
             var login_id = document.getElementById("login_id").value;
             var account_number= document.getElementById("account_number").value;
             var account_key =document.getElementById("account_key").value;
@@ -222,7 +226,7 @@
                         
                     }
                 };
-                xmlhttp.open("GET","vendoraction.php?action=insert&vendor_name="+vendor_name+"&login_id="+login_id+"&account_number="+account_number+"&account_key="+account_key+"&password="+password,true);
+                xmlhttp.open("GET","vendoraction.php?action=insert&vendor_name="+vendor_name+"&login_id="+login_id+"&account_number="+account_number+"&account_key="+account_key+"&password="+password+"&other="+other_vendor,true);
                 xmlhttp.send();
                 
                 
@@ -267,6 +271,7 @@
         
         function updatevendor(){
             var vendor_name= document.getElementById("vendor_name").value;
+            var other_vendor= document.getElementById("other").value;
             var login_id = document.getElementById("login_id").value;
             var account_number= document.getElementById("account_number").value;
             var account_key =document.getElementById("account_key").value;
@@ -290,14 +295,32 @@
                         document.getElementById("result").innerHTML = xmlhttp.responseText;
                     }
                 };
-                xmlhttp.open("GET","vendoraction.php?action=update&vendor_name="+vendor_name+"&login_id="+login_id+"&account_number="+account_number+"&account_key="+account_key+"&password="+password+"&id="+id,true);
+                xmlhttp.open("GET","vendoraction.php?action=update&vendor_name="+vendor_name+"&login_id="+login_id+"&account_number="+account_number+"&account_key="+account_key+"&password="+password+"&id="+id+"&other="+other_vendor,true);
                 xmlhttp.send();
                 
                 
             }
+        }
+        
+        function otherCourier(){
             
+            var vendor = document.getElementById("vendor_name");
+            var vendor_name = vendor.options[vendor.selectedIndex].value;
             
+            var otherCourier=document.getElementById("other").value;
             
+            if(vendor_name=="Other"){
+                
+                //vendor.options[vendor.selectedIndex].value=otherCourier;
+                //alert(vendor.options[vendor.selectedIndex].value);
+                document.getElementById("other").value="";
+                document.getElementById("other").style.display = 'inline';
+                
+            }
+            else if(vendor_name!="Other"){
+                document.getElementById("other").style.display = 'none';
+                document.getElementById("other").value=vendor.options[vendor.selectedIndex].value;
+            }
             
             
         }

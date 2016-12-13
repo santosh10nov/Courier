@@ -44,7 +44,7 @@
                 while($row = $stmt1->fetch()){
                     
                     
-                    echo '<tr><td>'.$i.'</td><td>'.$row["name"].'</td><td>'.$row["login_id"].'</td><td>'.$row["account_number"].'</td><td>'.$row["account_key"].'</td><td>'.$row["password"].'</td><td><button type="button" class="btn btn-sm btn-primary"  onclick="editvendor(\''.$row["name"].'\',\''.$row["login_id"].'\',\''.$row["account_number"].'\',\''.$row["account_key"].'\',\''.$row["password"].'\',\''.$row["serial_id"].'\')">Edit</button>&nbsp&nbsp<button type="button" class="btn btn-sm btn-danger" onclick="deletevendor(\''.$row["name"].'\',\''.$row["login_id"].'\',\''.$row["account_number"].'\',\''.$row["account_key"].'\',\''.$row["password"].'\',\''.$row["serial_id"].'\')">Delete</button></td></tr>';
+                    echo '<tr><td>'.$i.'</td><td>'.$row["othervendor"].'</td><td>'.$row["login_id"].'</td><td>'.$row["account_number"].'</td><td>'.$row["account_key"].'</td><td>'.$row["password"].'</td><td><button type="button" class="btn btn-sm btn-primary"  onclick="editvendor(\''.$row["name"].'\',\''.$row["login_id"].'\',\''.$row["account_number"].'\',\''.$row["account_key"].'\',\''.$row["password"].'\',\''.$row["serial_id"].'\')">Edit</button>&nbsp&nbsp<button type="button" class="btn btn-sm btn-danger" onclick="deletevendor(\''.$row["name"].'\',\''.$row["login_id"].'\',\''.$row["account_number"].'\',\''.$row["account_key"].'\',\''.$row["password"].'\',\''.$row["serial_id"].'\')">Delete</button></td></tr>';
                     
                     $i++;
                 }
@@ -61,11 +61,12 @@
             $account_number=$_GET['account_number'];
             $account_key=$_GET['account_key'];
             $password=$_GET['password'];
+            $other=$_GET['other'];
             
             
             
             
-            $stmt1 = $conn->prepare("INSERT INTO `courier_vendor_details` (`name`, `login_id`, `account_number`, `account_key`, `password`) VALUES ('$name','$login_id','$account_number','$account_key','$password')");
+            $stmt1 = $conn->prepare("INSERT INTO `courier_vendor_details` (`name`, `login_id`, `account_number`, `account_key`, `password`,`othervendor`) VALUES ('$name','$login_id','$account_number','$account_key','$password','$other')");
             
             $stmt1->execute();
             
@@ -91,7 +92,7 @@
                 while($row = $stmt2->fetch()){
                     
                     
-                    echo '<tr><td>'.$i.'</td><td>'.$row["name"].'</td><td>'.$row["login_id"].'</td><td>'.$row["account_number"].'</td><td>'.$row["account_key"].'</td><td>'.$row["password"].'</td><td><button type="button" class="btn btn-sm btn-primary"  onclick="editvendor(\''.$row["name"].'\',\''.$row["login_id"].'\',\''.$row["account_number"].'\',\''.$row["account_key"].'\',\''.$row["password"].'\',\''.$row["serial_id"].'\')">Edit</button>&nbsp&nbsp<button type="button" class="btn btn-sm btn-danger" onclick="deletevendor(\''.$row["name"].'\',\''.$row["login_id"].'\',\''.$row["account_number"].'\',\''.$row["account_key"].'\',\''.$row["password"].'\',\''.$row["serial_id"].'\')">Delete</button></td></tr>';
+                    echo '<tr><td>'.$i.'</td><td>'.$row["othervendor"].'</td><td>'.$row["login_id"].'</td><td>'.$row["account_number"].'</td><td>'.$row["account_key"].'</td><td>'.$row["password"].'</td><td><button type="button" class="btn btn-sm btn-primary"  onclick="editvendor(\''.$row["name"].'\',\''.$row["login_id"].'\',\''.$row["account_number"].'\',\''.$row["account_key"].'\',\''.$row["password"].'\',\''.$row["serial_id"].'\')">Edit</button>&nbsp&nbsp<button type="button" class="btn btn-sm btn-danger" onclick="deletevendor(\''.$row["name"].'\',\''.$row["login_id"].'\',\''.$row["account_number"].'\',\''.$row["account_key"].'\',\''.$row["password"].'\',\''.$row["serial_id"].'\')">Delete</button></td></tr>';
                     
                     $i++;
                 }
@@ -139,7 +140,7 @@
                 while($row = $stmt2->fetch()){
                     
                     
-                    echo '<tr><td>'.$i.'</td><td>'.$row["name"].'</td><td>'.$row["login_id"].'</td><td>'.$row["account_number"].'</td><td>'.$row["account_key"].'</td><td>'.$row["password"].'</td><td><button type="button" class="btn btn-sm btn-primary"  onclick="editvendor(\''.$row["name"].'\',\''.$row["login_id"].'\',\''.$row["account_number"].'\',\''.$row["account_key"].'\',\''.$row["password"].'\',\''.$row["serial_id"].'\')">Edit</button>&nbsp&nbsp<button type="button" class="btn btn-sm btn-danger" onclick="deletevendor(\''.$row["name"].'\',\''.$row["login_id"].'\',\''.$row["account_number"].'\',\''.$row["account_key"].'\',\''.$row["password"].'\',\''.$row["serial_id"].'\')">Delete</button></td></tr>';
+                    echo '<tr><td>'.$i.'</td><td>'.$row["othervendor"].'</td><td>'.$row["login_id"].'</td><td>'.$row["account_number"].'</td><td>'.$row["account_key"].'</td><td>'.$row["password"].'</td><td><button type="button" class="btn btn-sm btn-primary"  onclick="editvendor(\''.$row["name"].'\',\''.$row["login_id"].'\',\''.$row["account_number"].'\',\''.$row["account_key"].'\',\''.$row["password"].'\',\''.$row["serial_id"].'\')">Edit</button>&nbsp&nbsp<button type="button" class="btn btn-sm btn-danger" onclick="deletevendor(\''.$row["name"].'\',\''.$row["login_id"].'\',\''.$row["account_number"].'\',\''.$row["account_key"].'\',\''.$row["password"].'\',\''.$row["serial_id"].'\')">Delete</button></td></tr>';
                     
                     $i++;
                 }
@@ -160,8 +161,10 @@
             $account_key=$_GET['account_key'];
             $password=$_GET['password'];
             $id=$_GET['id'];
+            $other=$_GET['other'];
             
-            $stmt1 = $conn->prepare("Update `courier_vendor_details` SET `name`='$name',`login_id`='$login_id',`account_number`='$account_number',`account_key`='$account_key',`password`='$password' WHERE `serial_id`=$id");
+            
+            $stmt1 = $conn->prepare("Update `courier_vendor_details` SET `name`='$name',`login_id`='$login_id',`account_number`='$account_number',`account_key`='$account_key',`password`='$password', `othervendor`='$other' WHERE `serial_id`=$id");
             
             $stmt1->execute();
             
@@ -187,7 +190,7 @@
                 while($row = $stmt2->fetch()){
                     
                     
-                    echo '<tr><td>'.$i.'</td><td>'.$row["name"].'</td><td>'.$row["login_id"].'</td><td>'.$row["account_number"].'</td><td>'.$row["account_key"].'</td><td>'.$row["password"].'</td><td><button type="button" class="btn btn-sm btn-primary"  onclick="editvendor(\''.$row["name"].'\',\''.$row["login_id"].'\',\''.$row["account_number"].'\',\''.$row["account_key"].'\',\''.$row["password"].'\',\''.$row["serial_id"].'\')">Edit</button>&nbsp&nbsp<button type="button" class="btn btn-sm btn-danger" onclick="deletevendor(\''.$row["name"].'\',\''.$row["login_id"].'\',\''.$row["account_number"].'\',\''.$row["account_key"].'\',\''.$row["password"].'\',\''.$row["serial_id"].'\')">Delete</button></td></tr>';
+                    echo '<tr><td>'.$i.'</td><td>'.$row["othervendor"].'</td><td>'.$row["login_id"].'</td><td>'.$row["account_number"].'</td><td>'.$row["account_key"].'</td><td>'.$row["password"].'</td><td><button type="button" class="btn btn-sm btn-primary"  onclick="editvendor(\''.$row["name"].'\',\''.$row["login_id"].'\',\''.$row["account_number"].'\',\''.$row["account_key"].'\',\''.$row["password"].'\',\''.$row["serial_id"].'\')">Edit</button>&nbsp&nbsp<button type="button" class="btn btn-sm btn-danger" onclick="deletevendor(\''.$row["name"].'\',\''.$row["login_id"].'\',\''.$row["account_number"].'\',\''.$row["account_key"].'\',\''.$row["password"].'\',\''.$row["serial_id"].'\')">Delete</button></td></tr>';
                     
                     $i++;
                 }
@@ -219,6 +222,25 @@
             }
             echo json_encode($response);
             
+        }
+        
+        elseif($action=="CourierVendorList"){
+            
+            $stmt1 = $conn->prepare("SELECT * FROM `courier_vendor_details` ");
+            $stmt1->execute();
+            
+            $numrows = $stmt1->rowCount();
+            
+            $stmt1->setFetchMode(PDO::FETCH_ASSOC);
+            
+            $response = array();
+            while($row = $stmt1->fetch())
+            {
+                $x['value']=$row['othervendor'];
+                $x['venndor_name']=$row['othervendor'];
+                $response[] = $x;
+            }
+            echo json_encode($response);
         }
         
         

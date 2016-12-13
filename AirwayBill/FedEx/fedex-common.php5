@@ -109,7 +109,7 @@ function getProperty($var){
 	if($var == 'begindate') Return '2014-07-22';
 	if($var == 'enddate') Return '2014-07-25';	
 
-	if($var == 'trackingnumber') Return 'XXX';
+	if($var == 'trackingnumber') Return '794628952520';
 
 	if($var == 'hubid') Return '5531';
 	

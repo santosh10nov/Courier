@@ -20,7 +20,7 @@
 <li><a href="Service_Availabilty.php">Service Availability</a></li>
 <li><a href="TAT.php">TAT</a></li>
 <li><a href="Generate_AirwayBill.php">Generate AirwayBill</a></li>
-<li><a href="#">Book Pickup</a></li>
+<li><a href="pickup_3.html">Book Pickup</a></li>
 <li><a href="#">Track Courier</a></li>
 </ul>
 </div>
@@ -38,7 +38,7 @@
 </tr>
 <tr>
 <td align="center"><a href="Generate_AirwayBill.php"><img src="img/airwaybill.png" alt="airwaybill" width="42" height="42" border="0"></td>
-<td align="center"><img src="img/pickup.png" alt="pickup" width="42" height="42" border="0"></td>
+<td align="center"><a href="pickup_3.html"><img src="img/pickup.png" alt="pickup" width="42" height="42" border="0"></td>
 </tr>
 <tr>
 <td align="center">Generate AirwayBill</td>

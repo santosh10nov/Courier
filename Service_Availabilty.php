@@ -21,7 +21,7 @@
 <li class="nav-item nav-link active"><a href="Service_Availabilty.php">Service Availability</a></li>
 <li><a href="TAT.php">TAT</a></li>
 <li><a href="Generate_AirwayBill.php">Generate AirwayBill</a></li>
-<li><a href="#">Book Pickup</a></li>
+<li><a href="pickup_3.html">Book Pickup</a></li>
 <li><a href="#">Track Courier</a></li>
 </ul>
 </div>
