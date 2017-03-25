@@ -17,12 +17,15 @@
     $product_type1="STANDARD_OVERNIGHT";
     $sub_product="";
     $pickup_datetime=$pickup_date."T".$pickup_time;
+    
+    //$pickup_datetime="";
+    
     $weight=50;
     $length=3;
     $breath=4;
     $height=5;
     
-
+    
     
     $dimension=array("we"=>"$weight","l"=>"$length","b"=>"$breath","h"=>"$height");
     
@@ -41,17 +44,19 @@
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $pass);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
-        $stmt = $conn->prepare("SELECT `ProvinceCode` FROM `city_pincode` where `pin`=$from_pin");
+        $stmt = $conn->prepare("SELECT * FROM `city_pincode` where `pin`=$from_pin");
         $stmt->execute();
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
         $row = $stmt->fetch();
         $PID1=$row['ProvinceCode'];
+        $fromcity=$row['city'];
         
-        $stmt = $conn->prepare("SELECT `ProvinceCode` FROM `city_pincode` where `pin`=$to_pin");
+        $stmt = $conn->prepare("SELECT * FROM `city_pincode` where `pin`=$to_pin");
         $stmt->execute();
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
         $row = $stmt->fetch();
         $PID2=$row['ProvinceCode'];
+        $tocity=$row['city'];
     }catch(PDOException $e) {
         echo "Error: " . $e->getMessage();
     }
@@ -91,8 +96,8 @@
                                                              'Ammount'=>100,
                                                              'Currency'=>'INR'
                                                              );
-    $request['RequestedShipment']['Shipper'] = addShipper($from_pin,$PID1);
-    $request['RequestedShipment']['Recipient'] = addRecipient($to_pin,$PID2);
+    $request['RequestedShipment']['Shipper'] = addShipper($from_pin,$PID1,$fromcity);
+    $request['RequestedShipment']['Recipient'] = addRecipient($to_pin,$PID2,$tocity);
     $request['RequestedShipment']['ShippingChargesPayment'] = addShippingChargesPayment();
     $request['RequestedShipment']['CustomsClearanceDetail'] = addCustomsClearanceDetail();
     $request['RequestedShipment']['PackageCount'] = '1';
@@ -101,79 +106,79 @@
     
     
     if($service_avi_level1!=0){
-    
-    try {
-        if(setEndpoint('changeEndpoint')){
-            $newLocation = $client->__setLocation(setEndpoint('endpoint'));
-        }
         
-        $response = $client -> getRates($request);
-        
-        if ($response -> HighestSeverity != 'FAILURE' && $response -> HighestSeverity != 'ERROR'){
-            $rateReply = $response -> RateReplyDetails;
-            $serviceType = '<td>'.$rateReply -> ServiceType . '</td>';
-            $service=$rateReply -> ServiceType;
-            
-            if($rateReply->RatedShipmentDetails && is_array($rateReply->RatedShipmentDetails)){
-                $amount = '<td>' . number_format($rateReply->RatedShipmentDetails[0]->ShipmentRateDetail->TotalNetCharge->Amount,2,".",",") . '</td>';
-                $amt= number_format($rateReply->RatedShipmentDetails[0]->ShipmentRateDetail->TotalNetCharge->Amount,2,".",",");
-            }elseif($rateReply->RatedShipmentDetails && ! is_array($rateReply->RatedShipmentDetails)){
-                $amount = '<td>' . number_format($rateReply->RatedShipmentDetails->ShipmentRateDetail->TotalNetCharge->Amount,2,".",",") . '</td>';
-                $amt= number_format($rateReply->RatedShipmentDetails->ShipmentRateDetail->TotalNetCharge->Amount,2,".",",");
-            }
-            if(array_key_exists('DeliveryTimestamp',$rateReply)){
-                $deliveryDate= '<td>' . $rateReply->DeliveryTimestamp . '</td>';
-                $tat=$rateReply->DeliveryTimestamp;
-            }else if(array_key_exists('TransitTime',$rateReply)){
-                $deliveryDate= '<td>' . $rateReply->TransitTime . '</td>';
-                $tat=$rateReply->TransitTime;
-            }else {
-                $deliveryDate='<td>&nbsp;</td>';
+        try {
+            if(setEndpoint('changeEndpoint')){
+                $newLocation = $client->__setLocation(setEndpoint('endpoint'));
             }
             
-            ////////////////////////////////////////////
-            ///////// Expected Date////////////////////
-            //////////////////////////////////////////
+            $response = $client -> getRates($request);
             
-            $ExpectedDateDelivery=substr($deliveryDate, 4, 10);
-            $ExpectedDatePOD=substr($deliveryDate,4, 10);
-            $AdditionalDays="";
-            
-            
-            $convert_date = new DateTime($ExpectedDateDelivery);
-            $ExpectedDateDelivery = date_format($convert_date, 'd-M-Y');
-            $convert_date = new DateTime($ExpectedDatePOD);
-            $ExpectedDatePOD = date_format($convert_date, 'd-M-Y');
-            
-            $diff = abs(strtotime($ExpectedDatePOD) - strtotime($pickup_date1));
-            
-            $years = floor($diff / (365*60*60*24));
-            $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
-            $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
-            
-            
-            
-            try{
-                $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $pass);
-                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $stmt1 = $conn->prepare("INSERT INTO `transit_time` (`vendor_id`, `vendor_name`, `product_type`, `sub_product`, `pickup_date`, `pickup_Time`, `from_pin`, `to_pin`, `ExpectedDateDelivery`, `ExpectedDatePOD`, `TAT`, `AdditionalDays`,`added_date`,`added_by`) VALUES ('2', 'FedEx', '$product_type1', '$sub_product', '$pickup_date1', '$pickup_time', '$from_pin', '$to_pin', '$ExpectedDateDelivery', '$ExpectedDatePOD', '$days', '$AdditionalDays','$nowtime','$userid');");
-                $stmt1->execute();
+            if ($response -> HighestSeverity != 'FAILURE' && $response -> HighestSeverity != 'ERROR'){
+                $rateReply = $response -> RateReplyDetails;
+                $serviceType = '<td>'.$rateReply -> ServiceType . '</td>';
+                $service=$rateReply -> ServiceType;
                 
-            }catch(PDOException $e) {
-                echo "Error: " . $e->getMessage();
+                if($rateReply->RatedShipmentDetails && is_array($rateReply->RatedShipmentDetails)){
+                    $amount = '<td>' . number_format($rateReply->RatedShipmentDetails[0]->ShipmentRateDetail->TotalNetCharge->Amount,2,".",",") . '</td>';
+                    $amt= number_format($rateReply->RatedShipmentDetails[0]->ShipmentRateDetail->TotalNetCharge->Amount,2,".",",");
+                }elseif($rateReply->RatedShipmentDetails && ! is_array($rateReply->RatedShipmentDetails)){
+                    $amount = '<td>' . number_format($rateReply->RatedShipmentDetails->ShipmentRateDetail->TotalNetCharge->Amount,2,".",",") . '</td>';
+                    $amt= number_format($rateReply->RatedShipmentDetails->ShipmentRateDetail->TotalNetCharge->Amount,2,".",",");
+                }
+                if(array_key_exists('DeliveryTimestamp',$rateReply)){
+                    $deliveryDate= '<td>' . $rateReply->DeliveryTimestamp . '</td>';
+                    $tat=$rateReply->DeliveryTimestamp;
+                }else if(array_key_exists('TransitTime',$rateReply)){
+                    $deliveryDate= '<td>' . $rateReply->TransitTime . '</td>';
+                    $tat=$rateReply->TransitTime;
+                }else {
+                    $deliveryDate='<td>&nbsp;</td>';
+                }
+                
+                ////////////////////////////////////////////
+                ///////// Expected Date////////////////////
+                //////////////////////////////////////////
+                
+                $ExpectedDateDelivery=substr($deliveryDate, 4, 10);
+                $ExpectedDatePOD=substr($deliveryDate,4, 10);
+                $AdditionalDays="";
+                
+                
+                $convert_date = new DateTime($ExpectedDateDelivery);
+                $ExpectedDateDelivery = date_format($convert_date, 'd-M-Y');
+                $convert_date = new DateTime($ExpectedDatePOD);
+                $ExpectedDatePOD = date_format($convert_date, 'd-M-Y');
+                
+                $diff = abs(strtotime($ExpectedDatePOD) - strtotime($pickup_date1));
+                
+                $years = floor($diff / (365*60*60*24));
+                $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+                $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
+                
+                
+                
+                try{
+                    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $pass);
+                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    $stmt1 = $conn->prepare("INSERT INTO `transit_time` (`vendor_id`, `vendor_name`, `product_type`, `sub_product`, `pickup_date`, `pickup_Time`, `from_pin`, `to_pin`, `ExpectedDateDelivery`, `ExpectedDatePOD`, `TAT`, `AdditionalDays`,`added_date`,`added_by`) VALUES ('2', 'FedEx', '$product_type1', '$sub_product', '$pickup_date1', '$pickup_time', '$from_pin', '$to_pin', '$ExpectedDateDelivery', '$ExpectedDatePOD', '$days', '$AdditionalDays','$nowtime','$userid');");
+                    $stmt1->execute();
+                    
+                }catch(PDOException $e) {
+                    echo "Error: " . $e->getMessage();
+                }
+                
+                
+                //printSuccess($client, $response);
+            }else{
+                //printError($client, $response);
             }
+            writeToLog($client);    // Write to log file
             
-            
-            //printSuccess($client, $response);
-        }else{
-            //printError($client, $response);
+        } catch (SoapFault $exception) {
+            printFault($exception, $client);
         }
-        writeToLog($client);    // Write to log file
         
-    } catch (SoapFault $exception) {
-        printFault($exception, $client);
-    }
-    
     }
     
     /////////////////////////////////////////////////////////////////////////////////////
@@ -182,85 +187,85 @@
     
     
     if($service_avi_level2!=0){
-    
-    $product_type2='PRIORITY_OVERNIGHT';
-    
-    $request['RequestedShipment']['ServiceType'] = $product_type1;
-    
-    
-    try {
-        if(setEndpoint('changeEndpoint')){
-            $newLocation = $client->__setLocation(setEndpoint('endpoint'));
-        }
         
-        $response = $client -> getRates($request);
+        $product_type2='PRIORITY_OVERNIGHT';
         
-        if ($response -> HighestSeverity != 'FAILURE' && $response -> HighestSeverity != 'ERROR'){
-            $rateReply = $response -> RateReplyDetails;
-            $serviceType = '<td>'.$rateReply -> ServiceType . '</td>';
-            $service=$rateReply -> ServiceType;
-            
-            if($rateReply->RatedShipmentDetails && is_array($rateReply->RatedShipmentDetails)){
-                $amount = '<td>' . number_format($rateReply->RatedShipmentDetails[0]->ShipmentRateDetail->TotalNetCharge->Amount,2,".",",") . '</td>';
-                $amt= number_format($rateReply->RatedShipmentDetails[0]->ShipmentRateDetail->TotalNetCharge->Amount,2,".",",");
-            }elseif($rateReply->RatedShipmentDetails && ! is_array($rateReply->RatedShipmentDetails)){
-                $amount = '<td>' . number_format($rateReply->RatedShipmentDetails->ShipmentRateDetail->TotalNetCharge->Amount,2,".",",") . '</td>';
-                $amt= number_format($rateReply->RatedShipmentDetails->ShipmentRateDetail->TotalNetCharge->Amount,2,".",",");
-            }
-            if(array_key_exists('DeliveryTimestamp',$rateReply)){
-                $deliveryDate= '<td>' . $rateReply->DeliveryTimestamp . '</td>';
-                $tat=$rateReply->DeliveryTimestamp;
-            }else if(array_key_exists('TransitTime',$rateReply)){
-                $deliveryDate= '<td>' . $rateReply->TransitTime . '</td>';
-                $tat=$rateReply->TransitTime;
-            }else {
-                $deliveryDate='<td>&nbsp;</td>';
+        $request['RequestedShipment']['ServiceType'] = $product_type1;
+        
+        
+        try {
+            if(setEndpoint('changeEndpoint')){
+                $newLocation = $client->__setLocation(setEndpoint('endpoint'));
             }
             
-            ////////////////////////////////////////////
-            ///////// Expected Date////////////////////
-            //////////////////////////////////////////
+            $response = $client -> getRates($request);
             
-            $ExpectedDateDelivery=substr($deliveryDate, 4, 10);
-            $ExpectedDatePOD=substr($deliveryDate,4, 10);
-            $AdditionalDays="";
-            
-            $convert_date = new DateTime($ExpectedDateDelivery);
-            $ExpectedDateDelivery = date_format($convert_date, 'd-M-Y');
-            $convert_date = new DateTime($ExpectedDatePOD);
-            $ExpectedDatePOD = date_format($convert_date, 'd-M-Y');
-            
-            $diff = abs(strtotime($ExpectedDatePOD) - strtotime($pickup_date1));
-            
-            $years = floor($diff / (365*60*60*24));
-            $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
-            $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
-            
-        
-            
-            
-            try{
-                $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $pass);
-                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $product_type2="PRIORITY_OVERNIGHT";
-                $stmt1 = $conn->prepare("INSERT INTO `transit_time` (`vendor_id`, `vendor_name`, `product_type`, `sub_product`, `pickup_date`, `pickup_Time`, `from_pin`, `to_pin`, `ExpectedDateDelivery`, `ExpectedDatePOD`, `TAT`, `AdditionalDays`,`added_date`,`added_by`) VALUES ('2', 'FedEx', '$product_type2', '$sub_product', '$pickup_date1', '$pickup_time', '$from_pin', '$to_pin', '$ExpectedDateDelivery', '$ExpectedDatePOD', '$days', '$AdditionalDays','$nowtime','$userid');");
-                $stmt1->execute();
+            if ($response -> HighestSeverity != 'FAILURE' && $response -> HighestSeverity != 'ERROR'){
+                $rateReply = $response -> RateReplyDetails;
+                $serviceType = '<td>'.$rateReply -> ServiceType . '</td>';
+                $service=$rateReply -> ServiceType;
                 
-            }catch(PDOException $e) {
-                echo "Error: " . $e->getMessage();
+                if($rateReply->RatedShipmentDetails && is_array($rateReply->RatedShipmentDetails)){
+                    $amount = '<td>' . number_format($rateReply->RatedShipmentDetails[0]->ShipmentRateDetail->TotalNetCharge->Amount,2,".",",") . '</td>';
+                    $amt= number_format($rateReply->RatedShipmentDetails[0]->ShipmentRateDetail->TotalNetCharge->Amount,2,".",",");
+                }elseif($rateReply->RatedShipmentDetails && ! is_array($rateReply->RatedShipmentDetails)){
+                    $amount = '<td>' . number_format($rateReply->RatedShipmentDetails->ShipmentRateDetail->TotalNetCharge->Amount,2,".",",") . '</td>';
+                    $amt= number_format($rateReply->RatedShipmentDetails->ShipmentRateDetail->TotalNetCharge->Amount,2,".",",");
+                }
+                if(array_key_exists('DeliveryTimestamp',$rateReply)){
+                    $deliveryDate= '<td>' . $rateReply->DeliveryTimestamp . '</td>';
+                    $tat=$rateReply->DeliveryTimestamp;
+                }else if(array_key_exists('TransitTime',$rateReply)){
+                    $deliveryDate= '<td>' . $rateReply->TransitTime . '</td>';
+                    $tat=$rateReply->TransitTime;
+                }else {
+                    $deliveryDate='<td>&nbsp;</td>';
+                }
+                
+                ////////////////////////////////////////////
+                ///////// Expected Date////////////////////
+                //////////////////////////////////////////
+                
+                $ExpectedDateDelivery=substr($deliveryDate, 4, 10);
+                $ExpectedDatePOD=substr($deliveryDate,4, 10);
+                $AdditionalDays="";
+                
+                $convert_date = new DateTime($ExpectedDateDelivery);
+                $ExpectedDateDelivery = date_format($convert_date, 'd-M-Y');
+                $convert_date = new DateTime($ExpectedDatePOD);
+                $ExpectedDatePOD = date_format($convert_date, 'd-M-Y');
+                
+                $diff = abs(strtotime($ExpectedDatePOD) - strtotime($pickup_date1));
+                
+                $years = floor($diff / (365*60*60*24));
+                $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+                $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
+                
+                
+                
+                
+                try{
+                    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $pass);
+                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    $product_type2="PRIORITY_OVERNIGHT";
+                    $stmt1 = $conn->prepare("INSERT INTO `transit_time` (`vendor_id`, `vendor_name`, `product_type`, `sub_product`, `pickup_date`, `pickup_Time`, `from_pin`, `to_pin`, `ExpectedDateDelivery`, `ExpectedDatePOD`, `TAT`, `AdditionalDays`,`added_date`,`added_by`) VALUES ('2', 'FedEx', '$product_type2', '$sub_product', '$pickup_date1', '$pickup_time', '$from_pin', '$to_pin', '$ExpectedDateDelivery', '$ExpectedDatePOD', '$days', '$AdditionalDays','$nowtime','$userid');");
+                    $stmt1->execute();
+                    
+                }catch(PDOException $e) {
+                    echo "Error: " . $e->getMessage();
+                }
+                
+                
+                //printSuccess($client, $response);
+            }else{
+                //printError($client, $response);
             }
+            writeToLog($client);    // Write to log file
             
-            
-            //printSuccess($client, $response);
-        }else{
-            //printError($client, $response);
+        } catch (SoapFault $exception) {
+            printFault($exception, $client);
         }
-        writeToLog($client);    // Write to log file
         
-    } catch (SoapFault $exception) {
-        printFault($exception, $client);
-    }
-    
     }
     
     
@@ -270,7 +275,7 @@
     // Sender Details////////////////////////
     /////////////////////////////////////////
     
-    function addShipper($pin,$pid1){
+    function addShipper($pin,$pid1,$city){
         $shipper = array(
                          'Contact' => array(
                                             'PersonName' => 'Sender Name',
@@ -279,7 +284,7 @@
                                             ),
                          'Address' => array(
                                             'StreetLines' => array('Address Line 1'),
-                                            'City' => 'Mumbai',
+                                            'City' => "$city",
                                             'StateOrProvinceCode' => "$pid1",
                                             'PostalCode' => "$pin",
                                             'CountryCode' => 'IN'
@@ -292,7 +297,7 @@
     // Recipient Details/////////////////////
     /////////////////////////////////////////
     
-    function addRecipient($pin,$pid2){
+    function addRecipient($pin,$pid2,$city){
         $recipient = array(
                            'Contact' => array(
                                               'PersonName' => 'Recipient Name',
@@ -301,14 +306,14 @@
                                               ),
                            'Address' => array(
                                               'StreetLines' => array('Address Line 1'),
-                                              'City' => 'Mubmai',
+                                              'City' => '$city',
                                               'StateOrProvinceCode' => "$pid2",
                                               'PostalCode' => "$pin",
                                               'CountryCode' => 'IN',
                                               'Residential' => false
                                               )
                            );
-        return $recipient;	                                    
+        return $recipient;
     }
     
     /////////////////////////////////////////
@@ -350,13 +355,13 @@
                                  'SpecialServiceTypes' => array('COD'),
                                  'CodDetail' => array(
                                                       'CodCollectionAmount' => array(
-                                                                                     'Currency' => 'INR', 
+                                                                                     'Currency' => 'INR',
                                                                                      'Amount' => 150
                                                                                      ),
                                                       'CollectionType' => 'ANY' // ANY, GUARANTEED_FUNDS
                                                       )
                                  );
-        return $specialServices; 
+        return $specialServices;
     }
     /////////////////////////////////////////
     // Weight and Dimension of Packet////////

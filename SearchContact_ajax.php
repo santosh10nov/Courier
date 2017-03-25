@@ -46,7 +46,7 @@
             
         
             echo '<table class="table table-hover" id="try">';
-            echo '<thead><tr><th>Vendor ID</th><th>Name</th><th>Company Name</th><th>Phone Number</th><th>Address</th></tr></thead><tboby>';
+            echo '<thead style="background-color: gray; color:white; "><tr><th>Vendor ID</th><th>Name</th><th>Company Name</th><th>Phone Number</th><th>Address</th></tr></thead><tboby>';
             while($row = $stmt1->fetch()){
                 
                 

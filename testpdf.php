@@ -182,7 +182,7 @@
     // Table with rowspans and THEAD
     $tbl = <<<EOD
     <table border="1" cellpadding="2" cellspacing="2">
-    <thead>
+    <thead style="background-color: gray; color:white; ">
     <tr style="background-color:#FFFF00;color:#0000FF;">
     <td width="30" align="center"><b>A</b></td>
     <td width="140" align="center"><b>XXXX</b></td>

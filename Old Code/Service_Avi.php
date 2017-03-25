@@ -175,7 +175,7 @@
                 }
                 else{
                     echo '<table class="table table-bordered">';
-                    echo '<thead><tr><th>Service Provider Name</th><th>Product Name</th><th>Courier Value Limit</th><th>Pickup</th><th>Delivery</th><th>Service Availability</th></tr></thead><tboby>';
+                    echo '<thead style="background-color: gray; color:white; "><tr><th>Service Provider Name</th><th>Product Name</th><th>Courier Value Limit</th><th>Pickup</th><th>Delivery</th><th>Service Availability</th></tr></thead><tboby>';
                     if($service_avi_level1==1){
                         echo '<tr><td>FedEx</td><td>'.$p_product1.'</td><td></td><td>'.$p_pickup1.'</td><td>'.$p_delivery1.'</td><td>Yes</td></tr>';
                     }

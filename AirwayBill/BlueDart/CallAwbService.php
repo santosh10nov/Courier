@@ -1,5 +1,6 @@
 <?php
     
+    
     /*
      #echo "Start  of Soap 1.1 version ( BasicHttpBinding) setting"
      $soap = new DebugSoapClient('http://netconnect.bluedart.com/Demo/ShippingAPI/WayBill/WayBillGeneration.svc?wsdl',
@@ -93,7 +94,7 @@
     
     
     ///////////////////////////////////////////////////////////////
-    //////////////////////// Product Type  ///////////////////////////////
+    //////////////////////// Product Type  ////////////////////////
     ///////////////////////////////////////////////////////////////
     
     
@@ -107,9 +108,15 @@
         
         
         
-        for($i=1;$i<($commodity_count+1);$i++){
+        /*for($i=0;$i<=$commodity_count;$i++){
             
             $Commodity_desc["CommodityDetail".$i]=$_POST["Commodity".$i];
+            
+        }*/
+        
+        for($i=0;$i<$commodity_count;$i++){
+            
+            $Commodity_desc["CommodityDetail".($i+1)]=$_POST["Commodity".$i];
             
         }
         
@@ -243,13 +250,62 @@
         
         $token= $result->GenerateWayBillResult->AWBNo;
         
+
+        if($shipmentcontent=="Commodities"){
+            
+            include("ProFormaInvoice.php");
+        }
+        
+       
+        
+        /*$fp = fopen("./AirwayBill/BlueDart/AirwayBill/".$filename, 'a+');
+        fwrite($fp,$result->GenerateWayBillResult->AWBPrintContent); //Create PNG or PDF file
+        fclose($fp);*/
+        
+        /////////////////////////////////////////////////
+        ///////////////Genrates AWB//////////////////////
+        ///////////////////////////////////////////////////
+        
+        
+        // set  header data
+        $pdf->setHeaderData($ln='', $lw=0, $ht='', $hs='<table id="head" cellpadding="10" cellspacing="0" style="text-align:center;"><tr><td> Airway Bill</td></tr></table>', $tc=array(0,0,0), $lc=array(0,0,0));
+        $pdf->AddPage();
+        
+        
+        $pdf->write1DBarcode($token, 'C128', '', '', '', 18, 0.4, $style, 'N');
+        
+        
+        $html1 ='<style>th{border:0.5px solid #C0C0C0;background-color:rgb(44,126,193); font-size: 9pt;text-align:center;color:#FFFFFF;font-weight:bold;}td{ vertical-align: middle;border:0.5px solid #C0C0C0;padding:65px;color:#000000;background-color:#FFFFFF;font-size: 8pt;text-align: left;cellpadding:10; }tr{cellpadding:"10";}</style>
+        <table>
+        <tbody>
+        <tr nobr="true"><td>Sender Name: <b>'.$sender_name.'</b><br/>Address: '.$sender_address.','.$sender_city.'<br/>'.$sender_state.'-'.$from_pin .'<br/>Contact Number: '.$sender_phone.'</td><td>Receiver Name: <b>'.$receiver_name.'</b><br/>Address: '.$receiver_address.','.$receiver_city.'<br/>'.$receiver_state.'-'.$to_pin .'<br/>Contact Number: '.$receiver_phone.'</td></tr>
+        <tr nobr="true"><td>Courier Vendor:'.$couriervendor.' <br/>Service: '.$service.'</td><td>Airway Bill Number: '.$token.'<br/></td></tr>
+        <tr ><td>Pickup Date:________________<br/>Time: _____________________<br/> Emp. Code: ________________ <br/> Signature: __________________ <br/></td><td>Unique Number: '.$uid.'<br/>Package Count: '.$packagecount.'<br/> Total Weight: '.$TotalWeight.'<br/> Purpose of Shipment:'.$purpose.'</td></tr>
+        <tr ><td colspan="2">Package Details: '.$shipmentcontent.'<br/>'.$PackageDetails.'</td></tr>
+        </tbody>
+        </table>';
+        
+        
+        
+        $pdf417="Sender Address:".$sender_name."\n".$sender_address.','.$sender_city.','.$sender_state.'-'.$from_pin ."\n Contact Number:".$sender_phone."\n Receiver Address:".$receiver_name."\n".$receiver_address.','.$receiver_city.','.$receiver_state.'-'.$to_pin ."\n Contact Number:".$receiver_phone."\nCourier Vendor:".$couriervendor." \n Service:".$service."\n Airway Bill Number:".$token."\n Unique Number:".$uid."\n Package Count:".$packagecount."\n Total Weight:".$TotalWeight."\n Purpose of Shipment:".$purpose."\n Package Details:".$shipmentcontent."\n".$PackageDetails;
+        
+        
+        $pdf->writeHTML($html1, true, false, false, false,'');
+        $pdf->Ln(2);
+        $style['position'] = 'C';
+        $pdf->write2DBarcode($pdf417, 'PDF417', 80, 90, 0, 30, $style, 'N');
+        $pdf->lastPage();
+        
+
         $filename=$token.".pdf";
         
-        $fp = fopen("./AirwayBill/BlueDart/AirwayBill/".$filename, 'wb');
-        fwrite($fp,$result->GenerateWayBillResult->AWBPrintContent); //Create PNG or PDF file
-        fclose($fp);
+        $filepath='AirwayBill/BlueDart/AirwayBill/'.$filename;
+        
+        $pdf->Output($_SERVER['DOCUMENT_ROOT'].'/Courier/AirwayBill/BlueDart/AirwayBill/'.$filename, 'F'); // save in folder
+        ob_end_clean();
+        
     
-        $stmt5 = $conn->prepare("INSERT INTO `AirwayBill`(`ShipperName`, `ReceiverName`, `COD`, `PackageCount`, `ReferenceID`, `AWB_Date`, `CourierVendor`, `CourierService`,`Airwaybill_Number`,`AWB_Status`, `AWB_Link`) VALUES ('$sender_info[1]','$receiver_info[1]','$COD',$packagecount,'$uid','$shipment_date','BlueDart','$service','$token','Success','$filename')");
+        $stmt5 = $conn->prepare("INSERT INTO `AirwayBill`(`ShipperName`, `ReceiverName`, `COD`, `PackageCount`, `ReferenceID`, `AWB_Date`, `CourierVendor`, `CourierService`,`Airwaybill_Number`,`AWB_Status`, `AWB_Link`,`CreatedByUserID`) VALUES ('$sender_info[1]','$receiver_info[1]','$COD',$packagecount,'$uid','$shipment_date','BlueDart','$service','$token','Success','$filepath','$userid')");
         $stmt5->execute();
     
         $stmt6 = $conn->prepare(" SELECT * FROM AirwayBill WHERE `ShipperName`='$sender_info[1]' AND `ReceiverName`= '$receiver_info[1]' AND `COD`= '$COD' AND `ReferenceID`='$uid' AND `AWB_Date`='$shipment_date' AND `CourierVendor`='BlueDart' AND `AWB_Status` ='Success' order by `API_Hit_Date` DESC");
@@ -281,11 +337,13 @@
         }
         
         if($shipmentcontent=="Commodities"){
+            
+            
             for($i=0;$i<$commodity_count;$i++){
                 
-                $Commodity=$Package["Com".$i]["Commodity".$i];
-                $Commodity_desc=$Package["Com".$i]["Commodity_desc".$i];
-                $CommodityValue=$Package["Com".$i]["CommodityValue".$i];
+                $Commodity=$_POST["Commodity".$i];
+                $Commodity_desc=$_POST["Commodity_desc".$i];
+                $CommodityValue=$_POST["CommodityValue".$i];
                 
                 $stmt9=$conn->prepare("INSERT INTO `AirwayBill_Commodites`(`AWB_UID`, `Commodity`, `Commodity_Desc`, `Value`) VALUES ('$AWB_UID','$Commodity','$Commodity_desc','$CommodityValue')");
                 $stmt9->execute();
@@ -293,6 +351,9 @@
             }
             
         }
+        
+        $stmt10=$conn->prepare("INSERT INTO `pickup`(`AWB_Number`, `UID`, `Courier_Vendor`,`Pickup_Status`, `UserID`) VALUES ('$token','$AWB_UID','BlueDart','Pending','$userid')");
+        $stmt10->execute();
         
         
          $status="Success";

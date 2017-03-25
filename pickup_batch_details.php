@@ -10,8 +10,6 @@
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     $batch_id=$_GET['batchid'];
-    $date=$_GET['date'];
-    $userid=$_GET['userid'];
     
     ?>
 
@@ -49,13 +47,13 @@
         </nav>
         
         <div class="container" id="container">
-                <h1 align="center">Pickup Batch ID- <?php echo $batch_id; ?> </h1>
+<h1 align="center">Pickup Batch ID <?php echo $batch_id; ?> </h1>
             <div class="panel-body" id="result">
             <?php
                 
                 // Batch ID -> Vendor-> Pickup Time -> Pickup Date -> Sucess -> In Process -> Fail -> Total
                 
-                $stmt1 = $conn->prepare("SELECT distinct `AWB_Number`,`Courier_Vendor`,AirwayBill_Parties.Shipper_City,AirwayBill_Parties.Receiver_City,`Pickup_Status`,Pickup_Number,AirwayBill_Parties.AWB_UID FROM `pickup` INNER JOIN AirwayBill_Parties on AirwayBill_Parties.AWB_UID=pickup.UID INNER JOIN PickUp_Batch_Details on PickUp_Batch_Details.Batch_ID=pickup.Batch_ID WHERE pickup.`Batch_ID`='$batch_id' AND `UserID`='$userid' AND PickUp_Batch_Details.pickup_book_date='$date'");
+                $stmt1 = $conn->prepare("SELECT distinct `AWB_Number`,`Courier_Vendor`,AirwayBill_Parties.Shipper_City,AirwayBill_Parties.Receiver_City,`Pickup_Status`,Pickup_Number,AirwayBill_Parties.AWB_UID FROM `pickup` INNER JOIN AirwayBill_Parties on AirwayBill_Parties.AWB_UID=pickup.UID INNER JOIN PickUp_Batch_Details on PickUp_Batch_Details.Batch_ID=pickup.Batch_ID WHERE pickup.`Batch_ID`='$batch_id'");
                 
                 $stmt1->execute();
                 
@@ -64,14 +62,14 @@
                 
                 if($numrows==0){
                     echo ' <table class=" col-md-12 table table-striped table-bordered table-list">';
-                    echo '<thead><tr><th>Way Bill Number</th><th>Vendor</th><th>From</th><th>To</th><th>Pickup Status</th><th>Pickup Number</th><th>Action</th></tr></thead><tbody>';
+                    echo '<thead style="background-color: gray; color:white; "><tr><th>Way Bill Number</th><th>Vendor</th><th>From</th><th>To</th><th>Pickup Status</th><th>Pickup Number</th><th>Action</th></tr></thead><tbody>';
                     echo '<tr><td colspan="7" align="center">No Record Found</td></tr>';
                     echo '</tbody></table><br />';
                     
                 }
                 else if($numrows>0){
                     echo ' <table class=" col-md-12 table table-striped table-bordered table-list">';
-                    echo '<thead><tr><th>Way Bill Number</th><th>Vendor</th><th>From</th><th>To</th><th>Pickup Status</th><th>Pickup Number</th><th>Pickup Date</th><th>Action</th></tr></thead><tbody>';
+                    echo '<thead style="background-color: gray; color:white; "><tr><th>Way Bill Number</th><th>Vendor</th><th>From</th><th>To</th><th>Pickup Status</th><th>Pickup Number</th><th>Pickup Date</th><th>Action</th></tr></thead><tbody>';
                     $i=1;
                     while($row = $stmt1->fetch()){
                         

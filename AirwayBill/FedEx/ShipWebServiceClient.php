@@ -104,6 +104,8 @@ $client = new SoapClient($path_to_wsdl, array('trace' => 1)); // Refer to http:/
                     $token= $response->CompletedShipmentDetail->CompletedPackageDetails->TrackingIds->TrackingNumber;
                     
                     $filename=$token.".pdf";
+                    
+                    $filepath='AirwayBill/FedEx/AirwayBill/'.$filename;
 
                     
                     
@@ -111,7 +113,7 @@ $client = new SoapClient($path_to_wsdl, array('trace' => 1)); // Refer to http:/
                     fwrite($fp, $response->CompletedShipmentDetail->CompletedPackageDetails->Label->Parts->Image); //Create PNG or PDF file
                     fclose($fp);
                    
-                    $stmt5 = $conn->prepare("INSERT INTO `AirwayBill`(`ShipperName`, `ReceiverName`, `COD`, `PackageCount`, `ReferenceID`, `AWB_Date`, `CourierVendor`, `CourierService`,`Airwaybill_Number`, `AWB_Status`, `AWB_Link`) VALUES ('$sender_info[1]','$receiver_info[1]','$COD',$packagecount,'$uid','$shipment_date','FedEx','$service','$token','Success','$filename')");
+                    $stmt5 = $conn->prepare("INSERT INTO `AirwayBill`(`ShipperName`, `ReceiverName`, `COD`, `PackageCount`, `ReferenceID`, `AWB_Date`, `CourierVendor`, `CourierService`,`Airwaybill_Number`, `AWB_Status`, `AWB_Link`,`CreatedByUserID`) VALUES ('$sender_info[1]','$receiver_info[1]','$COD',$packagecount,'$uid','$shipment_date','FedEx','$service','$token','Success','$filepath','$userid')");
                     $stmt5->execute();
                     
                     $stmt6 = $conn->prepare(" SELECT * FROM AirwayBill WHERE `ShipperName`='$sender_info[1]' AND `ReceiverName`= '$receiver_info[1]' AND `COD`= '$COD' AND `ReferenceID`='$uid' AND `AWB_Date`='$shipment_date' AND `CourierVendor`='FedEx' AND `AWB_Status` ='Success' order by `API_Hit_Date` DESC");
@@ -144,9 +146,9 @@ $client = new SoapClient($path_to_wsdl, array('trace' => 1)); // Refer to http:/
                     if($shipmentcontent=="Commodities"){
                         for($i=0;$i<$commodity_count;$i++){
                             
-                            $Commodity=$Package["Com".$i]["Commodity".$i];
-                            $Commodity_desc=$Package["Com".$i]["Commodity_desc".$i];
-                            $CommodityValue=$Package["Com".$i]["CommodityValue".$i];
+                            $Commodity=$_POST["Commodity".$i];
+                            $Commodity_desc=$_POST["Commodity_desc".$i];
+                            $CommodityValue=$_POST["CommodityValue".$i];
                             
                             $stmt9=$conn->prepare("INSERT INTO `AirwayBill_Commodites`(`AWB_UID`, `Commodity`, `Commodity_Desc`, `Value`) VALUES ('$AWB_UID','$Commodity','$Commodity_desc','$CommodityValue')");
                             $stmt9->execute();
@@ -154,6 +156,9 @@ $client = new SoapClient($path_to_wsdl, array('trace' => 1)); // Refer to http:/
                         }
 
                     }
+                    
+                    $stmt10=$conn->prepare("INSERT INTO `pickup`(`AWB_Number`, `UID`, `Courier_Vendor`,`Pickup_Status`, `UserID`) VALUES ('$token','$AWB_UID','FedEx','Pending','$userid')");
+                    $stmt10->execute();
                     
                      $status="Success";
                     

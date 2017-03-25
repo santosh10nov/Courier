@@ -95,7 +95,7 @@
             if($numrows!=0){
                 
                 echo '<table class="table table-bordered">';
-                echo '<thead><tr><th>Service Provider Name</th><th>Product Name</th><th>Pickup Date</th><th>Delivery Date</th><th>TAT</th></tr></thead><tboby>';
+                echo '<thead style="background-color: gray; color:white; "><tr><th>Service Provider Name</th><th>Product Name</th><th>Pickup Date</th><th>Delivery Date</th><th>TAT</th></tr></thead><tboby>';
                 while($row9 = $stmt9->fetch()){
                     echo '<tr><td>'.$row9["vendor_name"].'</td><td>'.$row9["product_type"].'</td><td>'.$row9["pickup_date"].'</td><td>'.$row9["ExpectedDateDelivery"].'</td><td>'.$row9["TAT"].'</td></tr>';
                     
@@ -225,7 +225,7 @@
             if($numrows!=0){
             
             echo '<table class="table table-bordered">';
-            echo '<thead><tr><th>Service Provider Name</th><th>Product Name</th><th>Pickup Date</th><th>Delivery Date</th><th>TAT</th></tr></thead><tboby>';
+            echo '<thead style="background-color: gray; color:white; "><tr><th>Service Provider Name</th><th>Product Name</th><th>Pickup Date</th><th>Delivery Date</th><th>TAT</th></tr></thead><tboby>';
             while($row9 = $stmt9->fetch()){
                 echo '<tr><td>'.$row9["vendor_name"].'</td><td>'.$row9["product_type"].'</td><td>'.$row9["pickup_date"].'</td><td>'.$row9["ExpectedDateDelivery"].'</td><td>'.$row9["TAT"].'</td></tr>';
                

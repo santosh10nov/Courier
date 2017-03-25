@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Header />
+    <SOAP-ENV:Body>
+        <TrackReply xmlns="http://fedex.com/ws/track/v12">
+            <HighestSeverity>SUCCESS</HighestSeverity>
+            <Notifications>
+                <Severity>SUCCESS</Severity>
+                <Source>trck</Source>
+                <Code>0</Code>
+                <Message>Request was successfully processed.</Message>
+                <LocalizedMessage>Request was successfully processed.</LocalizedMessage>
+            </Notifications>
+            <TransactionDetail>
+                <CustomerTransactionId>*** Track Request using PHP ***</CustomerTransactionId>
+            </TransactionDetail>
+            <Version>
+                <ServiceId>trck</ServiceId>
+                <Major>12</Major>
+                <Intermediate>0</Intermediate>
+                <Minor>0</Minor>
+            </Version>
+            <CompletedTrackDetails>
+                <HighestSeverity>SUCCESS</HighestSeverity>
+                <Notifications>
+                    <Severity>SUCCESS</Severity>
+                    <Source>trck</Source>
+                    <Code>0</Code>
+                    <Message>Request was successfully processed.</Message>
+                    <LocalizedMessage>Request was successfully processed.</LocalizedMessage>
+                </Notifications>
+                <DuplicateWaybill>false</DuplicateWaybill>
+                <MoreData>false</MoreData>
+                <TrackDetailsCount>0</TrackDetailsCount>
+                <TrackDetails>
+                    <Notification>
+                        <Severity>SUCCESS</Severity>
+                        <Source>trck</Source>
+                        <Code>0</Code>
+                        <Message>Request was successfully processed.</Message>
+                        <LocalizedMessage>Request was successfully processed.</LocalizedMessage>
+                    </Notification>
+                    <TrackingNumber>785483021254</TrackingNumber>
+                    <TrackingNumberUniqueIdentifier>2457787000~785483021254~FX</TrackingNumberUniqueIdentifier>
+                    <StatusDetail>
+                        <CreationTime>2017-02-11T00:00:00</CreationTime>
+                        <Code>FD</Code>
+                        <Description>At FedEx destination facility</Description>
+                        <Location>
+                            <City>BHILAI</City>
+                            <StateOrProvinceCode>CT</StateOrProvinceCode>
+                            <CountryCode>IN</CountryCode>
+                            <CountryName>India</CountryName>
+                            <Residential>false</Residential>
+                        </Location>
+                    </StatusDetail>
+                    <ServiceCommitMessage>No scheduled delivery date available at this time.</ServiceCommitMessage>
+                    <DestinationServiceArea>EDDUNAVAILABLE</DestinationServiceArea>
+                    <CarrierCode>FDXE</CarrierCode>
+                    <OperatingCompanyOrCarrierDescription>FedEx Express</OperatingCompanyOrCarrierDescription>
+                    <OtherIdentifiers>
+                        <PackageIdentifier>
+                            <Type>DEPARTMENT</Type>
+                            <Value>BILL D/T:SENDER</Value>
+                        </PackageIdentifier>
+                    </OtherIdentifiers>
+                    <OtherIdentifiers>
+                        <PackageIdentifier>
+                            <Type>PURCHASE_ORDER</Type>
+                            <Value>B2C</Value>
+                        </PackageIdentifier>
+                    </OtherIdentifiers>
+                    <OtherIdentifiers>
+                        <PackageIdentifier>
+                            <Type>SHIPPER_REFERENCE</Type>
+                            <Value>DLN0000152748--88888888</Value>
+                        </PackageIdentifier>
+                    </OtherIdentifiers>
+                    <Service>
+                        <Type>PRIORITY_OVERNIGHT</Type>
+                        <Description>FedEx Priority Overnight</Description>
+                        <ShortDescription>PO</ShortDescription>
+                    </Service>
+                    <PackageWeight>
+                        <Units>KG</Units>
+                        <Value>0.5</Value>
+                    </PackageWeight>
+                    <ShipmentWeight>
+                        <Units>KG</Units>
+                        <Value>0.5</Value>
+                    </ShipmentWeight>
+                    <Packaging>Your Packaging</Packaging>
+                    <PackagingType>YOUR_PACKAGING</PackagingType>
+                    <PackageSequenceNumber>1</PackageSequenceNumber>
+                    <PackageCount>1</PackageCount>
+                    <SpecialHandlings>
+                        <Type>DELIVER_WEEKDAY</Type>
+                        <Description>Deliver Weekday</Description>
+                        <PaymentType>OTHER</PaymentType>
+                    </SpecialHandlings>
+                    <SpecialHandlings>
+                        <Type>RESIDENTIAL_DELIVERY</Type>
+                        <Description>Residential Delivery</Description>
+                        <PaymentType>OTHER</PaymentType>
+                    </SpecialHandlings>
+                    <Payments>
+                        <Classification>TRANSPORTATION</Classification>
+                        <Type>SHIPPER_ACCOUNT</Type>
+                        <Description>Shipper</Description>
+                    </Payments>
+                    <Payments>
+                        <Classification>DUTIES_AND_TAXES</Classification>
+                        <Type>SHIPPER_ACCOUNT</Type>
+                        <Description>Shipper</Description>
+                    </Payments>
+                    <ShipperAddress>
+                        <City>Mumbai</City>
+                        <StateOrProvinceCode>MH</StateOrProvinceCode>
+                        <CountryCode>IN</CountryCode>
+                        <CountryName>India</CountryName>
+                        <Residential>false</Residential>
+                    </ShipperAddress>
+                    <DatesOrTimes>
+                        <Type>ACTUAL_PICKUP</Type>
+                        <DateOrTimestamp>2017-02-02T17:59:00+05:30</DateOrTimestamp>
+                    </DatesOrTimes>
+                    <DatesOrTimes>
+                        <Type>SHIP</Type>
+                        <DateOrTimestamp>2017-02-03T00:00:00</DateOrTimestamp>
+                    </DatesOrTimes>
+                    <DatesOrTimes>
+                        <Type>ACTUAL_TENDER</Type>
+                        <DateOrTimestamp>2017-02-02T17:59:00+05:30</DateOrTimestamp>
+                    </DatesOrTimes>
+                    <DestinationAddress>
+                        <City>Durg</City>
+                        <StateOrProvinceCode>CT</StateOrProvinceCode>
+                        <CountryCode>IN</CountryCode>
+                        <CountryName>India</CountryName>
+                        <Residential>false</Residential>
+                    </DestinationAddress>
+                    <DeliveryAttempts>0</DeliveryAttempts>
+                    <TotalUniqueAddressCountInConsolidation>0</TotalUniqueAddressCountInConsolidation>
+                    <NotificationEventsAvailable>ON_DELIVERY</NotificationEventsAvailable>
+                    <NotificationEventsAvailable>ON_EXCEPTION</NotificationEventsAvailable>
+                    <NotificationEventsAvailable>ON_ESTIMATED_DELIVERY</NotificationEventsAvailable>
+                    <DeliveryOptionEligibilityDetails>
+                        <Option>INDIRECT_SIGNATURE_RELEASE</Option>
+                        <Eligibility>INELIGIBLE</Eligibility>
+                    </DeliveryOptionEligibilityDetails>
+                    <DeliveryOptionEligibilityDetails>
+                        <Option>REDIRECT_TO_HOLD_AT_LOCATION</Option>
+                        <Eligibility>INELIGIBLE</Eligibility>
+                    </DeliveryOptionEligibilityDetails>
+                    <DeliveryOptionEligibilityDetails>
+                        <Option>REROUTE</Option>
+                        <Eligibility>INELIGIBLE</Eligibility>
+                    </DeliveryOptionEligibilityDetails>
+                    <DeliveryOptionEligibilityDetails>
+                        <Option>RESCHEDULE</Option>
+                        <Eligibility>INELIGIBLE</Eligibility>
+                    </DeliveryOptionEligibilityDetails>
+                    <Events>
+                        <Timestamp>2017-02-11T12:46:00+05:30</Timestamp>
+                        <EventType>AR</EventType>
+                        <EventDescription>At local FedEx facility</EventDescription>
+                        <Address>
+                            <City>BHILAI</City>
+                            <StateOrProvinceCode>CT</StateOrProvinceCode>
+                            <PostalCode>490001</PostalCode>
+                            <CountryCode>IN</CountryCode>
+                            <CountryName>India</CountryName>
+                            <Residential>false</Residential>
+                        </Address>
+                        <ArrivalLocation>DESTINATION_FEDEX_FACILITY</ArrivalLocation>
+                    </Events>
+                </TrackDetails>
+            </CompletedTrackDetails>
+        </TrackReply>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

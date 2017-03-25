@@ -223,7 +223,7 @@
                                         </th>
                                     </tr>
                                     
-
+                                    
                                     
                                 </table>
                                 <button type="button" class="btn btn-success"  onclick="CutOffTime()">Schedule Pickup</button>
@@ -256,7 +256,7 @@
                                             </div>
                                             <input type="hidden" name="parties" id="parties_id" value=""/>
                                             <table class="table">
-                                                <thead>
+                                                <thead style="background-color: gray; color:white; ">
                                                     <tr class="filters">
                                                         <th><input type="text" class="form-control" placeholder="VendorId" id="search_vendor_id"  onkeyup="search()"></th>
                                                         <th><input type="text" class="form-control" placeholder="Name" id="contact_name"  onkeyup="search()"></th>
@@ -432,7 +432,7 @@
             }
         
         
- 
+        
         
         
         
@@ -595,18 +595,7 @@
             
         }
         
-        function Collectable(i){
-            
-            if(i.id=="CODYes"){
-                document.getElementById("CollectableAmount").style.display='block';
-                
-            }
-            else if (i.id=="CODNo"){
-                document.getElementById("CollectableAmount").style.display='none';
-                document.getElementById("CollectableAmount").value=0;
-                
-            }
-        }
+    
         
         
         function Reset(i){
@@ -709,23 +698,20 @@
                 }
                 xmlhttp.onreadystatechange = function() {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        
                         if(xmlhttp.responseText=="Success"){
-                            
-                            if(xmlhttp.responseText=="Success"){
-                                document.getElementById("myForm").submit();
-                            }
-                            
+                            document.getElementById("myForm").submit();
                         }
                         
                     }
                 };
-                xmlhttp.open("GET","pickup_ajax.php?vendor_name="+vendor_name+"&PickupDate="+PickupDate+"&PickupTime="+PickupTime+"&CompanyClosingTime="+CompanyClosingTime+"&pincode="+pincode,true);
+                xmlhttp.open("GET","pickup_ajax.php?action=CheckCutoff&vendor_name="+vendor_name+"&PickupDate="+PickupDate+"&PickupTime="+PickupTime+"&CompanyClosingTime="+CompanyClosingTime+"&pincode="+pincode,true);
                 xmlhttp.send();
                 
             }
             
-
-
+            
+            
         }
         
         

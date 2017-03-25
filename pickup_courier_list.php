@@ -163,7 +163,7 @@ padding: 16px;
 <div class="col-md-12">
 <h3 class="panel-title">Filters</h3>
 <table class="table table-bordered">
-<thead>
+<thead style="background-color: gray; color:white; ">
 <tr>
 <td>Courier Vendor</td>
 <td>Shipment Date</td>
@@ -367,7 +367,7 @@ function changePagination(list_id){
         
         if(lowerlimit>0 && upperlimit<(parseInt(page_count)-2)){
             
-            $('ul li').remove();
+            $("#pagination1").empty();
             
             $("#pagination1").append('<li class="previous disabled" id="li_prev"><a href="javascript:void(0)"  onclick="changePagination(this.id)"id="prev">&larr; Previous</a></li>');
             

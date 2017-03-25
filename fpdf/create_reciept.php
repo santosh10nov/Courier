@@ -25,7 +25,7 @@ class PDF_reciept extends FPDF {
 		$this->SetFont('Arial', '', 12);
 		$this->SetTextColor(0);
 		$this->SetXY(40, -60);
-		$this->Cell(0, 20, "Thank you for shopping at Nettuts+", 'T', 0, 'C');
+		$this->Cell(0, 20, "", 'T', 0, 'C');
 	}
 	
     function TextWithRotation($x, $y, $txt, $txt_angle, $font_angle=0)

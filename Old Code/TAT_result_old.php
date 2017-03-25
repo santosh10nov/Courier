@@ -111,7 +111,7 @@
             echo "Pickup Location: " .$pickup_location."  (".$from_pin.")   ========================>  ";
             echo "Destination Location: " .$destination_location."  (".$to_pin.")<br><br>";
             echo '<table class="table table-bordered">';
-            echo '<thead><tr><th>Service Provider Name</th><th>Product Name</th><th>Pickup Date</th><th>Delivery Date</th><th>TAT</th></tr></thead><tboby>';
+            echo '<thead style="background-color: gray; color:white; "><tr><th>Service Provider Name</th><th>Product Name</th><th>Pickup Date</th><th>Delivery Date</th><th>TAT</th></tr></thead><tboby>';
             echo '<tr><td>BlueDart</td><td>'.$bd_product.'</td><td>'.$bd_pickupdate.'</td><td>'.$bd_deliverydate.'</td><td>'.$bd_tat.'</td></tr>';
             echo '<tr><td>FedEx</td><td>'.$fd_product.'</td><td>'.$fd_pickupdate.'</td><td>'.$fd_deliverydate.'</td><td>'.$fd_tat.'</td></tr>';
             echo '</tbody></table><br />';

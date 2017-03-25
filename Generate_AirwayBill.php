@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,39 +66,49 @@ padding: 16px;
 
 <body>
 
-<nav class="navbar navbar-default" id="header_nav">
+<nav class="navbar navbar-default">
 <div class="container-fluid">
 <div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
 <a class="navbar-brand" href="index.php">rShipper</a>
 </div>
+<div class="collapse navbar-collapse" id="myNavbar">
 <ul class="nav navbar-nav">
-<li><a href="index.php">Home</a></li>
-<li><a href="Service_Availabilty.php">Service Availability</a></li>
-<li><a href="TAT.php">TAT</a></li>
-<li class="nav-item nav-link active"><a href="Generate_AirwayBill.php">Generate AirwayBill</a></li>
-<li><a href="pickup_3.html">Book Pickup</a></li>
-<li><a href="#">Track Courier</a></li>
+<li><a href="index.php">Dashboard</a></li>
+<li><a href="ServiceTAT.php">Service Availability/TAT</a></li>
+<li class="dropdown active">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">AirwayBill</a>
+<ul class="dropdown-menu">
+<li><a href="Generate_AirwayBill.php">Generate AirwayBill</a></li>
+<li><a href="AirwayBillList.php">AirwayBill List</a></li>
+<li><a href="DispatchList.php">Dispatch List</a></li>
 </ul>
+</li>
+<li><a href="schedulepickup.html">Pickup</a></li>
+<li><a href="trackcourier.php">Tracking</a></li>
+<li><a href="index.php">Extra</a></li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span></a>
+<ul class="dropdown-menu">
+<li><a href="#">Profile</a></li>
+<li><a href="logout.php">Logout</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 </nav>
 
 
-<div class="container" id="container">
-<span style="font-size:30px;cursor:pointer;float: left;" onclick="openNav()">&#9776;</span>
-<h1 align="center">Generate AirwayBill </h1>
-<div class="alerts" id="alert_box" style="padding-top: 0em; padding-bottom: 0em;display: none;">
-<div class="alert alert-danger" role="alert">
-<p id="alert_div" align="center"></p>
-<ul id="list">
-</ul>
-</div>
-</div>
-<div id="mySidenav" class="sidenav">
-<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-<a href="Generate_AirwayBill.php" >Generate Way Bill</a>
-<a href="airwaybill_list.html">Way Bill List</a>
-</div>
 
+<div class="container" id="container">
+<h1 align="center">Generate AirwayBill </h1>
 <!-- form start -->
 <form class="form-horizontal" action="airwaybill.php" role="form" method="post" onsubmit="validate_activity()">
 
@@ -144,12 +156,12 @@ padding: 16px;
 
 <tr>
 <td>City:</td>
-<th><input type="text" class="form-control" name="sender_city" placeholder="Enter City" id="sender_city" ></th>
+<th><input type="text" class="form-control" name="sender_city" placeholder="" id="sender_city" ></th>
 </tr>
 
 <tr>
 <td>State:</td>
-<th><input type="text" class="form-control" name="sender_state" placeholder="Enter State" id="sender_state"></th>
+<th><input type="text" class="form-control" name="sender_state" placeholder="" id="sender_state"></th>
 </tr>
 
 <tr>
@@ -207,12 +219,12 @@ padding: 16px;
 
 <tr>
 <td>City:</td>
-<th><input type="text" class="form-control" name="receiver_city" placeholder="Enter City" id="receiver_city"></th>
+<th><input type="text" class="form-control" name="receiver_city" placeholder="" id="receiver_city"></th>
 </tr>
 
 <tr>
 <td>State:</td>
-<th><input type="text" class="form-control" name="receiver_state" placeholder="Enter State" id="receiver_state" ></th>
+<th><input type="text" class="form-control" name="receiver_state" placeholder="" id="receiver_state" ></th>
 </tr>
 
 <tr>
@@ -231,7 +243,11 @@ padding: 16px;
 <div class="col-sm-4">
 <div class="box box-primary">
 <div class="box-header with-border">
-<h4 class="box-title">Shipment Details</h4>
+<h4 class="box-title">Shipment Details
+<button type="button" class="btn btn-info btn-sm"  id="Check_Avi" onclick="Service_Availabilty()">
+<span class="glyphicon glyphicon-search"></span> Check Availability
+</button>
+</h4>
 </div>
 <!-- /.box-header -->
 <div class="box-body">
@@ -241,12 +257,28 @@ padding: 16px;
 <td>
 <div>
 <select class="form-control selcls" name="couriervendor" id="couriervendor" onclick="services_list()">
-<option value="" selected="selected">Select Courier Vendor</option>
-<option value="BlueDart">BlueDart</option>
-<option value="FedEx">Fedex</option>
-<option value="DTDC">DTDC</option>
-</select>
+<input type="text" id="OtherCourierVendor" name="OtherCourierVendor" class="form-control" placeholder="Courier Vendor Name" style="display:none">
 </div>
+</td>
+</tr>
+
+<tr>
+<td>Courier Service</td>
+<td>
+<select class="form-control selcls" name="services" id="services" style="display:inline">
+<option value="" selected="selected">Select Courier Service</option>
+</select>
+<input type="text" id="OtherCourierService" name="OtherCourierService" class="form-control" placeholder="Courier Vendor Service" style="display:none">
+</td>
+</tr>
+
+<tr>
+<td id="AccountOrAWB">Account Number</td>
+<td>
+<select class="form-control selcls" name="accountnumber" id="accountnumber" style="display:inline">
+<option value="" selected="selected">Select Account Number</option>
+</select>
+<input type="text" id="OtherCourierAWB" name="OtherCourierAWB" class="form-control" placeholder="Airway Bill Number" style="display:none">
 </td>
 </tr>
 <tr>
@@ -268,25 +300,6 @@ padding: 16px;
 <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
 </div>
 <input type="hidden" id="dtp_input2" value="" />
-</td>
-</tr>
-
-
-<tr>
-<td>Courier Service</td>
-<td>
-<select class="form-control selcls" name="services" id="services" style="display:inline">
-<option value="" selected="selected">Select Courier Service</option>
-</select>
-</td>
-</tr>
-
-<tr>
-<td>Account Number</td>
-<td>
-<select class="form-control selcls" name="accountnumber" id="accountnumber" style="display:inline">
-<option value="" selected="selected">Select Account Number</option>
-</select>
 </td>
 </tr>
 
@@ -343,6 +356,7 @@ padding: 16px;
 </tr>
 
 </table>
+<button type="reset" class="btn btn-danger">Reset</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <button type="submit" class="btn btn-success"  onclick=" validate_activity()">Submit</button>
 </div>
 <!-- /.box-footer -->
@@ -367,7 +381,7 @@ padding: 16px;
 <div class="modal-body">
 <div class="col-md-12 column">
 <table class="table table-bordered table-hover" id="tab_logic">
-<thead>
+<thead style="background-color: gray; color:white; ">
 <tr >
 <th class="text-center">
 #
@@ -423,14 +437,14 @@ Weight
 <div class="modal-content">
 <div class="modal-header">
 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-<h4 class="modal-title">Package Details</h4>
+<h4 class="modal-title">Commodity Details</h4>
 </div>
 <div class="modal-body">
 <div class="row clearfix">
 <div class="col-md-12 column">
 
 <table class="table table-bordered table-hover" id="tab_logic1">
-<thead>
+<thead style="background-color: gray; color:white; ">
 <tr >
 <th class="text-center">
 #
@@ -442,7 +456,13 @@ Commodity
 Commodity Description
 </th>
 <th class="text-center">
-Value
+Quantity
+</th>
+<th class="text-center">
+Unit Weight
+</th>
+<th class="text-center">
+Unit Value
 </th>
 </tr>
 </thead>
@@ -452,13 +472,19 @@ Value
 1
 </td>
 <td>
-<input type="text" name='Commodity0'  placeholder='Commodity' class="form-control"/>
+<input type="text" name='Commodity0'  placeholder='' class="form-control"/>
 </td>
 <td>
-<input type="text" name='Commodity_desc0' placeholder='Commodity Description' class="form-control"/>
+<input type="text" name='Commodity_desc0' placeholder='' class="form-control"/>
 </td>
 <td>
-<input type="text" name='CommodityValue0' placeholder='Commodity Value' class="form-control"/>
+<input type="text" name='Commodity_quan0' placeholder='' class="form-control"/>
+</td>
+<td>
+<input type="text" name='Commodity_weight0' placeholder='' class="form-control"/>
+</td>
+<td>
+<input type="text" name='CommodityValue0' placeholder='' class="form-control"/>
 </td>
 </tr>
 <tr id='addr1'></tr>
@@ -494,7 +520,7 @@ Value
 </div>
 <input type="hidden" name="parties" id="parties_id" value=""/>
 <table class="table">
-<thead>
+<thead style="background-color: gray; color:white; ">
 <tr class="filters">
 <th><input type="text" class="form-control" placeholder="VendorId" id="search_vendor_id"  onkeyup="search()"></th>
 <th><input type="text" class="form-control" placeholder="Name" id="contact_name"  onkeyup="search()"></th>
@@ -512,6 +538,25 @@ Value
 </div>
 </div>
 
+
+<div id="CheckAvailability" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+<h4 class="modal-title">Service Availability</h4>
+</div>
+<div class="modal-body">
+<div id="CheckAvailabilityresult"></div>
+</div>
+<div class="modal-footer">
+
+</div>
+</div>
+</div>
+</div>
+
+
 <!-- /.form Submit -->
 
 
@@ -519,12 +564,6 @@ Value
 
 </div>
 
-
-
-
-
-<script type="text/javascript" src="jquery/jquery-1.8.3.min.js" charset="UTF-8"></script>
-<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
 <script type="text/javascript" src="js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
 
@@ -566,7 +605,7 @@ $(document).ready(function(){
                                           $('#ShipmentContentModal').modal();
                                           var i=1;
                                           $("#add_row").click(function(){
-                                                              $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='Commodity"+i+"' type='text' placeholder='Commodity' class='form-control input-md'  /> </td><td><input  name='Commodity_desc"+i+"' type='text' placeholder='Commodity Description'  class='form-control input-md'></td><td><input  name='CommodityValue"+i+"' type='text' placeholder='Commodity Value'  class='form-control input-md'></td>");
+                                                              $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='Commodity"+i+"' type='text' placeholder='' class='form-control input-md'  /> </td><td><input  name='Commodity_desc"+i+"' type='text' placeholder=''  class='form-control input-md'></td><td><input  name='Commodity_quan"+i+"' type='text' placeholder=''  class='form-control input-md'></td><td><input  name='Commodity_weight"+i+"' type='text' placeholder=''  class='form-control input-md'></td><td><input  name='CommodityValue"+i+"' type='text' placeholder=''  class='form-control input-md'></td>");
                                                               
                                                               $('#tab_logic1').append('<tr id="addr'+(i+1)+'"></tr>');
                                                               i++;
@@ -702,8 +741,8 @@ function services_list(){
     var vendor = document.getElementById("couriervendor");
     var vendor_name = vendor.options[vendor.selectedIndex].value;
     
-    var from_pin= document.getElementById("from_pin").value;
-    var to_pin= document.getElementById("to_pin").value;
+    //var from_pin= document.getElementById("from_pin").value;
+    //var to_pin= document.getElementById("to_pin").value;
     
     
     if(vendor_name==""){
@@ -711,11 +750,43 @@ function services_list(){
         document.getElementById("services").options[0]=new Option("Select Courier Service");
         $("#accountnumber").empty();
         document.getElementById("accountnumber").options[0]=new Option("Select Account Number");
+        document.getElementById("OtherCourierVendor").style.display='none';
+        document.getElementById("OtherCourierVendor").value='';
+        document.getElementById("OtherCourierService").style.display='none';
+        document.getElementById("OtherCourierService").value='';
+        document.getElementById("OtherCourierAWB").style.display='none';
+        document.getElementById("OtherCourierAWB").value='';
+        document.getElementById("AccountOrAWB").innerHTML = "Account Number";
+    }
+    else if(vendor_name=="Other"){
+        //$("#services").empty();
+        //document.getElementById("services").options[0]=new Option("Select Courier Service","");
+        //$("#accountnumber").empty();
+        //document.getElementById("accountnumber").options[0]=new Option("Select Account Number","");
+        document.getElementById("OtherCourierVendor").style.display='block';
+        document.getElementById("OtherCourierService").style.display='block';
+        document.getElementById("OtherCourierAWB").style.display='block';
+        
+        document.getElementById("services").style.display = 'none';
+        document.getElementById("accountnumber").style.display = 'none';
+        document.getElementById("services").value = "";
+        document.getElementById("accountnumber").value = "";
+        document.getElementById("AccountOrAWB").innerHTML = "AirwayBill Number";
+
+        
+        
     }
     else {
         
         document.getElementById("services").style.display = 'inline';
         document.getElementById("accountnumber").style.display = 'inline';
+        document.getElementById("OtherCourierVendor").style.display='none';
+        document.getElementById("OtherCourierVendor").value='';
+        document.getElementById("OtherCourierService").style.display='none';
+        document.getElementById("OtherCourierService").value='';
+        document.getElementById("OtherCourierAWB").style.display='none';
+        document.getElementById("OtherCourierAWB").value='';
+        document.getElementById("AccountOrAWB").innerHTML = "Account Number";
         
         if (window.XMLHttpRequest) {
             // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -730,7 +801,7 @@ function services_list(){
                 courierservice(xmlhttp.responseText,vendor_name);
             }
         };
-        xmlhttp.open("GET","Service_ajax.php?couriervendor="+vendor_name,true);
+        xmlhttp.open("GET","Service_ajax.php?action=productname&couriervendor="+vendor_name,true);
         xmlhttp.send();
         
         
@@ -743,8 +814,10 @@ function courierservice(response,vendor) {
     var i;
     document.getElementById("services").options[0]=new Option("Select Courier Service");
     for(i = 0; i < arr.length; i++) {
-        document.getElementById("services").options[i+1]=new Option(arr[i].servicevalue,arr[i].service);
+        document.getElementById("services").options[i+1]=new Option(arr[i].service,arr[i].servicevalue);
+        
     }
+    
     accountnumber(vendor);
     
 }
@@ -1081,15 +1154,63 @@ function CourierVendorList(){
             var arr = JSON.parse(xmlhttp.responseText);
             var i;
             
-            document.getElementById("couriervendor").options[0]=new Option("Select Courier Vendor");
+            document.getElementById("couriervendor").options[0]=new Option("Select Courier Vendor","");
             for(i = 0; i < arr.length; i++) {
                 document.getElementById("couriervendor").options[i+1]=new Option(arr[i].value,arr[i].venndor_name);
             }
+             document.getElementById("couriervendor").options[i+1]=new Option("Other","Other");
             
         }
     };
     xmlhttp.open("GET","vendoraction.php?action=CourierVendorList",true);
     xmlhttp.send();
+    
+    
+}
+
+
+
+function Service_Availabilty(){
+    
+    var from_pin= document.getElementById("from_pin").value;
+    var to_pin= document.getElementById("to_pin").value;
+    
+    if(from_pin==""){
+        alert("Enter Pickup Pincode");
+        return;
+    }
+    else if (from_pin.length!=6 || isNaN(from_pin)) {
+        if(from_pin!=""){
+            alert("Enter Correct Pickup Pincode");
+            return;
+        }
+    }
+    else if(to_pin==""){
+        alert("Enter Destination Pincode");
+        return;
+    }
+    else if (to_pin.length!=6 || isNaN(to_pin)) {
+        if(to_pin!=""){
+            alert("Enter Correct Destination  Pincode");
+            return;
+        }
+    }
+    else{
+        document.getElementById("Check_Avi").disabled = true;
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                //alert(this.responseText);
+                $("#CheckAvailability").modal();
+                document.getElementById("CheckAvailabilityresult").innerHTML = xmlhttp.responseText;
+                document.getElementById("Check_Avi").disabled = false;
+                
+            }
+        };
+        xmlhttp.open("GET", "Service_ajax.php?action=ServiceAvailability_AWB&pickup_pin="+from_pin+"&desti_pin="+to_pin, true);
+        xmlhttp.send();
+        
+    }
     
     
 }
@@ -1112,7 +1233,19 @@ function closeNav() {
 
 
 
-
+function santy(x,y,z){
+    $('#CheckAvailability').modal('hide');
+    var couriervendor = document.getElementById('couriervendor');
+    couriervendor.value = x;
+    
+    $("#services").empty();
+    var services = document.getElementById('services');
+    document.getElementById("services").options[0]=new Option(z,y);
+    
+    accountnumber(x);
+    
+    
+}
 
 
 

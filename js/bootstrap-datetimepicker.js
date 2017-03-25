@@ -1764,14 +1764,14 @@
 
       return viewMode;
     },
-    headTemplate: '<thead>' +
+    headTemplate: '<thead style="background-color: gray; color:white; ">' +
                 '<tr>' +
                 '<th class="prev"><i class="{iconType} {leftArrow}"/></th>' +
                 '<th colspan="5" class="switch"></th>' +
                 '<th class="next"><i class="{iconType} {rightArrow}"/></th>' +
                 '</tr>' +
       '</thead>',
-    headTemplateV3: '<thead>' +
+    headTemplateV3: '<thead style="background-color: gray; color:white; ">' +
                 '<tr>' +
                 '<th class="prev"><span class="{iconType} {leftArrow}"></span> </th>' +
                 '<th colspan="5" class="switch"></th>' +

@@ -30,7 +30,7 @@
             
             // Batch ID -> Vendor-> Pickup Time -> Pickup Date -> Sucess -> In Process -> Fail -> Total
             
-            $stmt1 = $conn->prepare("SELECT PickUp_Batch_Details.Batch_ID, pickup.Courier_Vendor,PickUp_Batch_Details.pickup_time,PickUp_Batch_Details.pickup_book_date FROM `PickUp_Batch_Details` LEFT JOIN pickup ON `pickup`.Batch_ID= `PickUp_Batch_Details`.Batch_ID ORDER BY PickUp_Batch_Details.pickup_book_date DESC LIMIT $row_count");
+            $stmt1 = $conn->prepare("SELECT DISTINCT PickUp_Batch_Details.Batch_ID, pickup.Courier_Vendor,PickUp_Batch_Details.pickup_time,PickUp_Batch_Details.pickup_book_date FROM `PickUp_Batch_Details` LEFT JOIN pickup ON `pickup`.Batch_ID= `PickUp_Batch_Details`.Batch_ID ORDER BY PickUp_Batch_Details.pickup_book_date DESC LIMIT $row_count");
             
             $stmt1->execute();
             
@@ -39,18 +39,18 @@
             
             if($numrows==0){
                 echo ' <table class=" col-md-12 table table-striped table-bordered table-list">';
-                echo '<thead><tr><th>Batch ID</th><th>Vendor</th><th>Pickup Date-Time</th><th>Total Pickup</th><th>Pickup Booked</th><th>Pickup In Process</th><th>Pickup Failed</th></tr></thead><tbody>';
+                echo '<thead style="background-color: gray; color:white; "><tr><th>Batch ID</th><th>Vendor</th><th>Pickup Date-Time</th><th>Total Pickup</th><th>Pickup Booked</th><th>Pickup In Process</th><th>Pickup Failed</th></tr></thead><tbody>';
                 echo '<tr><td colspan="7" align="center">No Record Found</td></tr>';
                 echo '</tbody></table><br />';
                 
             }
             else if($numrows>0){
                 echo ' <table class=" col-md-12 table table-striped table-bordered table-list">';
-                echo '<thead><tr><th>Batch ID</th><th>Vendor</th><th>Pickup Date-Time</th><th>Total Pickup</th><th>Pickup Booked</th><th>Pickup In Process</th><th>Pickup Failed</th></tr></thead><tbody>';
+                echo '<thead style="background-color: gray; color:white; "><tr><th>Batch ID</th><th>Vendor</th><th>Pickup Date-Time</th><th>Total Pickup</th><th>Pickup Booked</th><th>Pickup In Process</th><th>Pickup Failed</th></tr></thead><tbody>';
                 $i=1;
                 while($row = $stmt1->fetch()){
                     
-                    echo '<tr></td><td><a href="pickup_batch_details.php?batchid='.$row[0].'&date='.$row[3].'&userid='.$userid.'" target="_blank" >'.$row[0].'</a></td><td>'.$row[1].'</td><td>'.$row[3]."  ".$row[2].'</td><td>XXX</td><td>XXX</td><td>XXXX</td><td>XXXXX</td></tr>';
+                    echo '<tr></td><td><a href="pickup_batch_details.php?batchid='.urlencode($row[0]).'&date='.$row[3].'&userid='.$userid.'" target="_blank" >'.$row[0].'</a></td><td>'.$row[1].'</td><td>'.$row[3]."  ".$row[2].'</td><td>XXX</td><td>XXX</td><td>XXXX</td><td>XXXXX</td></tr>';
                     
                     $i++;
                 }
@@ -98,14 +98,14 @@
             
             if($numrows==0){
                 echo ' <table class=" col-md-12 table table-striped table-bordered table-list">';
-                echo '<thead><tr><th>ID</th><th>Shipper Details</th><th>Receiver Details</th><th>Shipment Date</th><th>Courier Vendor</th><th>Airway Bill Number</th><th><em class="fa fa-cog" align="center"></em></th></tr></thead><tbody>';
+                echo '<thead style="background-color: gray; color:white; "><tr><th>ID</th><th>Shipper Details</th><th>Receiver Details</th><th>Shipment Date</th><th>Courier Vendor</th><th>Airway Bill Number</th><th><em class="fa fa-cog" align="center"></em></th></tr></thead><tbody>';
                 echo '<tr><td colspan="7" align="center">No Record Found</td></tr>';
                 echo '</tbody></table><br />';
                 
             }
             else if($numrows>0){
                 echo ' <table class=" col-md-12 table table-striped table-bordered table-list">';
-                echo '<thead><tr><th>Select All &nbsp<INPUT type="checkbox" onchange="checkAll(this)" name="chk[]" /></th><th>Courier Vendor</th><th>Airway Bill Number</th><th>Shipment Date</th><th>Pickup Date</th><th>Pickup Status</th><th><em class="fa fa-cog" align="center"></em></th></tr></thead><tbody>';
+                echo '<thead style="background-color: gray; color:white; "><tr><th>Select All &nbsp<INPUT type="checkbox" onchange="checkAll(this)" name="chk[]" /></th><th>Courier Vendor</th><th>Airway Bill Number</th><th>Shipment Date</th><th>Pickup Date</th><th>Pickup Status</th><th><em class="fa fa-cog" align="center"></em></th></tr></thead><tbody>';
                 $i=$lowerlimit+1;
                 while($row = $stmt1->fetch()){
                     
@@ -132,14 +132,14 @@
             
             if($numrows==0){
                 echo ' <table class=" col-md-12 table table-striped table-bordered table-list">';
-                echo '<thead><tr><th>ID</th><th>Shipper Details</th><th>Receiver Details</th><th>Shipment Date</th><th>Courier Vendor</th><th>Airway Bill Number</th><th><em class="fa fa-cog" align="center"></em></th></tr></thead><tbody>';
+                echo '<thead style="background-color: gray; color:white; "><tr><th>ID</th><th>Shipper Details</th><th>Receiver Details</th><th>Shipment Date</th><th>Courier Vendor</th><th>Airway Bill Number</th><th><em class="fa fa-cog" align="center"></em></th></tr></thead><tbody>';
                 echo '<tr><td colspan="7" align="center">No Record Found</td></tr>';
                 echo '</tbody></table><br />';
                 
             }
             else if($numrows>0){
                 echo ' <table class=" col-md-12 table table-striped table-bordered table-list">';
-                echo '<thead><tr><th>Select All &nbsp<INPUT type="checkbox" onchange="checkAll(this)" name="chk[]" /></th><th>Courier Vendor</th><th>Airway Bill Number</th><th>Shipment Date</th><th>Pickup Date</th><th>Pickup Status</th><th><em class="fa fa-cog" align="center"></em></th></tr></thead><tbody>';
+                echo '<thead style="background-color: gray; color:white; "><tr><th>Select All &nbsp<INPUT type="checkbox" onchange="checkAll(this)" name="chk[]" /></th><th>Courier Vendor</th><th>Airway Bill Number</th><th>Shipment Date</th><th>Pickup Date</th><th>Pickup Status</th><th><em class="fa fa-cog" align="center"></em></th></tr></thead><tbody>';
                 
                 $i=1;
                 while($row = $stmt1->fetch()){
@@ -175,14 +175,14 @@
             
             if($numrows==0){
                 echo ' <table class=" col-md-12 table table-striped table-bordered table-list">';
-                echo '<thead><tr><th>ID</th><th>Shipper Details</th><th>Receiver Details</th><th>Shipment Date</th><th>Courier Vendor</th><th>Airway Bill Number</th><th><em class="fa fa-cog" align="center"></em></th></tr></thead><tbody>';
+                echo '<thead style="background-color: gray; color:white; "><tr><th>ID</th><th>Shipper Details</th><th>Receiver Details</th><th>Shipment Date</th><th>Courier Vendor</th><th>Airway Bill Number</th><th><em class="fa fa-cog" align="center"></em></th></tr></thead><tbody>';
                 echo '<tr><td colspan="7" align="center">No Record Found</td></tr>';
                 echo '</tbody></table><br />';
                 
             }
             else if($numrows>0){
                 echo ' <table class=" col-md-12 table table-striped table-bordered table-list">';
-                echo '<thead><tr><th>Select All &nbsp<INPUT type="checkbox" onchange="checkAll(this)" name="chk[]" /></th><th>Courier Vendor</th><th>Airway Bill Number</th><th>Shipment Date</th><th>Pickup Date</th><th>Pickup Status</th><th><em class="fa fa-cog" align="center"></em></th></tr></thead><tbody>';
+                echo '<thead style="background-color: gray; color:white; "><tr><th>Select All &nbsp<INPUT type="checkbox" onchange="checkAll(this)" name="chk[]" /></th><th>Courier Vendor</th><th>Airway Bill Number</th><th>Shipment Date</th><th>Pickup Date</th><th>Pickup Status</th><th><em class="fa fa-cog" align="center"></em></th></tr></thead><tbody>';
                 
                 $i=1;
                 while($row = $stmt1->fetch()){
@@ -214,14 +214,14 @@
             
             if($numrows==0){
                 echo ' <table class=" col-md-12 table table-striped table-bordered table-list">';
-                echo '<thead><tr><th>ID</th><th>Shipper Details</th><th>Receiver Details</th><th>Shipment Date</th><th>Courier Vendor</th><th>Airway Bill Number</th><th><em class="fa fa-cog" align="center"></em></th></tr></thead><tbody>';
+                echo '<thead style="background-color: gray; color:white; "><tr><th>ID</th><th>Shipper Details</th><th>Receiver Details</th><th>Shipment Date</th><th>Courier Vendor</th><th>Airway Bill Number</th><th><em class="fa fa-cog" align="center"></em></th></tr></thead><tbody>';
                 echo '<tr><td colspan="7" align="center">No Record Found</td></tr>';
                 echo '</tbody></table><br />';
                 
             }
             else if($numrows>0){
                 echo ' <table class=" col-md-12 table table-striped table-bordered table-list">';
-                echo '<thead><tr><th>Select All &nbsp<INPUT type="checkbox" onchange="checkAll(this)" name="chk[]" /></th><th>Airway Bill Number</th><th>Shipment Date</th><th>Batch ID</th><th>Pickup Date</th><th>Pickup Status</th><th><em class="fa fa-cog" align="center"></em></th></tr></thead><tbody>';
+                echo '<thead style="background-color: gray; color:white; "><tr><th>Select All &nbsp<INPUT type="checkbox" onchange="checkAll(this)" name="chk[]" /></th><th>Airway Bill Number</th><th>Shipment Date</th><th>Batch ID</th><th>Pickup Date</th><th>Pickup Status</th><th><em class="fa fa-cog" align="center"></em></th></tr></thead><tbody>';
                 $i=1;
                 while($row = $stmt1->fetch()){
                     

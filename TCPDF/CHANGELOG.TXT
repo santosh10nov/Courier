@@ -942,7 +942,7 @@
 	- Table header alignment when using WriteHTMLCell() or MultiCell() was fixed.
 
 5.9.074 (2011-04-28)
-	- Bug item #3294306 "CSS classes not work in <thead> table section" was fixed.
+	- Bug item #3294306 "CSS classes not work in <thead style="background-color: gray; color:white; "> table section" was fixed.
 
 5.9.073 (2011-04-27)
 	- A bug related to character entities on HTML cells was fixed.
@@ -1687,7 +1687,7 @@
 
 4.8.038 (2010-03-13)
 	- Various bugs related to page-break in HTML mode were fixed.
-	- Bug item #2968974 "Another <thead> pagebreak problem" was fixed.
+	- Bug item #2968974 "Another <thead style="background-color: gray; color:white; "> pagebreak problem" was fixed.
 	- Bug item #2969276 "justification problem" was fixed.
 	- Bug item #2969289 "bug when using justified text and custom headers" was fixed.
 	- Images are now automatically resized to be contained on the page.
@@ -1696,7 +1696,7 @@
 
 4.8.037 (2010-03-03)
 	- Bug item #2962068 was fixed.
-	- Bug item #2967017 "Problems with <thead> and pagebreaks" was fixed.
+	- Bug item #2967017 "Problems with <thead style="background-color: gray; color:white; "> and pagebreaks" was fixed.
 	- Bug item #2967023 "table header lost with pagebreak" was fixed.
 	- Bug item #2967032 "Header lost with nested tables" was fixed.
 

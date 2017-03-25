@@ -1,3 +1,19 @@
+<?php
+    
+    session_start();
+    require_once 'class.user.php';
+    $user = new USER();
+    
+    if($user->is_logged_in()!=true)
+    {
+        $user->redirect('login.php');
+    }
+    
+    $userid=$_SESSION['userSession'];
+    
+    ?>
+
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -7,10 +23,17 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title>rShipper-Generate AirwayBill</title>
-<meta name="description" content="Learn how to recreate the preloader from Cantina Negrar. Tutorial for a passionate front-end web developers by Petr Tichy.">
+<meta name="description" content="Generate AirwayBill">
 
 <!--iOS -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -50,40 +73,60 @@ position: relative;
 #container {
 padding-top: 10px;
 }
-.pdfobject-container { height:450px;}
+.pdfobject-container { height:600px;}
 .pdfobject { border: 1px solid #666; }
     
     </style>
     </head>
     <body class="demo">
-    <!--[if lt IE 7]>
-        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
+    
+    
+    <nav class="navbar navbar-default">
+    <div class="container-fluid">
+    <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="index.php">rShipper</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+    <ul class="nav navbar-nav">
+    <li><a href="index.php">Dashboard</a></li>
+    <li><a href="ServiceTAT.php">Service Availability/TAT</a></li>
+    <li class="dropdown active">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">AirwayBill</a>
+    <ul class="dropdown-menu">
+    <li><a href="Generate_AirwayBill.php">Generate AirwayBill</a></li>
+    <li><a href="#">AirwayBill List</a></li>
+    <li><a href="DispatchList.php">Dispatch List</a></li>
+    </ul>
+    </li>
+    <li><a href="schedulepickup.html">Pickup</a></li>
+    <li><a href="trackcourier.php">Tracking</a></li>
+    <li><a href="index.php">Extra</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+    <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span></a>
+    <ul class="dropdown-menu">
+    <li><a href="#">Profile</a></li>
+    <li><a href="logout.php">Logout</a></li>
+    </ul>
+    </li>
+    </ul>
+    </div>
+    </div>
+    </nav>
+    
+
         
-        <nav class="navbar navbar-default">
-        <div class="container-fluid">
-        <div class="navbar-header">
-        <a class="navbar-brand" href="index.php">rShipper</a>
-        </div>
-        <ul class="nav navbar-nav">
-        <li><a href="index.php">Home</a></li>
-        <li><a href="Service_Availabilty.php">Service Availabilty</a></li>
-        <li><a href="TAT.php">TAT</a></li>
-        <li class="nav-item nav-link active"><a href="Generate_AirwayBill.php">Generate AirwayBill</a></li>
-        <li><a href="#">Book shipment</a></li>
-        <li><a href="#">Track Courier</a></li>
-        </ul>
-        </div>
-        </nav>
         
-        
-        
-        <!-- Demo content -->
+        <!--content -->
         <div id="container">
-        
-        <header class="entry-header">
-        <h1 class="entry-title">Generate AirwayBill</h1>
-        </header>
+    
+        <h1>Generate AirwayBill</h1>
         
         <div id="loader-wrapper">
         <div id="loader"></div>
@@ -95,21 +138,17 @@ padding-top: 10px;
         
         <form class="form-horizontal" action="airwaybill.php" role="form">
         <div id="content">
-        <div class="row">
-        <div class="col-sm-6" id="info">
-        <button type="button" class="btn btn-danger btn-sm" href="Generate_AirwayBill.php" >Cancel AirwayBill</button>
-        <button type="button" class="btn btn-info btn-sm" onclick="goBack()">Modify AirwayBill</button>
-        <a href="Generate_AirwayBill.php"><button type="button" class="btn btn-success btn-sm">New AirwayBill</button></a>
-        <input type="text" id="AWB_Number" value="">
-        <a href="#" download="proposed_file_name">Download</a>
+        <div class="col-sm-12" id="info" style="display:none;">
+        <button type="button" class="btn btn-info btn-sm" onclick="goBack()">Modify AirwayBill</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="Generate_AirwayBill.php"><button type="button" class="btn btn-success btn-sm">New AirwayBill</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" id="AWB_Number" value="" style="display:none;">
+        <button type="button" class="btn btn-success btn-sm"><a href="#" id="myUniqueLinkId" download>Click to Download!</a></button>
         </div>
-        <div class="col-sm-6" id="pdf">
-        </div>
-        </div>
+        <div class="col-sm-12" id="pdf" style="width: 100%;  margin-top:2%; background-color: gray;"></div>
         </div>
         </form>
         </div>
-        <!-- /Demo content -->
+        <!-- / content -->
         
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="./js/pdfobject.js"></script>
@@ -125,19 +164,32 @@ padding-top: 10px;
                           });
     
     function goBack() {
-        window.history.back();
+        var AWB=document.getElementById("AWB_Number").value;
+        
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                window.history.back();
+            }
+        };
+        xmlhttp.open("GET","airwaybill_list_action.php?action=AWBModified&AWB="+AWB,true);
+        xmlhttp.send();
+
     }
     </script>
     
-    </body>
-    </html>
-    
+  
     <?php
     
     
     if (isset($_POST["from_pin"]) && !empty($_POST["from_pin"]) && isset($_POST["to_pin"]) && !empty($_POST["to_pin"])) {
         
-        $userid="santy";
         
         $shipment_date=$_POST["date"];
         $nowtime = time();
@@ -145,11 +197,19 @@ padding-top: 10px;
         $convert_date = new DateTime($shipment_date);
         $shipment_date1 = date_format($convert_date, 'd-M-Y');
         
+        /////////////////////////////////////////////////
+        ///////////// Courier Vendor Details ////////////
+        /////////////////////////////////////////////////
         
         $couriervendor=$_POST["couriervendor"];
         $service=$_POST["services"];
         $account_number=$_POST["accountnumber"];
         $uid=$_POST["UID"];
+        
+        $OtherCourierVendor=$_POST["OtherCourierVendor"];
+        $OtherCourierService=$_POST["OtherCourierService"];
+        $OtherCourierAWB=$_POST["OtherCourierAWB"];
+        
         
         $from_pin=$_POST["from_pin"];
         $to_pin=$_POST["to_pin"];
@@ -221,6 +281,8 @@ padding-top: 10px;
                 
                 $Commodity_desc["Com".$i]["Commodity".$i]=$_POST["Commodity".$i];
                 $Commodity_desc["Com".$i]["Commodity_desc".$i]=$_POST["Commodity_desc".$i];
+                $Commodity_desc["Com".$i]["Commodity_quan".$i]=$_POST["Commodity_quan".$i];
+                $Commodity_desc["Com".$i]["Commodity_weight".$i]=$_POST["Commodity_weight".$i];
                 $Commodity_desc["Com".$i]["CommodityValue".$i]=$_POST["CommodityValue".$i];
                 
             }
@@ -298,7 +360,13 @@ padding-top: 10px;
                 if($status=="Success"){
                     ?>
                     
-                    <script>PDFObject.embed('<?php echo "./AirwayBill/FedEx/AirwayBill/$filename";?>', "#pdf");</script>
+                    <script>
+                    PDFObject.embed('<?php echo "./AirwayBill/FedEx/AirwayBill/$filename";?>', "#pdf");
+                    document.getElementById("AWB_Number").value = "<?php echo $token; ?>";
+                    document.getElementById("info").style.display='block';
+                    var myURL = '<?php echo $filepath; ?>';
+                    document.getElementById('myUniqueLinkId').href = myURL;
+                    </script>
                     
                     <?php
                 }
@@ -399,7 +467,13 @@ padding-top: 10px;
                 
                 if($status=="Success"){
                     ?>
-                    <script>PDFObject.embed('<?php echo "./AirwayBill/BlueDart/AirwayBill/$filename";?>', "#pdf");</script>
+                    <script>
+                    PDFObject.embed('<?php echo "./AirwayBill/BlueDart/AirwayBill/$filename";?>', "#pdf");
+                    document.getElementById("AWB_Number").value = "<?php echo $token; ?>";
+                    document.getElementById("info").style.display='block';
+                    var myURL = '<?php echo $filepath; ?>';
+                    document.getElementById('myUniqueLinkId').href = myURL;
+                    </script>
                     
                     <?php
                 }
@@ -411,9 +485,27 @@ padding-top: 10px;
                     echo "Sorry, No Service";
                 }
             }
-            elseif($couriervendor=="DTDC"){
+            elseif($couriervendor=="Other"){
                 
-                include './fpdf/create_reciept.php';
+                include './AirwayBill/NonAPI/create_awb.php';
+                ob_end_clean();
+                
+                if($status=="Success"){
+                    ?>
+                    <script>
+                    PDFObject.embed('<?php echo "./AirwayBill/NonAPI/AirwayBill/$fname";?>', "#pdf");
+                    document.getElementById("AWB_Number").value = "<?php echo $OtherCourierAWB; ?>";
+                    document.getElementById("info").style.display='block';
+                    var myURL = '<?php echo $filepath; ?>';
+                    document.getElementById('myUniqueLinkId').href = myURL;
+                    </script>
+                    
+                    <?php
+                }
+                elseif($status=="Error"){
+                    echo "Sorry, Some Error Occurred";
+                }
+
             }
             
             
@@ -429,6 +521,8 @@ padding-top: 10px;
     
     ?>
     
+    </body>
+    </html>
     
     
     
