@@ -45,6 +45,8 @@
 <li><a href="Generate_AirwayBill.php">Generate AirwayBill</a></li>
 <li><a href="AirwayBillList.php">AirwayBill List</a></li>
 <li><a href="DispatchList.php">Dispatch List</a></li>
+<li><a href="ReceiveCourier.php">Receive Courier</a></li>
+<li><a href="ReceiveCourierList.php">Receive Courier List</a></li>
 </ul>
 </li>
 <li><a href="schedulepickup.html">Pickup</a></li>

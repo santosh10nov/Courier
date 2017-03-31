@@ -26,10 +26,7 @@
 		  #echo "Start  of Soap 1.2 version (ws_http_Binding)  setting";
     
     
-    $servername = "127.0.0.1";
-    $username = "root";
-    $pass = "yesbank";
-    $dbname = "transporter";
+    require_once 'dbconfig.php';
     
     
 	 		$soap = new DebugSoapClient('http://netconnect.bluedart.com/Demo/ShippingAPI/Pickup/PickupRegistrationService.svc?wsdl',

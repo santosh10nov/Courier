@@ -2,7 +2,7 @@
     class Database
     {
         
-        private $host = "localhost";
+        private $host = "127.0.0.1";
         private $db_name = "transporter";
         private $username = "root";
         private $password = "yesbank";
@@ -25,4 +25,10 @@
             return $this->conn;
         }
     }
+    
+    $servername = "localhost";
+    $dbname = "transporter";
+    $username = "root";
+    $pass = "yesbank";
+    
     ?>

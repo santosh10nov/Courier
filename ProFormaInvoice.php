@@ -1,49 +1,5 @@
 <?php
 
-include("TCPDF/tcpdf.php");
-
-class MYPDF extends TCPDF {
-    //Page header
-    public function Header() {
-        $headerData = $this->getHeaderData();
-        $this->SetFont('helvetica','B', 10);
-        $this->writeHTML($headerData['string']);
-    }
-}
-
-
-
-$style = array(
-               'position' => '',
-               'align' => 'C',
-               'stretch' => false,
-               'fitwidth' => true,
-               'cellfitalign' => '',
-               'border' => true,
-               'hpadding' => 'auto',
-               'vpadding' => 'auto',
-               'fgcolor' => array(0,0,0),
-               'bgcolor' => false, //array(255,255,255),
-               'text' => true,
-               'font' => 'helvetica',
-               'fontsize' => 8,
-               'stretchtext' => 4
-               );
-
-$pdf = new MYPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, "UTF-8", false); //Default for UTF-8 unicode
-//$pdf = new MYPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, false, ‘ISO-8859-1′, false); // set unicode to ISO-8859-1 so special chars like æ, ø, å will work.
-$pdf->SetCreator(PDF_CREATOR);
-// set default header data
-$pdf->setHeaderData($ln='', $lw=0, $ht='', $hs='<table id="head" cellpadding="10" cellspacing="0" style="text-align:center;"><tr><td>Airway Bill</td></tr></table>', $tc=array(0,0,0), $lc=array(0,0,0));
-// set header and footer fonts
-$pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
-$pdf->setFooterFont(Array(PDF_FONT_NAME_DATA,'', PDF_FONT_SIZE_DATA));
-// set default monospaced font
-$pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
-// set document information
-
-
 $PackageDetails="";
 $Pro_formaPackageDetails="";
 $total_units=0;

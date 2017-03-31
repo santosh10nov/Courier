@@ -142,7 +142,7 @@ padding-top: 10px;
         <button type="button" class="btn btn-info btn-sm" onclick="goBack()">Modify AirwayBill</button>&nbsp;&nbsp;&nbsp;&nbsp;
         <a href="Generate_AirwayBill.php"><button type="button" class="btn btn-success btn-sm">New AirwayBill</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="text" id="AWB_Number" value="" style="display:none;">
-        <button type="button" class="btn btn-success btn-sm"><a href="#" id="myUniqueLinkId" download>Click to Download!</a></button>
+        <button type="button" class="btn btn-success btn-sm"><a href="#" id="myUniqueLinkId" download>Download!</a></button>
         </div>
         <div class="col-sm-12" id="pdf" style="width: 100%;  margin-top:2%; background-color: gray;"></div>
         </div>
@@ -296,11 +296,7 @@ padding-top: 10px;
         
         $status="";
         
-        $servername = "127.0.0.1";
-        $username = "root";
-        $pass = "yesbank";
-        $dbname = "transporter";
-        
+       require_once 'dbconfig.php';
         try{
             
             $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $pass);
@@ -364,8 +360,9 @@ padding-top: 10px;
                     PDFObject.embed('<?php echo "./AirwayBill/FedEx/AirwayBill/$filename";?>', "#pdf");
                     document.getElementById("AWB_Number").value = "<?php echo $token; ?>";
                     document.getElementById("info").style.display='block';
-                    var myURL = '<?php echo $filepath; ?>';
-                    document.getElementById('myUniqueLinkId').href = myURL;
+                    var UID = '<?php echo $AWB_UID; ?>';
+                    var userid='<?php echo $userid; ?>';
+                    document.getElementById('myUniqueLinkId').href = 'download.php?UID='+UID+'&userid='+$userid;
                     </script>
                     
                     <?php
@@ -471,8 +468,9 @@ padding-top: 10px;
                     PDFObject.embed('<?php echo "./AirwayBill/BlueDart/AirwayBill/$filename";?>', "#pdf");
                     document.getElementById("AWB_Number").value = "<?php echo $token; ?>";
                     document.getElementById("info").style.display='block';
-                    var myURL = '<?php echo $filepath; ?>';
-                    document.getElementById('myUniqueLinkId').href = myURL;
+                    var UID = '<?php echo $AWB_UID; ?>';
+                    var userid='<?php echo $userid; ?>';
+                    document.getElementById('myUniqueLinkId').href = 'download.php?UID='+UID+'&userid='+$userid;
                     </script>
                     
                     <?php
@@ -496,8 +494,9 @@ padding-top: 10px;
                     PDFObject.embed('<?php echo "./AirwayBill/NonAPI/AirwayBill/$fname";?>', "#pdf");
                     document.getElementById("AWB_Number").value = "<?php echo $OtherCourierAWB; ?>";
                     document.getElementById("info").style.display='block';
-                    var myURL = '<?php echo $filepath; ?>';
-                    document.getElementById('myUniqueLinkId').href = myURL;
+                    var UID = '<?php echo $AWB_UID; ?>';
+                    var userid='<?php echo $userid; ?>';
+                    document.getElementById('myUniqueLinkId').href = 'download.php?UID='+UID+'&userid='+$userid;
                     </script>
                     
                     <?php

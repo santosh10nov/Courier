@@ -1,9 +1,6 @@
 <?php
     
-    $servername = "127.0.0.1";
-    $username = "root";
-    $pass = "yesbank";
-    $dbname = "transporter";
+    require_once 'dbconfig.php';
 
     //SMTP needs accurate times, and the PHP time zone MUST be set
     //This should be done in your php.ini, but this is how to do it if you don't have access to that

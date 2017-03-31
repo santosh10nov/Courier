@@ -6,11 +6,7 @@
     $action=$_GET['action'];
     $output="";
     
-    $servername = "127.0.0.1";
-    $username = "root";
-    $pass = "yesbank";
-    $dbname = "transporter";
-    
+    require_once 'dbconfig.php';
     
     
     
@@ -270,6 +266,29 @@
             $id=$_GET['id'];
             
             $stmt1 = $conn->prepare("SELECT DISTINCT `CourierVendor` as `Vendor` FROM `AirwayBill` where AWB_Status in ('Success','Dispatched') and CreatedByUserID='$id'");
+            $stmt1->execute();
+            
+            $numrows = $stmt1->rowCount();
+            
+            $stmt1->setFetchMode(PDO::FETCH_ASSOC);
+            
+            $response = array();
+            while($row = $stmt1->fetch())
+            {
+                $x['value']=$row['Vendor'];
+                $x['venndor_name']=$row['Vendor'];
+                $response[] = $x;
+            }
+            echo json_encode($response);
+            
+        }
+        
+        elseif($action=="ReceiveCourierList"){
+            
+            
+            $id=$_GET['id'];
+            
+            $stmt1 = $conn->prepare("SELECT DISTINCT `CourierVendor` as `Vendor` FROM `receive_details` where AWB_Status in ('Received') and CreatedByUserID='$id'");
             $stmt1->execute();
             
             $numrows = $stmt1->rowCount();

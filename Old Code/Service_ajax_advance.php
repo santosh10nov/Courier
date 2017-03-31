@@ -2,10 +2,7 @@
     
     $service=$_GET['couriervendor'];
     
-    $servername = "127.0.0.1";
-    $username = "root";
-    $pass = "yesbank";
-    $dbname = "transporter";
+    require_once 'dbconfig.php';
     
     if($service=="BlueDart"){
         $from_pin = $_GET['from_pin'];

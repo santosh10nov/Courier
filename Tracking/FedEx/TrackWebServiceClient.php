@@ -13,10 +13,7 @@
     $client = new SoapClient($path_to_wsdl, array('trace' => 1)); // Refer to http://us3.php.net/manual/en/ref.soap.php for more information
     
     
-    $servername = "127.0.0.1";
-    $username = "root";
-    $pass = "yesbank";
-    $dbname = "transporter";
+    require_once 'dbconfig.php';
     
     //$AWBNo="794626519641";
     //$UID="0";

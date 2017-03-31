@@ -38,10 +38,7 @@
             $from_pin=$_POST["from_pin"];
             $to_pin=$_POST["to_pin"];
             
-            $servername = "127.0.0.1";
-            $username = "root";
-            $pass = "yesbank";
-            $dbname = "transporter";
+            require_once 'dbconfig.php';
             
             try{
                 $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $pass);

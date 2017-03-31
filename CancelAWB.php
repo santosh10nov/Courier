@@ -4,11 +4,7 @@
     header("Content-Type: application/json; charset=UTF-8");
     
     
-    $servername = "127.0.0.1";
-    $username = "root";
-    $pass = "yesbank";
-    $dbname = "transporter";
-    
+    require_once 'dbconfig.php';
     
    
     $cancel_type=$_GET["cancel_type"];
@@ -26,17 +22,26 @@
             $AWB_Date=$_GET["AWB_Date"];
             $UID=$_GET["UID"];
             
-            $stmt1 = $conn->prepare("UPDATE `AirwayBill` SET `AWB_Status`='Cancellation Pending' where `UID`=$UID AND `Airwaybill_Number`=$Airwaybill_Number ");
+            $stmt1 = $conn->prepare("UPDATE `AirwayBill` SET `AWB_Status`='Cancellation Pending' where `UID`=$UID AND `Airwaybill_Number`='$Airwaybill_Number' ");
             $stmt1->execute();
         }
         elseif($cancel_type=="Pickup"){
             
             $UID=$_GET["UID"];
             $Airwaybill_Number=$_GET["Airwaybill_Number"];
-            $stmt1 = $conn->prepare("UPDATE `pickup` SET `Pickup_Status`='Cancel Pickup' WHERE `UID`= $UID and AWB_Number= $Airwaybill_Number");
+            $stmt1 = $conn->prepare("UPDATE `pickup` SET `Pickup_Status`='Cancel Pickup' WHERE `UID`= $UID and AWB_Number= '$Airwaybill_Number'ßß");
             $stmt1->execute();
             
             echo "Pickup Canceled";
+        }
+        
+        elseif($cancel_type=="Receive"){
+            
+           
+            $Airwaybill_Number=$_GET["Airwaybill_Number"];
+            $RUID=$_GET["RUID"];
+            $stmt1 = $conn->prepare("UPDATE `receive_details` SET `AWB_Status`='Cancel' WHERE `RUID`='$RUID' and Airwaybill_Number='$Airwaybill_Number'");
+            $stmt1->execute();
         }
         
         

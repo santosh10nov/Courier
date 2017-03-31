@@ -45,10 +45,7 @@
         include 'FedExTAT.php';
 
         
-        $servername = "127.0.0.1";
-        $username = "root";
-        $pass = "yesbank";
-        $dbname = "transporter";
+        require_once 'dbconfig.php';
         
         try{
             $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $pass);

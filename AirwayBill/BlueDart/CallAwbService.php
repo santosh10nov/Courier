@@ -86,10 +86,12 @@
     if($subproduct==''){
         $COD=0;
         $CustomerPay='false';
+        $DBCOD="No";
     }
     else {
         $CustomerPay='true';
         $COD=$CollectableAmount;
+        $DBCOD="Yes";
     }
     
     
@@ -156,7 +158,7 @@
         $key= $row1['account_key'];
         $LoginID= $row1['login_id'];
         
-        $stmt2 = $conn->prepare("SELECT * FROM `bluedart_service_avi` WHERE `pincode`=$from_pin");
+        $stmt2 = $conn->prepare("SELECT * FROM `bluedart_service_avii1` WHERE `pincode`=$from_pin");
         $stmt2->execute();
         $stmt2->setFetchMode(PDO::FETCH_ASSOC);
         $row2 = $stmt2->fetch();
@@ -250,17 +252,56 @@
         
         $token= $result->GenerateWayBillResult->AWBNo;
         
+        $PackageDetails="";
+        
+        include("TCPDF/tcpdf.php");
+        
+        class MYPDF extends TCPDF {
+            //Page header
+            public function Header() {
+                $headerData = $this->getHeaderData();
+                $this->SetFont('helvetica','B', 10);
+                $this->writeHTML($headerData['string']);
+            }
+        }
 
+        
+        
+        
+        $style = array(
+                       'position' => '',
+                       'align' => 'C',
+                       'stretch' => false,
+                       'fitwidth' => true,
+                       'cellfitalign' => '',
+                       'border' => true,
+                       'hpadding' => 'auto',
+                       'vpadding' => 'auto',
+                       'fgcolor' => array(0,0,0),
+                       'bgcolor' => false, //array(255,255,255),
+                       'text' => true,
+                       'font' => 'helvetica',
+                       'fontsize' => 8,
+                       'stretchtext' => 4
+                       );
+        
+        $pdf = new MYPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, "UTF-8", false); //Default for UTF-8 unicode
+        //$pdf = new MYPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, false, ‘ISO-8859-1′, false); // set unicode to ISO-8859-1 so special chars like æ, ø, å will work.
+        $pdf->SetCreator(PDF_CREATOR);
+        // set header and footer fonts
+        $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+        $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA,'', PDF_FONT_SIZE_DATA));
+        // set default monospaced font
+        $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+        $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+        // set document information
+
+        
         if($shipmentcontent=="Commodities"){
             
             include("ProFormaInvoice.php");
         }
         
-       
-        
-        /*$fp = fopen("./AirwayBill/BlueDart/AirwayBill/".$filename, 'a+');
-        fwrite($fp,$result->GenerateWayBillResult->AWBPrintContent); //Create PNG or PDF file
-        fclose($fp);*/
         
         /////////////////////////////////////////////////
         ///////////////Genrates AWB//////////////////////
@@ -304,21 +345,22 @@
         $pdf->Output($_SERVER['DOCUMENT_ROOT'].'/Courier/AirwayBill/BlueDart/AirwayBill/'.$filename, 'F'); // save in folder
         ob_end_clean();
         
-    
-        $stmt5 = $conn->prepare("INSERT INTO `AirwayBill`(`ShipperName`, `ReceiverName`, `COD`, `PackageCount`, `ReferenceID`, `AWB_Date`, `CourierVendor`, `CourierService`,`Airwaybill_Number`,`AWB_Status`, `AWB_Link`,`CreatedByUserID`) VALUES ('$sender_info[1]','$receiver_info[1]','$COD',$packagecount,'$uid','$shipment_date','BlueDart','$service','$token','Success','$filepath','$userid')");
+        
+        $stmt5 = $conn->prepare("INSERT INTO `AirwayBill`(`ShipperName`, `ReceiverName`, `COD`, `PackageCount`, `ReferenceID`, `AWB_Date`, `CourierVendor`, `CourierService`,`Airwaybill_Number`,`AWB_Status`, `AWB_Link`,`CreatedByUserID`) VALUES ('$sender_info[1]','$receiver_info[1]','$DBCOD',$packagecount,'$uid','$shipment_date','BlueDart','$service','$token','Success','$filepath','$userid')");
         $stmt5->execute();
-    
-        $stmt6 = $conn->prepare(" SELECT * FROM AirwayBill WHERE `ShipperName`='$sender_info[1]' AND `ReceiverName`= '$receiver_info[1]' AND `COD`= '$COD' AND `ReferenceID`='$uid' AND `AWB_Date`='$shipment_date' AND `CourierVendor`='BlueDart' AND `AWB_Status` ='Success' order by `API_Hit_Date` DESC");
+        
+        $stmt6 = $conn->prepare(" SELECT * FROM AirwayBill WHERE `ShipperName`='$sender_info[1]' AND `ReceiverName`= '$receiver_info[1]' AND `COD`= '$DBCOD' AND `ReferenceID`='$uid' AND `AWB_Date`='$shipment_date' AND `CourierVendor`='BlueDart' AND `AWB_Status` ='Success' order by `API_Hit_Date` DESC");
         $stmt6->execute();
-    
+        
         $stmt6->setFetchMode(PDO::FETCH_ASSOC);
         $row6 = $stmt6->fetch();
-    
+        
         $AWB_UID=$row6['UID'];
-    
-    
+        
+        
+        
         $stmt7=$conn->prepare("INSERT INTO `AirwayBill_Parties`(`Shipper_VendorID`,`Shipper_Name`, `Shipper_Comp`, `Shipper_Address`,`Shipper_City`,`Shipper_State`,`Shipper_Pincode`,`Shipper_Phone`,`Receiver_VendorID`, `Receiver_Name`, `Receiver_Comp`, `Receiver_Address`,`Receiver_City`,`Receiver_State`,`Receiver_Pincode`,`Receiver_Phone`,`AWB_UID`) VALUES ('$sender_vendorid','$sender_info[1]','$sender_info[2]','$sender_info[3]','$sender_info[4]','$sender_info[5]','$sender_info[0]','$sender_info[6]','$receiver_vendorid','$receiver_info[1]','$receiver_info[2]','$receiver_info[3]','$receiver_info[4]','$receiver_info[5]','$receiver_info[0]','$receiver_info[6]','$AWB_UID') ");
-    
+        
         $stmt7->execute();
         
         
@@ -356,17 +398,19 @@
         $stmt10->execute();
         
         
-         $status="Success";
+        $status="Success";
+        
+        
 
     }
     else{
         
-        $stmt5 = $conn->prepare("INSERT INTO `AirwayBill`(`ShipperName`, `ReceiverName`, `COD`, `PackageCount`, `ReferenceID`, `AWB_Date`, `CourierVendor`, `CourierService`, `AWB_Status`, `AWB_Link`) VALUES ('$sender_info[1]','$receiver_info[1]','$COD',$packagecount,'$uid','$shipment_date','BlueDart','$service','Fail','')");
+        $stmt5 = $conn->prepare("INSERT INTO `AirwayBill`(`ShipperName`, `ReceiverName`, `COD`, `PackageCount`, `ReferenceID`, `AWB_Date`, `CourierVendor`, `CourierService`, `AWB_Status`, `AWB_Link`,`CreatedByUserID`) VALUES ('$sender_info[1]','$receiver_info[1]','$DBCOD',$packagecount,'$uid','$shipment_date','BlueDart','$service','Fail','','$userid')");
         $stmt5->execute();
         
         
         
-        $stmt6 = $conn->prepare(" SELECT * FROM AirwayBill WHERE `ShipperName`='$sender_info[1]' AND `ReceiverName`= '$receiver_info[1]' AND `COD`= '$COD' AND `ReferenceID`='$uid' AND `AWB_Date`='$shipment_date' AND `CourierVendor`='BlueDart' AND `AWB_Status` ='Fail' order by `API_Hit_Date` DESC");
+        $stmt6 = $conn->prepare(" SELECT * FROM AirwayBill WHERE `ShipperName`='$sender_info[1]' AND `ReceiverName`= '$receiver_info[1]' AND `COD`= '$DBCOD' AND `ReferenceID`='$uid' AND `AWB_Date`='$shipment_date' AND `CourierVendor`='BlueDart' AND `AWB_Status` ='Fail' order by `API_Hit_Date` DESC");
         $stmt6->execute();
         
         $stmt6->setFetchMode(PDO::FETCH_ASSOC);

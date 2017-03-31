@@ -2,7 +2,7 @@
 // Copyright 2009, FedEx Corporation. All rights reserved.
 // Version 12.0.0
 
-require_once('fedex-common.php5');
+require_once('/Applications/XAMPP/xamppfiles/htdocs/Courier/fedex-common.php5');
 
 //The WSDL is not included with the sample code.
 //Please include and reference in $path_to_wsdl variable.
@@ -17,12 +17,15 @@ ini_set("soap.wsdl_cache_enabled", "0");
 $client = new SoapClient($path_to_wsdl, array('trace' => 1)); // Refer to http://us3.php.net/manual/en/ref.soap.php for more information
 
  
+    $stmt=$conn->prepare("Select * from courier_vendor_details where account_number=$account_number and name='FedEx'");
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    $row = $stmt->fetch();
     
-    try{
-        
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $pass);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
+    $Key=$row['account_key'];
+    $Password=$row['password'];
+    $Meter=$row['login_id'];
+    
         
         $stmt1 = $conn->prepare("Select * from fedex_service_avi where `pincode`=$from_pin");
         $stmt1->execute();
@@ -40,18 +43,18 @@ $client = new SoapClient($path_to_wsdl, array('trace' => 1)); // Refer to http:/
         
             $request['WebAuthenticationDetail'] = array(
                                                         'ParentCredential' => array(
-                                                                                    'Key' => getProperty('parentkey'),
-                                                                                    'Password' => getProperty('parentpassword')
+                                                                                    'Key' =>$Key,
+                                                                                    'Password' =>$Password
                                                                                     ),
                                                         'UserCredential' => array(
-                                                                                  'Key' => getProperty('key'),
-                                                                                  'Password' => getProperty('password')
+                                                                                  'Key' =>$Key,
+                                                                                  'Password' =>$Password
                                                                                   )
                                                         );
             
             $request['ClientDetail'] = array(
-                                             'AccountNumber' => getProperty('shipaccount'),
-                                             'MeterNumber' => getProperty('meter')
+                                             'AccountNumber' =>$account_number,
+                                             'MeterNumber' =>$Meter
                                              );
             $request['TransactionDetail'] = array('CustomerTransactionId' => '*** Express Domestic Shipping Request using PHP ***');
             $request['Version'] = array(
@@ -194,7 +197,7 @@ $client = new SoapClient($path_to_wsdl, array('trace' => 1)); // Refer to http:/
             } catch (SoapFault $exception) {
                 
                 
-                $message=json_encode($exception->detail);
+                $message=json_encode($exception);
                 $message = str_replace("'", ' ', $message);
                 
                 $stmt5 = $conn->prepare("INSERT INTO `AirwayBill`(`ShipperName`, `ReceiverName`, `COD`, `PackageCount`, `ReferenceID`, `AWB_Date`, `CourierVendor`, `CourierService`, `AWB_Status`, `AWB_Link`) VALUES ('$sender_info[1]','$receiver_info[1]','$COD',$packagecount,'$uid','$shipment_date','FedEx','$service','Fail','')");
@@ -216,11 +219,7 @@ $client = new SoapClient($path_to_wsdl, array('trace' => 1)); // Refer to http:/
                 
                  $status="Error";
             }
-            
-    }
-    catch(PDOException $e) {
-        echo "Error: " . $e->getMessage();
-    }
+  
     
  
 

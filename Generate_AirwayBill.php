@@ -110,7 +110,7 @@ padding: 16px;
 <div class="container" id="container">
 <h1 align="center">Generate AirwayBill </h1>
 <!-- form start -->
-<form class="form-horizontal" action="airwaybill.php" role="form" method="post" onsubmit="validate_activity()">
+<form class="form-horizontal" action="airwaybill.php" role="form" method="post" onsubmit="return(validate_form());">
 
 <div class="row">
 <!-- right column -->
@@ -357,7 +357,7 @@ padding: 16px;
 
 </table>
 <button type="reset" class="btn btn-danger">Reset</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<button type="submit" class="btn btn-success"  onclick=" validate_activity()">Submit</button>
+<button type="submit" class="btn btn-success" >Submit</button>
 </div>
 <!-- /.box-footer -->
 </div>
@@ -1248,7 +1248,42 @@ function santy(x,y,z){
 }
 
 
-
+function validate_form(){
+    
+    ////// Sender////////////////////
+    
+    var spin= document.getElementById("from_pin").value;
+    var sname = document.getElementById("sender_name").value;
+    var scom_name = document.getElementById("sender_com_name").value;
+    var saddress = document.getElementById("sender_address").value;
+    var scity = document.getElementById("sender_city").value;
+    var sstate = document.getElementById("sender_state").value;
+    var sphone = document.getElementById("sender_phone").value;
+    var svendorid=document.getElementById("sender_vendorid").value;
+    
+    
+    /////////// Receiver/////////////
+    
+    var rpin= document.getElementById("to_pin").value;
+    var rname = document.getElementById("receiver_name").value;
+    var rcom_name = document.getElementById("receiver_com_name").value;
+    var raddress = document.getElementById("receiver_address").value;
+    var rcity = document.getElementById("receiver_city").value;
+    var rstate = document.getElementById("receiver_state").value;
+    var rphone = document.getElementById("receiver_phone").value;
+    var rvendorid=document.getElementById("receiver_vendorid").value;
+    
+    
+    if(spin=="" || sname=="" || scom_name=="" || saddress=="" || scity=="" || sstate=="" || sphone=="" || svendorid=="" ){
+        
+        alert(Enter required details);
+        return false;
+    }
+    
+    
+    
+    
+}
 
 
 </script>
