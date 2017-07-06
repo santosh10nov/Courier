@@ -189,7 +189,7 @@ padding: 16px;
 
 
 </div>
-<div class="panel-body" id="result">
+<div class="panel-body" id="result" style="overflow: scroll;">
 
 
 </div>

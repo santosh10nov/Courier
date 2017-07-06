@@ -7,7 +7,7 @@
     $newline = "<br />";
     //The WSDL is not included with the sample code.
     //Please include and reference in $path_to_wsdl variable.
-    $path_to_wsdl1 = "/Applications/XAMPP/xamppfiles/htdocs/web/rate/wsdl/RateService_v18.wsdl";
+    $path_to_wsdl1 = "/Applications/XAMPP/xamppfiles/htdocs/Courier/wsdl/RateService_v18.wsdl";
     
     ini_set("soap.wsdl_cache_enabled", "0");
     
@@ -28,7 +28,7 @@
     //////////////////////////////////
     
     
-   require_once 'dbconfig.php';
+   
     
     try{
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $pass);

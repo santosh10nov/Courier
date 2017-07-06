@@ -3,7 +3,7 @@
     header("Access-Control-Allow-Origin: *");
     header("Content-Type: application/json; charset=UTF-8");
     
-    
+    $userid=$_GET['id'];
     $searchvendorid=$_GET['searchvendorid'];
     $searchname=$_GET['searchname'];
     $searchcom_name=$_GET['comp_name'];
@@ -26,7 +26,7 @@
         
         
         //$stmt1 = $conn->prepare("Select * from contact_list where phone LIKE '$searchname' ");
-        $stmt1 = $conn->prepare("SELECT * FROM `contact_list` WHERE fav!=0 and `Name` LIKE '%$searchname%' and Company LIKE '%$searchcom_name%' and phone LIKE '%$searchphone%' and `vendor_id` LIKE '%$searchvendorid%' Limit 5");
+        $stmt1 = $conn->prepare("SELECT * FROM `contact_list` WHERE fav!=0 and `Name` LIKE '%$searchname%' and Company LIKE '%$searchcom_name%' and phone LIKE '%$searchphone%' and `vendor_id` LIKE '%$searchvendorid%' and `UpdatedBy`='$userid' Limit 5");
 
         $stmt1->execute();
         

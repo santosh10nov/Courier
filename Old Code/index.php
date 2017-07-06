@@ -10,21 +10,8 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default">
-<div class="container-fluid">
-<div class="navbar-header">
-<a class="navbar-brand" href="index.php">rShipper</a>
-</div>
-<ul class="nav navbar-nav">
-<li class="active"><a href="index.php">Home</a></li>
-<li><a href="Service_Availabilty.php">Service Availability</a></li>
-<li><a href="TAT.php">TAT</a></li>
-<li><a href="Generate_AirwayBill.php">Generate AirwayBill</a></li>
-<li><a href="#">Book Pickup</a></li>
-<li><a href="#">Track Courier</a></li>
-</ul>
-</div>
-</nav>
+
+<?php echo  $user->Navigation(); ?>
 
 <div class="container">
 <table style="width:100%">

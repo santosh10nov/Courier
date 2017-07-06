@@ -2,11 +2,11 @@
 // Copyright 2009, FedEx Corporation. All rights reserved.
 // Version 5.0.0
 
-require_once('fedex-common.php5');
+require_once('/Applications/XAMPP/xamppfiles/htdocs/Courier/fedex-common.php5');
 
 //The WSDL is not included with the sample code.
 //Please include and reference in $path_to_wsdl variable.
-$path_to_wsdl = "/Applications/XAMPP/xamppfiles/htdocs/Courier/Pickup/FedEx/PickupService_v13.wsdl";
+$path_to_wsdl = "/Applications/XAMPP/xamppfiles/htdocs/Courier/wsdl/PickupService_v13.wsdl";
 
 ini_set("soap.wsdl_cache_enabled", "0");
 
@@ -15,8 +15,17 @@ $client = new SoapClient($path_to_wsdl, array('trace' => 1)); // Refer to http:/
     
     try{
         
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $pass);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+     
+        
+        $stmt6 = $conn->prepare("SELECT * FROM `courier_vendor_details` WHERE `name`='FedEx' and CompanyID='$CompanyID'");
+        $stmt6->execute();
+        $stmt6->setFetchMode(PDO::FETCH_ASSOC);
+        $row6 = $stmt6->fetch();
+        
+        $key=$row6['account_key'];
+        $password=$row6['password'];
+        $accountnumber=$row6['account_number'];
+        $meterno=$row6['login_id'];
         
         
         $stmt1 = $conn->prepare("Select * from fedex_service_avi where `pincode`=$pincode");
@@ -38,17 +47,17 @@ $client = new SoapClient($path_to_wsdl, array('trace' => 1)); // Refer to http:/
         
 $request['WebAuthenticationDetail'] = array(
 	'ParentCredential' => array(
-		'Key' => getProperty('parentkey'),
-		'Password' => getProperty('parentpassword')
+		'Key' => $key,
+		'Password' => $password
 	),
 	'UserCredential' => array(
-		'Key' => getProperty('key'), 
-		'Password' => getProperty('password')
+		'Key' => $key,
+		'Password' => $password
 	)
 );
 $request['ClientDetail'] = array(
-	'AccountNumber' => getProperty('shipaccount'), 
-	'MeterNumber' => getProperty('meter')
+	'AccountNumber' => $accountnumber,
+	'MeterNumber' => $meterno
 );
 $request['TransactionDetail'] = array('CustomerTransactionId' => '*** Create Pickup Request using PHP ***');
 $request['Version'] = array(
@@ -112,7 +121,7 @@ try {
         ////////Insert Data in Tracking & Tracking History Table/////////////
         /////////////////////////////////////////////////////////////////////
         
-        $stmt4= $conn->prepare(" INSERT INTO `Tracking`(`AWB_Number`, `UID`, `CourierVendor`, `Code`,  `StatusChangeTimestamp`,`UpdatedBy`) VALUES ('$AWBNo','$UID','$couriervendor','PSD',NOW(),'Santy') ");
+        $stmt4= $conn->prepare(" INSERT INTO `Tracking`(`AWB_Number`, `UID`, `CourierVendor`, `Code`,  `StatusChangeTimestamp`,`UpdatedBy`) VALUES ('$AWBNo','$UID','$couriervendor','PSD',NOW(),'$userid') ");
         $stmt4->execute();
         $stmt5= $conn->prepare(" INSERT INTO `TrackingHistory`(`UID`, `Code`, `TrackingTime`) VALUES ('$UID','PSD',NOW())");
         $stmt5->execute();
@@ -132,6 +141,8 @@ try {
     } 
     //printFault($client, $exception);
     //printSuccess($client, $response);
+   
+    $val.=json_encode($response)."\n\n";
     
     
     writeToLog($client);    // Write to log file   

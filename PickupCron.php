@@ -8,17 +8,29 @@
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         
-        $stmt1 = $conn->prepare("SELECT pickup.UID,pickup.Courier_Vendor,pickup.AWB_Number,PickUp_Batch_Details.name,PickUp_Batch_Details. Company_Name,PickUp_Batch_Details.Address,PickUp_Batch_Details.City,PickUp_Batch_Details.State, PickUp_Batch_Details.pincode,PickUp_Batch_Details.Phone,PickUp_Batch_Details.pickup_book_date,PickUp_Batch_Details.pickup_time, PickUp_Batch_Details.com_closing_time,AirwayBill_Packages.Package_Count,AirwayBill_Packages.Weight FROM `pickup` LEFT JOIN PickUp_Batch_Details ON PickUp_Batch_Details.Batch_ID=pickup.Batch_ID LEFT JOIN AirwayBill_Packages ON pickup.UID=AirwayBill_Packages.AWB_UID WHERE pickup.Pickup_Status='UNDER PROCESS' AND pickup.is_locked=0");
+        $stmt1 = $conn->prepare("SELECT pickup.UID,pickup.Courier_Vendor,pickup.AWB_Number,PickUp_Batch_Details.name,PickUp_Batch_Details. Company_Name,PickUp_Batch_Details.Address,PickUp_Batch_Details.City,PickUp_Batch_Details.State, PickUp_Batch_Details.pincode,PickUp_Batch_Details.Phone,PickUp_Batch_Details.pickup_book_date,PickUp_Batch_Details.pickup_time, PickUp_Batch_Details.com_closing_time,AirwayBill_Packages.Package_Count,AirwayBill_Packages.Weight, AirwayBill.CreatedByCompID FROM `pickup` LEFT JOIN PickUp_Batch_Details ON PickUp_Batch_Details.Batch_ID=pickup.Batch_ID LEFT JOIN AirwayBill_Packages ON pickup.UID=AirwayBill_Packages.AWB_UID LEFT JOIN AirwayBill on AirwayBill.UID= pickup.UID WHERE pickup.Pickup_Status='UNDER PROCESS' AND pickup.is_locked=0 AND AirwayBill.AWB_Status='Success'");
         $stmt1->execute();
-        $i=0;
+        $numrows = $stmt1->rowCount();
+        
+        $i=1;
         
         $stmt2 = $conn->prepare("UPDATE `pickup` SET pickup.is_locked=1 WHERE pickup.Pickup_Status='UNDER PROCESS' AND pickup.is_locked=0");
         $stmt2->execute();
+        
+        $fname =time().".txt";
+        
+        $log=fopen($_SERVER['DOCUMENT_ROOT'].'/Courier/Pickup/CronLog/'.$fname,"a");
+        
+        $val="Total Number of rows=>".$numrows."\n";
+        
+        
 
         
         foreach ($stmt1->fetchAll(PDO::FETCH_ASSOC) as $row) {
             
-            //print_r($row);
+            print_r($row);
+            
+            $val.= $i."\n".json_encode($row)."\n\n";
             
             $name=$row["name"];
             $com_name=$row["Company_Name"];
@@ -35,10 +47,12 @@
             
             $AWBNo=$row["AWB_Number"];
             $UID=$row["UID"];
-            $NumberofPieces=$row["Package_Count"];
+            $NumberofPieces=1;      // Scheduling Pickup for Indiv. AWB
             $Weight=$row["Weight"];
             $couriervendor=$row["Courier_Vendor"];
+            $CompanyID=$row["CreatedByCompID"];
             
+            echo $CompanyID;
            
 
             
@@ -50,8 +64,13 @@
                 
                 include("Pickup/FedEx/CreatePickupWebServiceClient.php");
             }
-        }
             
+            $i++;
+        }
+       
+        fwrite($log,$val);
+        
+        fclose($log);
         
 }
     catch(PDOException $e) {

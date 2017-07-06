@@ -54,8 +54,16 @@
     
     
     try{
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $pass);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        
+        $stmt6 = $conn->prepare("SELECT * FROM `courier_vendor_details` WHERE `name`='BlueDart' and CompanyID='$CompanyID'");
+        $stmt6->execute();
+        $stmt6->setFetchMode(PDO::FETCH_ASSOC);
+        $row6 = $stmt6->fetch();
+        
+        $key=$row6['account_key'];
+        $CustomerCode=$row6['account_number'];
+        $LoginID=$row6['login_id'];
         
         
         $stmt1 = $conn->prepare("SELECT * FROM `bluedart_service_avi_main` WHERE pincode= $pincode ");
@@ -128,7 +136,7 @@
                            'EmailID' => 'a@b.com',
                            'MobileTelNo' => $phone,
                            
-                           'CustomerCode' => '359181',
+                           'CustomerCode' =>$CustomerCode,
                            'ProductCode' => $product,
                            'ReferenceNo' => $AWBNo,
                            'Remarks' => $AWBNo,
@@ -143,23 +151,23 @@
                     'profile' =>
                     array(
                           'Api_type' => 'S',
-                          'LicenceKey'=>'4ac1e14526f0e9f4a4d91af49404ca2a',
-                          'LoginID'=>'BOM05559',
+                          'LicenceKey'=>$key,
+                          'LoginID'=>$LoginID,
                           'Version'=>'1.3')
                     );
     
     $result = $soap->__soapCall('RegisterPickup',array($params));
     
-    /*
-     echo '<h5> TokenNo : ' ;
+    
+     /*echo '<h5> TokenNo : ' ;
      echo $result->RegisterPickupResult->TokenNumber;
      echo ' </h5> <h5> Error Message : ' ;
      echo $result->RegisterPickupResult->IsError;
      echo '</h5>' ;
-     */
     
-    //echo "<br>";
-    //echo '<h2>Result</h2><pre>'; print_r($result); echo '</pre>';
+    
+    echo "<br>";
+    echo '<h2>Result</h2><pre>'; print_r($result); echo '</pre>';*/
     
     
     
@@ -174,14 +182,27 @@
         $stmt3= $conn->prepare("UPDATE `pickup` SET `Pickup_Number` = '$Pickup_Number', `Scheduled_Pickup_Date`='$Scheduled_Pickup_Date' ,`Pickup_Status`='Scheduled' WHERE `AWB_Number`='$AWBNo'");
         $stmt3->execute();
         
+        
+        
+        /////////////////////////////////////////////////////////////////////
+        ////////Insert Data in Tracking & Tracking History Table/////////////
+        /////////////////////////////////////////////////////////////////////
+        
+        $stmt4= $conn->prepare(" INSERT INTO `Tracking`(`AWB_Number`, `UID`, `CourierVendor`, `Code`,  `StatusChangeTimestamp`,`UpdatedBy`) VALUES ('$AWBNo','$UID','$couriervendor','PSD',NOW(),'$userid') ");
+        $stmt4->execute();
+        
+        $stmt5= $conn->prepare(" INSERT INTO `TrackingHistory`(`UID`, `Code`, `TrackingTime`) VALUES ('$UID','PSD',NOW())");
+        $stmt5->execute();
+        
     }
     else{
-        
         
         $stmt2 = $conn->prepare("UPDATE `pickup` SET pickup.is_locked=0 WHERE AWB_Number=$AWBNo");
         $stmt2->execute();
     }
     
+    
+    $val.=json_encode($result)."\n\n";
     
 
     

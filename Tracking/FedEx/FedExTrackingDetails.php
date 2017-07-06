@@ -2,11 +2,11 @@
     // Copyright 2009, FedEx Corporation. All rights reserved.
     // Version 6.0.0
     
-    require_once('/Applications/XAMPP/xamppfiles/htdocs/Courier/Tracking/FedEx/fedex-common.php5');
+    require_once('/Applications/XAMPP/xamppfiles/htdocs/Courier/fedex-common.php5');
     
     //The WSDL is not included with the sample code.
     //Please include and reference in $path_to_wsdl variable.
-    $path_to_wsdl = "/Applications/XAMPP/xamppfiles/htdocs/Courier/Tracking/FedEx/TrackService_v12.wsdl";
+    $path_to_wsdl = "/Applications/XAMPP/xamppfiles/htdocs/Courier/wsdl/TrackService_v12.wsdl";
     
     ini_set("soap.wsdl_cache_enabled", "0");
     
@@ -146,6 +146,12 @@
                 elseif($TrackingCode=="OC"){
                     
                     $TrackingStatus="AWB Created";
+                    
+                    
+                }
+                elseif($TrackingCode=="PCD"){
+                    
+                    $TrackingStatus="Pickup Canceled";
                     
                     
                 }

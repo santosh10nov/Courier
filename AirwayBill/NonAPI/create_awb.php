@@ -113,6 +113,20 @@
     ///////////////////////////////////////////////////
     
     
+    
+    $stmt5 = $conn->prepare("INSERT INTO `AirwayBill`(`ShipperName`, `ReceiverName`, `COD`, `PackageCount`, `ReferenceID`, `AWB_Date`, `CourierVendor`, `CourierService`,`Airwaybill_Number`,`AWB_Status`, `AWB_Link`,`CreatedByUserID`,`CreatedByCompID`) VALUES ('$sender_info[1]','$receiver_info[1]','$COD',$packagecount,'$uid','$shipment_date','$OtherCourierVendor','$OtherCourierService','$OtherCourierAWB','Success','$filepath','$userid','$CompID')");
+    $stmt5->execute();
+    
+    $stmt6 = $conn->prepare(" SELECT * FROM AirwayBill WHERE `ShipperName`='$sender_info[1]' AND `ReceiverName`= '$receiver_info[1]' AND `COD`= '$COD' AND `ReferenceID`='$uid' AND `AWB_Date`='$shipment_date' AND `CourierVendor`='$OtherCourierVendor' AND `AWB_Status` ='Success' order by `API_Hit_Date` DESC");
+    $stmt6->execute();
+    
+    $stmt6->setFetchMode(PDO::FETCH_ASSOC);
+    $row6 = $stmt6->fetch();
+    
+    $AWB_UID=$row6['UID'];
+    
+    
+    
     // set  header data
     $pdf->setHeaderData($ln='', $lw=0, $ht='', $hs='<table id="head" cellpadding="10" cellspacing="0" style="text-align:center;"><tr><td> Airway Bill</td></tr></table>', $tc=array(0,0,0), $lc=array(0,0,0));
     $pdf->AddPage();
@@ -151,17 +165,7 @@
     
     
     
-    $stmt5 = $conn->prepare("INSERT INTO `AirwayBill`(`ShipperName`, `ReceiverName`, `COD`, `PackageCount`, `ReferenceID`, `AWB_Date`, `CourierVendor`, `CourierService`,`Airwaybill_Number`,`AWB_Status`, `AWB_Link`,`CreatedByUserID`) VALUES ('$sender_info[1]','$receiver_info[1]','$COD',$packagecount,'$uid','$shipment_date','$OtherCourierVendor','$OtherCourierService','$OtherCourierAWB','Success','$filepath','$userid')");
-    $stmt5->execute();
-    
-    $stmt6 = $conn->prepare(" SELECT * FROM AirwayBill WHERE `ShipperName`='$sender_info[1]' AND `ReceiverName`= '$receiver_info[1]' AND `COD`= '$COD' AND `ReferenceID`='$uid' AND `AWB_Date`='$shipment_date' AND `CourierVendor`='$OtherCourierVendor' AND `AWB_Status` ='Success' order by `API_Hit_Date` DESC");
-    $stmt6->execute();
-    
-    $stmt6->setFetchMode(PDO::FETCH_ASSOC);
-    $row6 = $stmt6->fetch();
-    
-    $AWB_UID=$row6['UID'];
-    
+
     
     $stmt7=$conn->prepare("INSERT INTO `AirwayBill_Parties`(`Shipper_VendorID`,`Shipper_Name`, `Shipper_Comp`, `Shipper_Address`,`Shipper_City`,`Shipper_State`,`Shipper_Pincode`,`Shipper_Phone`,`Receiver_VendorID`, `Receiver_Name`, `Receiver_Comp`, `Receiver_Address`,`Receiver_City`,`Receiver_State`,`Receiver_Pincode`,`Receiver_Phone`,`AWB_UID`) VALUES ('$sender_vendorid','$sender_info[1]','$sender_info[2]','$sender_info[3]','$sender_info[4]','$sender_info[5]','$sender_info[0]','$sender_info[6]','$receiver_vendorid','$receiver_info[1]','$receiver_info[2]','$receiver_info[3]','$receiver_info[4]','$receiver_info[5]','$receiver_info[0]','$receiver_info[6]','$AWB_UID') ");
     

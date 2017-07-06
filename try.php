@@ -1,9 +1,28 @@
 <?php
     
-    echo realpath(dirname(__FILE__))."/wsdl";
     
-    $upOne = realpath(__DIR__ . '/..');
+    $flag=1;
     
-    echo $upOne;
+    echo "Try";
     
     ?>
+
+<HTML>
+<script language="JavaScript">
+
+<?php
+    
+    if($flag==1){
+        
+        echo "myFunction()";
+
+    }
+    
+    ?>
+
+function myFunction() {
+    location.reload();
+}
+
+</script>
+</HTML>

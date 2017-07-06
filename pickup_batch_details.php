@@ -45,7 +45,7 @@
         
         <div class="container" id="container">
 <h1 align="center">Pickup Batch ID <?php echo $batch_id; ?> </h1>
-            <div class="panel-body" id="result">
+            <div class="panel-body" id="result" style="overflow: scroll;">
             <?php
                 
                 // Batch ID -> Vendor-> Pickup Time -> Pickup Date -> Sucess -> In Process -> Fail -> Total

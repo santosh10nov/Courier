@@ -1,0 +1,6 @@
+Total Number of rows=>1
+1
+{"UID":"363","Courier_Vendor":"FedEx","AWB_Number":"794696198085","name":"Santy","Company_Name":"AAAAA","Address":"wzsxdcfvghbjn","City":"Mumbai","State":"Maha","pincode":"400069","Phone":"9833563411","pickup_book_date":"2017-05-23","pickup_time":"09:00:27","com_closing_time":"16:00:27","Package_Count":"0","Weight":"4","CreatedByCompID":"1"}
+
+{"HighestSeverity":"SUCCESS","Notifications":{"Severity":"SUCCESS","Source":"disp","Code":"0000","Message":"Success","LocalizedMessage":"Success"},"TransactionDetail":{"CustomerTransactionId":"*** Create Pickup Request using PHP ***"},"Version":{"ServiceId":"disp","Major":13,"Intermediate":0,"Minor":0},"PickupConfirmationNumber":"5","Location":"BOMCL"}
+

@@ -43,7 +43,7 @@
 require_once(dirname(__FILE__).'/tcpdf_barcodes_2d_include.php');
 
 // set the barcode content and type
-$barcodeobj = new TCPDF2DBarcode('http://www.tcpdf.org', 'QRCODE,H');
+$barcodeobj = new TCPDF2DBarcode('00000331', 'QRCODE,H');
 
 // output the barcode as PNG image
 $barcodeobj->getBarcodePNG(6, 6, array(0,0,0));

@@ -1,4 +1,17 @@
-
+<?php
+    
+    session_start();
+    require_once 'class.user.php';
+    $user = new USER();
+    
+    if($user->is_logged_in()!=true)
+    {
+        $user->redirect('login.php');
+    }
+    
+    $userid=$_SESSION['userSession'];
+    
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,21 +24,8 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default">
-<div class="container-fluid">
-<div class="navbar-header">
-<a class="navbar-brand" href="index.php">rShipper</a>
-</div>
-<ul class="nav navbar-nav">
-<li><a href="index.php">Home</a></li>
-<li class="nav-item nav-link active"><a href="Service_Availabilty.php">Service Availability</a></li>
-<li><a href="TAT.php">TAT</a></li>
-<li><a href="Generate_AirwayBill.php">Generate AirwayBill</a></li>
-<li><a href="#">Book Pickup</a></li>
-<li><a href="#">Track Courier</a></li>
-</ul>
-</div>
-</nav>
+
+<?php echo  $user->Navigation(); ?>
 
 <div class="container">
 <h1 align="center">Service Availability </h1>

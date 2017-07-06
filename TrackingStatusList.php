@@ -1,12 +1,16 @@
 <?php
     
-    $userid=$_GET['userid'];
+    session_start();
+    require_once 'class.user.php';
+    $user = new USER();
+    
+    if($user->is_logged_in()!=true)
+    {
+        $user->redirect('login.php');
+    }
+    
+    $userid=$_SESSION['userSession'];
     $status=$_GET['status'];
-    
-    
-    
-    require_once 'dbconfig.php';
-    
     
     
     ?>
@@ -124,21 +128,7 @@ padding: 16px;
 
 <body onload="list()">
 
-<nav class="navbar navbar-default" id="header_nav">
-<div class="container-fluid">
-<div class="navbar-header">
-<a class="navbar-brand" href="index.php">rShipper</a>
-</div>
-<ul class="nav navbar-nav">
-<li><a href="index.php">Home</a></li>
-<li><a href="Service_Availabilty.php">Service Availability</a></li>
-<li><a href="TAT.php">TAT</a></li>
-<li><a href="Generate_AirwayBill.php">Generate AirwayBill</a></li>
-<li><a href="schedulepickup.html">Book Pickup</a></li>
-<li><a href="#">Track Courier</a></li>
-</ul>
-</div>
-</nav>
+<?php echo  $user->Navigation(); ?>
 
 <div class="container" id="container">
 <span style="font-size:30px;cursor:pointer;float: left;" onclick="openNav()">&#9776;</span>
@@ -222,7 +212,7 @@ padding: 16px;
 </div>
 </div>
 </div>
-<div class="panel-body" id="result">
+<div class="panel-body" id="result" style="overflow: scroll;">
 
 
 </div>

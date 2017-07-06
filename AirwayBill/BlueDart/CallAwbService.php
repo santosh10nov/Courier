@@ -346,7 +346,7 @@
         ob_end_clean();
         
         
-        $stmt5 = $conn->prepare("INSERT INTO `AirwayBill`(`ShipperName`, `ReceiverName`, `COD`, `PackageCount`, `ReferenceID`, `AWB_Date`, `CourierVendor`, `CourierService`,`Airwaybill_Number`,`AWB_Status`, `AWB_Link`,`CreatedByUserID`) VALUES ('$sender_info[1]','$receiver_info[1]','$DBCOD',$packagecount,'$uid','$shipment_date','BlueDart','$service','$token','Success','$filepath','$userid')");
+        $stmt5 = $conn->prepare("INSERT INTO `AirwayBill`(`ShipperName`, `ReceiverName`, `COD`, `PackageCount`, `ReferenceID`, `AWB_Date`, `CourierVendor`, `CourierService`,`Airwaybill_Number`,`AWB_Status`, `AWB_Link`,`CreatedByUserID`,`CreatedByCompID`) VALUES ('$sender_info[1]','$receiver_info[1]','$DBCOD',$packagecount,'$uid','$shipment_date','BlueDart','$service','$token','Success','$filepath','$userid','$CompID')");
         $stmt5->execute();
         
         $stmt6 = $conn->prepare(" SELECT * FROM AirwayBill WHERE `ShipperName`='$sender_info[1]' AND `ReceiverName`= '$receiver_info[1]' AND `COD`= '$DBCOD' AND `ReferenceID`='$uid' AND `AWB_Date`='$shipment_date' AND `CourierVendor`='BlueDart' AND `AWB_Status` ='Success' order by `API_Hit_Date` DESC");
@@ -405,7 +405,7 @@
     }
     else{
         
-        $stmt5 = $conn->prepare("INSERT INTO `AirwayBill`(`ShipperName`, `ReceiverName`, `COD`, `PackageCount`, `ReferenceID`, `AWB_Date`, `CourierVendor`, `CourierService`, `AWB_Status`, `AWB_Link`,`CreatedByUserID`) VALUES ('$sender_info[1]','$receiver_info[1]','$DBCOD',$packagecount,'$uid','$shipment_date','BlueDart','$service','Fail','','$userid')");
+        $stmt5 = $conn->prepare("INSERT INTO `AirwayBill`(`ShipperName`, `ReceiverName`, `COD`, `PackageCount`, `ReferenceID`, `AWB_Date`, `CourierVendor`, `CourierService`, `AWB_Status`, `AWB_Link`,`CreatedByUserID`,`CreatedByCompID`) VALUES ('$sender_info[1]','$receiver_info[1]','$DBCOD',$packagecount,'$uid','$shipment_date','BlueDart','$service','Fail','','$userid','$CompID')");
         $stmt5->execute();
         
         

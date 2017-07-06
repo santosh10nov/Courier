@@ -18,9 +18,9 @@
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
             
-            $stmt1 = $conn->prepare("SELECT * FROM `vendor_services` where `vendor_name`='$couriervendor'");
-            $stmt1->execute();
+            $stmt1 = $conn->prepare("SELECT * FROM `vendor_services` where `vendor_name`=:couriervendor");
             
+            $stmt1->execute(array(':couriervendor'=>$couriervendor));
             $numrows = $stmt1->rowCount();
             
             $stmt1->setFetchMode(PDO::FETCH_ASSOC);
@@ -64,13 +64,13 @@
                 foreach($stmt9->fetchAll() as $row9){
                     if($row9["name"]=="FedEx"){
                         
-                        $stmt1 = $conn->prepare("Select * from fedex_avi where `pincode`=$from_pin");
-                        $stmt1->execute();
+                        $stmt1 = $conn->prepare("Select * from fedex_avi where `pincode`=:from_pin");
+                        $stmt1->execute(array(':from_pin'=>$from_pin));
                         $stmt1->setFetchMode(PDO::FETCH_ASSOC);
                         $row1 = $stmt1->fetch();
                         
-                        $stmt2 = $conn->prepare("Select * from fedex_avi where `pincode`=$to_pin");
-                        $stmt2->execute();
+                        $stmt2 = $conn->prepare("Select * from fedex_avi where `pincode`=:to_pin");
+                        $stmt2->execute(array(':to_pin'=>$to_pin));
                         $stmt2->setFetchMode(PDO::FETCH_ASSOC);
                         $row2 = $stmt2->fetch();
                         
@@ -82,8 +82,8 @@
                         
                         $s_product2= "Standard";
                         
-                        $stmt9 = $conn->prepare("Select distinct * from `transit_time` where `from_pin`=$from_pin  AND `to_pin` = $to_pin  AND `vendor_name`='FedEx' order by `TAT` asc");
-                        $stmt9->execute();
+                        $stmt9 = $conn->prepare("Select distinct * from `transit_time` where `from_pin`=:from_pin  AND `to_pin` = :to_pin  AND `vendor_name`=:couriervendor order by `TAT` asc");
+                        $stmt9->execute(array(':from_pin'=>$from_pin,':to_pin'=>$to_pin,':couriervendor'=>'FedEx'));
                         
                         $numrows = $stmt9->rowCount();
                         $stmt9->setFetchMode(PDO::FETCH_ASSOC);
@@ -102,14 +102,14 @@
                     }
                     elseif($row9["name"]=="BlueDart"){
                         
-                        $stmt3 = $conn->prepare("Select * from `bluedart_service_avii1` where `pincode`=$from_pin");
-                        $stmt3->execute();
+                        $stmt3 = $conn->prepare("Select * from `bluedart_service_avii1` where `pincode`=:from_pin");
+                        $stmt3->execute(array(':from_pin'=>$from_pin));
                         $stmt3->setFetchMode(PDO::FETCH_ASSOC);
                         $row3 = $stmt3->fetch();
                         
                         
-                        $stmt4 = $conn->prepare("Select * from `bluedart_service_avii1` where `pincode`=$to_pin");
-                        $stmt4->execute();
+                        $stmt4 = $conn->prepare("Select * from `bluedart_service_avii1` where `pincode`=:to_pin");
+                        $stmt4->execute(array(':to_pin'=>$to_pin));
                         $stmt4->setFetchMode(PDO::FETCH_ASSOC);
                         $row4 = $stmt4->fetch();
                         
@@ -159,8 +159,8 @@
                     
                 }
                 
-                $stmt9 = $conn->prepare("Select distinct * from `transit_time`left join `vendor_services` on `vendor_services`.display_name=`transit_time`.product_type  where `from_pin`=$from_pin  AND `to_pin` = $to_pin GROUP BY product_type order by `TAT` asc");
-                $stmt9->execute();
+                $stmt9 = $conn->prepare("Select distinct * from `transit_time`left join `vendor_services` on `vendor_services`.display_name=`transit_time`.product_type  where `from_pin`=:from_pin  AND `to_pin` = :to_pin GROUP BY product_type order by `TAT` asc");
+                $stmt9->execute(array(':from_pin'=>$from_pin,':to_pin'=>$to_pin));
                 
                 $numrows = $stmt9->rowCount();
                 $stmt9->setFetchMode(PDO::FETCH_ASSOC);
@@ -213,13 +213,13 @@
                 foreach($stmt9->fetchAll() as $row9){
                     if($row9["name"]=="FedEx"){
                         
-                        $stmt1 = $conn->prepare("Select * from fedex_avi where `pincode`=$from_pin");
-                        $stmt1->execute();
+                        $stmt1 = $conn->prepare("Select * from fedex_avi where `pincode`=:from_pin");
+                        $stmt1->execute(array(':from_pin'=>$from_pin));
                         $stmt1->setFetchMode(PDO::FETCH_ASSOC);
                         $row1 = $stmt1->fetch();
                         
-                        $stmt2 = $conn->prepare("Select * from fedex_avi where `pincode`=$to_pin");
-                        $stmt2->execute();
+                        $stmt2 = $conn->prepare("Select * from fedex_avi where `pincode`=:to_pin");
+                        $stmt2->execute(array(':to_pin'=>$to_pin));
                         $stmt2->setFetchMode(PDO::FETCH_ASSOC);
                         $row2 = $stmt2->fetch();
                         
@@ -231,10 +231,10 @@
                         
                         $s_product2= "Standard";
                         
-                        $stmt9 = $conn->prepare("Select distinct * from `transit_time` where `from_pin`=$from_pin  AND `to_pin` = $to_pin  AND `vendor_name`='FedEx' order by `TAT` asc");
+                        $stmt9 = $conn->prepare("Select distinct * from `transit_time` where `from_pin`=:from_pin  AND `to_pin` = :to_pin  AND `vendor_name`=:couriervendor order by `TAT` asc");
                         $stmt9->execute();
                         
-                        $numrows = $stmt9->rowCount();
+                        $numrows = $stmt9->rowCount(array(':from_pin'=>$from_pin,':to_pin'=>$to_pin,':couriervendor'=>'FedEx'));
                         $stmt9->setFetchMode(PDO::FETCH_ASSOC);
                         
                         if($numrows==0){
@@ -251,14 +251,14 @@
                     }
                     elseif($row9["name"]=="BlueDart"){
                         
-                        $stmt3 = $conn->prepare("Select * from `bluedart_service_avii1` where `pincode`=$from_pin");
-                        $stmt3->execute();
+                        $stmt3 = $conn->prepare("Select * from `bluedart_service_avii1` where `pincode`=:from_pin");
+                        $stmt3->execute(array(':from_pin'=>$from_pin));
                         $stmt3->setFetchMode(PDO::FETCH_ASSOC);
                         $row3 = $stmt3->fetch();
                         
                         
-                        $stmt4 = $conn->prepare("Select * from `bluedart_service_avii1` where `pincode`=$to_pin");
-                        $stmt4->execute();
+                        $stmt4 = $conn->prepare("Select * from `bluedart_service_avii1` where `pincode`=:to_pin");
+                        $stmt4->execute(array(':to_pin'=>$to_pin));
                         $stmt4->setFetchMode(PDO::FETCH_ASSOC);
                         $row4 = $stmt4->fetch();
                         

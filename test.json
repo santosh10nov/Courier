@@ -1,0 +1,571 @@
+
+
+{
+    
+    "webAuthenticationDetail": {
+        
+        "userCredential": {
+            
+            "key": "pJEti43mlJhMMggM",
+            
+            "password": "VoSTqZ6LjglgCRDvt4xiu85LV",
+            
+            "__hashCodeCalc": false
+            
+        },
+        
+        "__hashCodeCalc": false
+        
+    },
+    
+    "clientDetail": {
+        
+        "accountNumber": "273371770",
+        
+        "meterNumber": "108780603",
+        
+        "__hashCodeCalc": false
+        
+    },
+    
+    "transactionDetail": {
+        
+        "customerTransactionId": "DLN0000004005",
+        
+        "__hashCodeCalc": false
+        
+    },
+    
+    "version": {
+        
+        "serviceId": "ship",
+        
+        "major": 17,
+        
+        "intermediate": 0,
+        
+        "minor": 0,
+        
+        "__hashCodeCalc": false
+        
+    },
+    
+    "requestedShipment": {
+        
+        "shipTimestamp": {
+            
+            "year": 2016,
+            
+            "month": 1,
+            
+            "dayOfMonth": 9,
+            
+            "hourOfDay": 16,
+            
+            "minute": 51,
+            
+            "second": 22
+            
+        },
+        
+        "dropoffType": {
+            
+            "_value_": "REGULAR_PICKUP"
+            
+        },
+        
+        "serviceType": {
+            
+            "_value_": "PRIORITY_OVERNIGHT"
+            
+        },
+        
+        "packagingType": {
+            
+            "_value_": "YOUR_PACKAGING"
+            
+        },
+        
+        "shipper": {
+            
+            "contact": {
+                
+                "companyName": "AppsDaily Solutions Pvt Ltd.",
+                
+                "phoneNumber": "40770500",
+                
+                "EMailAddress": "amit.jadhav@appsdaily.in",
+                
+                "__hashCodeCalc": false
+                
+            },
+            
+            "address": {
+                
+                "streetLines": [
+                                
+                                "Shop No 315, C Wing, Shanti Shoppin",
+                                
+                                "g Centre, Mira Road East, Near Railway Station, Thane 401107, Maharashtra"
+                                
+                                ],
+                
+                "city": "Mumbai",
+                
+                "stateOrProvinceCode": "MH",
+                
+                "postalCode": "401107",
+                
+                "countryCode": "IN",
+                
+                "__hashCodeCalc": false
+                
+            },
+            
+            "__hashCodeCalc": false
+            
+        },
+        
+        "recipient": {
+            
+            "contact": {
+                
+                "companyName": "AppsDaily Solutions Pvt Ltd.",
+                
+                "phoneNumber": "7230021659",
+                
+                "EMailAddress": "cc1077@appsdaily.in",
+                
+                "__hashCodeCalc": false
+                
+            },
+            
+            "address": {
+                
+                "streetLines": [
+                                
+                                "91 Chaupati Road Guman pura shoppin",
+                                
+                                "g center Kota 324007"
+                                
+                                ],
+                
+                "city": "Kota",
+                
+                "stateOrProvinceCode": "RJ",
+                
+                "postalCode": "324007",
+                
+                "countryCode": "IN",
+                
+                "__hashCodeCalc": false
+                
+            },
+            
+            "__hashCodeCalc": false
+            
+        },
+        
+        "shippingChargesPayment": {
+            
+            "paymentType": {
+                
+                "_value_": "SENDER"
+                
+            },
+            
+            "payor": {
+                
+                "responsibleParty": {
+                    
+                    "accountNumber": "273371770",
+                    
+                    "contact": {
+                        
+                        "__hashCodeCalc": false
+                        
+                    },
+                    
+                    "address": {
+                        
+                        "countryCode": "IN",
+                        
+                        "__hashCodeCalc": false
+                        
+                    },
+                    
+                    "__hashCodeCalc": false
+                    
+                },
+                
+                "__hashCodeCalc": false
+                
+            },
+            
+            "__hashCodeCalc": false
+            
+        },
+        
+        "customsClearanceDetail": {
+            
+            "dutiesPayment": {
+                
+                "paymentType": {
+                    
+                    "_value_": "SENDER"
+                    
+                },
+                
+                "payor": {
+                    
+                    "responsibleParty": {
+                        
+                        "accountNumber": "273371770",
+                        
+                        "contact": {
+                            
+                            "__hashCodeCalc": false
+                            
+                        },
+                        
+                        "address": {
+                            
+                            "countryCode": "IN",
+                            
+                            "__hashCodeCalc": false
+                            
+                        },
+                        
+                        "__hashCodeCalc": false
+                        
+                    },
+                    
+                    "__hashCodeCalc": false
+                    
+                },
+                
+                "__hashCodeCalc": false
+                
+            },
+            
+            "documentContent": {
+                
+                "_value_": "NON_DOCUMENTS"
+                
+            },
+            
+            "customsValue": {
+                
+                "currency": "INR",
+                
+                "amount": 4999,
+                
+                "__hashCodeCalc": false
+                
+            },
+            
+            "commercialInvoice": {
+                
+                "declarationStatement": "This is NOT FOR SALE.",
+                
+                "purpose": {
+                    
+                    "_value_": "REPAIR_AND_RETURN"
+                    
+                },
+                
+                "__hashCodeCalc": false
+                
+            },
+            
+            "commodities": [
+                            
+                            {
+                            
+                            "numberOfPieces": {
+                            
+                            "zero": 0,
+                            
+                            "signum": 1,
+                            
+                            "mag": [
+                                    
+                                    1
+                                    
+                                    ],
+                            
+                            "bitCount": 0,
+                            
+                            "bitLength": 0,
+                            
+                            "lowestSetBit": 0,
+                            
+                            "firstNonzeroIntNum": 0
+                            
+                            },
+                            
+                            "description": "REPAIRED MOBILE HANDSET - Packet No. 10241412",
+                            
+                            "countryOfManufacture": "IN",
+                            
+                            "weight": {
+                            
+                            "units": {
+                            
+                            "_value_": "KG"
+                            
+                            },
+                            
+                            "value": 0.5,
+                            
+                            "__hashCodeCalc": false
+                            
+                            },
+                            
+                            "quantity": 1,
+                            
+                            "quantityUnits": "PZA",
+                            
+                            "unitPrice": {
+                            
+                            "currency": "INR",
+                            
+                            "amount": 4999,
+                            
+                            "__hashCodeCalc": false
+                            
+                            },
+                            
+                            "customsValue": {
+                            
+                            "currency": "INR",
+                            
+                            "amount": 4999,
+                            
+                            "__hashCodeCalc": false
+                            
+                            },
+                            
+                            "__hashCodeCalc": false
+                            
+                            }
+                            
+                            ],
+            
+            "__hashCodeCalc": false
+            
+        },
+        
+        "labelSpecification": {
+            
+            "labelFormatType": {
+                
+                "_value_": "COMMON2D"
+                
+            },
+            
+            "imageType": {
+                
+                "_value_": "PDF"
+                
+            },
+            
+            "labelStockType": {
+                
+                "_value_": "PAPER_8.5X11_BOTTOM_HALF_LABEL"
+                
+            },
+            
+            "labelPrintingOrientation": {
+                
+                "_value_": "BOTTOM_EDGE_OF_TEXT_FIRST"
+                
+            },
+            
+            "customerSpecifiedDetail": {
+                
+                "docTabContent": {
+                    
+                    "docTabContentType": {
+                        
+                        "_value_": "STANDARD"
+                        
+                    },
+                    
+                    "__hashCodeCalc": false
+                    
+                },
+                
+                "__hashCodeCalc": false
+                
+            },
+            
+            "__hashCodeCalc": false
+            
+        },
+        
+        "shippingDocumentSpecification": {
+            
+            "shippingDocumentTypes": [
+                                      
+                                      {
+                                      
+                                      "_value_": "PRO_FORMA_INVOICE"
+                                      
+                                      }
+                                      
+                                      ],
+            
+            "commercialInvoiceDetail": {
+                
+                "format": {
+                    
+                    "imageType": {
+                        
+                        "_value_": "PDF"
+                        
+                    },
+                    
+                    "stockType": {
+                        
+                        "_value_": "PAPER_LETTER"
+                        
+                    },
+                    
+                    "provideInstructions": true,
+                    
+                    "__hashCodeCalc": false
+                    
+                },
+                
+                "__hashCodeCalc": false
+                
+            },
+            
+            "__hashCodeCalc": false
+            
+        },
+        
+        "packageCount": {
+            
+            "zero": 0,
+            
+            "signum": 1,
+            
+            "mag": [
+                    
+                    1
+                    
+                    ],
+            
+            "bitCount": 0,
+            
+            "bitLength": 0,
+            
+            "lowestSetBit": 0,
+            
+            "firstNonzeroIntNum": 0
+            
+        },
+        
+        "requestedPackageLineItems": [
+                                      
+                                      {
+                                      
+                                      "sequenceNumber": {
+                                      
+                                      "iMinInclusive": 1,
+                                      
+                                      "zero": 0,
+                                      
+                                      "signum": 1,
+                                      
+                                      "mag": [
+                                              
+                                              1
+                                              
+                                              ],
+                                      
+                                      "bitCount": 0,
+                                      
+                                      "bitLength": 0,
+                                      
+                                      "lowestSetBit": 0,
+                                      
+                                      "firstNonzeroIntNum": 0
+                                      
+                                      },
+                                      
+                                      "weight": {
+                                      
+                                      "units": {
+                                      
+                                      "_value_": "KG"
+                                      
+                                      },
+                                      
+                                      "value": 0.5,
+                                      
+                                      "__hashCodeCalc": false
+                                      
+                                      },
+                                      
+                                      "customerReferences": [
+                                                             
+                                                             {
+                                                             
+                                                             "customerReferenceType": {
+                                                             
+                                                             "_value_": "CUSTOMER_REFERENCE"
+                                                             
+                                                             },
+                                                             
+                                                             "value": "DLN0000004005--10241412",
+                                                             
+                                                             "__hashCodeCalc": false
+                                                             
+                                                             },
+                                                             
+                                                             {
+                                                             
+                                                             "customerReferenceType": {
+                                                             
+                                                             "_value_": "DEPARTMENT_NUMBER"
+                                                             
+                                                             },
+                                                             
+                                                             "value": "BILL D/T:SENDER",
+                                                             
+                                                             "__hashCodeCalc": false
+                                                             
+                                                             },
+                                                             
+                                                             {
+                                                             
+                                                             "customerReferenceType": {
+                                                             
+                                                             "_value_": "P_O_NUMBER"
+                                                             
+                                                             },
+                                                             
+                                                             "value": "B2B",
+                                                             
+                                                             "__hashCodeCalc": false
+                                                             
+                                                             }
+                                                             
+                                                             ],
+                                      
+                                      "__hashCodeCalc": false
+                                      
+                                      }
+                                      
+                                      ],
+        
+        "__hashCodeCalc": false
+        
+    },
+    
+    "__hashCodeCalc": false
+    
+}

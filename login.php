@@ -34,7 +34,7 @@
 <![endif]-->
 <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 </head>
-<body id="login">
+<body id="login" style="background:#778899;">
 <div class="container">
 <h1 class="form-signin-heading" align="center">rShipper</h1><hr />
 <div id = "alert_placeholder"></div>
@@ -66,7 +66,7 @@
 <input type="password" class="input-block-level" placeholder="Password" name="txtupass" id="pass" required />
 <hr />
 <button class="btn btn-large btn-success" type="submit" name="btn-login">Login</button>
-<a href="signup.php" style="float:right;" class="btn btn-large">Sign Up</a><hr />
+<a href="CompanySignUp.php" style="float:right;" class="btn btn-large">Sign Up</a><hr />
 <a href="fpass.php">Lost your Password ? </a>
 </form>
 

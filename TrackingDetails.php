@@ -1,10 +1,21 @@
 <?php
+   
+    session_start();
+    require_once 'class.user.php';
+    $user = new USER();
+    
+    if($user->is_logged_in()!=true)
+    {
+        $user->redirect('login.php');
+    }
+    
+    $userid=$_SESSION['userSession'];
+    
     
     $UID=$_GET["UID"];
     $AWBNo=$_GET["AWB_Number"];
     $couriervendor=$_GET["couriervendor"];
-    
-    require_once 'dbconfig.php';
+
     
     error_reporting(0);
     

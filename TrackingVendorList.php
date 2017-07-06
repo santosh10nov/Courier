@@ -1,12 +1,16 @@
 <?php
+
+    session_start();
+    require_once 'class.user.php';
+    $user = new USER();
     
-    $userid=$_GET['userid'];
+    if($user->is_logged_in()!=true)
+    {
+        $user->redirect('login.php');
+    }
+    
+    $userid=$_SESSION['userSession'];
     $couriervendor=$_GET['vendor'];
-    
-    
-    require_once 'dbconfig.php';
-    
-    
     
     ?>
 
@@ -127,21 +131,7 @@ padding: 16px;
 
 <body onload="list()">
 
-<nav class="navbar navbar-default" id="header_nav">
-<div class="container-fluid">
-<div class="navbar-header">
-<a class="navbar-brand" href="index.php">rShipper</a>
-</div>
-<ul class="nav navbar-nav">
-<li><a href="index.php">Home</a></li>
-<li><a href="Service_Availabilty.php">Service Availability</a></li>
-<li><a href="TAT.php">TAT</a></li>
-<li><a href="Generate_AirwayBill.php">Generate AirwayBill</a></li>
-<li><a href="schedulepickup.html">Book Pickup</a></li>
-<li><a href="#">Track Courier</a></li>
-</ul>
-</div>
-</nav>
+<?php echo  $user->Navigation(); ?>
 
 <div class="container" id="container">
 <h1 align="center"> <?php echo $couriervendor; ?> Tracking List</h1>
@@ -215,7 +205,7 @@ padding: 16px;
 </div>
 </div>
 </div>
-<div class="panel-body" id="result">
+<div class="panel-body" id="result" style="overflow: scroll;">
 
 
 </div>
@@ -617,6 +607,8 @@ function Send(x){
         };
         xmlhttp.open("GET","PHPMailer/examples/gmail.php?to="+to+"&subject="+subject+"&msg="+msg,true);
         xmlhttp.send();
+        
+        
     }
     
     

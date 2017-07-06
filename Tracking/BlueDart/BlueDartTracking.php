@@ -42,6 +42,8 @@
         
         $oXML = new SimpleXMLElement($response);
         
+        print_r($oXML);
+        
         $TrackingCode= $oXML->Shipment->Scans->ScanDetail->ScanCode[0];
         
         if($oXML->Shipment->StatusType!="NF"){

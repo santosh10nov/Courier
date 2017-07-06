@@ -115,50 +115,15 @@ padding: 16px;
 
 <body onload="CourierVendorList()">
 
-<nav class="navbar navbar-default">
-<div class="container-fluid">
-<div class="navbar-header">
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-</button>
-<a class="navbar-brand" href="index.php">rShipper</a>
-</div>
-<div class="collapse navbar-collapse" id="myNavbar">
-<ul class="nav navbar-nav">
-<li><a href="index.php">Dashboard</a></li>
-<li><a href="ServiceTAT.php">Service Availability/TAT</a></li>
-<li class="dropdown active">
-<a class="dropdown-toggle" data-toggle="dropdown" href="#">AirwayBill</a>
-<ul class="dropdown-menu">
-<li><a href="Generate_AirwayBill.php">Generate AirwayBill</a></li>
-<li><a href="AirwayBillList.php">AirwayBill List</a></li>
-<li><a href="DispatchList.php">Dispatch List</a></li>
-</ul>
-</li>
-<li><a href="schedulepickup.html">Pickup</a></li>
-<li><a href="trackcourier.php">Tracking</a></li>
-<li><a href="index.php">Extra</a></li>
-</ul>
-<ul class="nav navbar-nav navbar-right">
-<li class="dropdown">
-<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span></a>
-<ul class="dropdown-menu">
-<li><a href="#">Profile</a></li>
-<li><a href="logout.php">Logout</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</nav>
+
+<?php echo  $user->Navigation(); ?>
+
 
 
 
 <div class="container" id="container">
 
-<h1 align="center">Dispatch List</h1>
+<h1 align="center">Dispatch</h1>
 <!-- form start -->
 <form class="form-horizontal"  method="post" >
 <div class="col-md-12 ">
@@ -205,7 +170,7 @@ padding: 16px;
 </div>
 </div>
 </div>
-<div class="panel-body" id="result">
+<div class="panel-body" id="result" style="overflow: scroll;">
 
 
 </div>
@@ -629,6 +594,8 @@ function MarkDispatch(){
     var empid=document.getElementById("empid").value;
     var dispatchdate=document.getElementById("dispatchDate").value;
     
+    var n=$(":checkbox:checked").length;
+    
     
     if(name==""){
         
@@ -642,6 +609,9 @@ function MarkDispatch(){
     else if(dispatchdate==""){
         
         alert("Please enter Dispatch Date");
+    }
+    else if(n<1){
+        alert("Atleast select one AirWay Bill to dispatch!");
     }
     else{
         var couriercount=$(":checkbox:checked").length;
